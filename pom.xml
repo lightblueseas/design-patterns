@@ -10,12 +10,35 @@
 	</parent>
 
 	<artifactId>design-patterns</artifactId>
-	<version>4.4.0</version>
+	<version>4.6.0</version>
+
+	<name>${project.artifactId}</name>
+
+	<description>
+		Project that holds a view examples of the famous design patterns in java
+	</description>
+
+	<url>https://github.com/lightblueseas/design-patterns</url>
+
+	<scm>
+		<connection>scm:git:git:@github.com:lightblueseas/design-patterns.git</connection>
+		<developerConnection>scm:git:git@github.com:lightblueseas/design-patterns.git</developerConnection>
+		<url>git:@github.com:lightblueseas/design-patterns.git</url>
+	</scm>
+
+	<ciManagement>
+		<system>travis-ci</system>
+		<url>https://travis-ci.org/lightblueseas/design-patterns</url>
+	</ciManagement>
+
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/lightblueseas/design-patterns/issues</url>
+	</issueManagement>
 
 	<properties>
-		<!-- EXTERNAL LIBRARIES versions -->
-		<file-worker.version>4.4.0</file-worker.version>
-		<test-objects.version>4.4.0</test-objects.version>
+		<file-worker.version>4.6.0</file-worker.version>
+		<test-objects.version>4.6.0</test-objects.version>
 		<auth-security.version>4.2.0</auth-security.version>
 	</properties>
 
@@ -66,5 +89,5 @@
 		</dependency>
 
 	</dependencies>
-	
+
 </project>
