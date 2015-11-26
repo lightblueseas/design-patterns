@@ -22,8 +22,9 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.designpattern.strategy;
+package de.alpharogroup.design.pattern.strategy;
 
+import de.alpharogroup.design.pattern.strategy.Strategy;
 import de.alpharogroup.test.objects.AlgorithmModel;
 
 public class SubtractionStrategy implements Strategy<Integer, AlgorithmModel>

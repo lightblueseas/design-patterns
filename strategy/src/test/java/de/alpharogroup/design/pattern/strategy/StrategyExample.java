@@ -22,17 +22,29 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.designpattern.strategy;
+package de.alpharogroup.design.pattern.strategy;
 
+import de.alpharogroup.design.pattern.strategy.Context;
+import de.alpharogroup.design.pattern.strategy.Strategy;
 import de.alpharogroup.test.objects.AlgorithmModel;
 
-// A strategy for addition
-public class AdditionStrategy implements Strategy<Integer, AlgorithmModel>
+public class StrategyExample
 {
-	@Override
-	public Integer execute(final AlgorithmModel model)
+
+	public static void main(final String[] args)
 	{
-		System.out.println("Called AdditionStrategy's execute()");
-		return model.getA() + model.getB(); // Do an addition with a and b
+		Strategy<Integer, AlgorithmModel> strategy = new AdditionStrategy();
+		Context<Integer, AlgorithmModel> context = new Context<>(strategy);
+		Integer i = context.execute(new AlgorithmModel().setA(5).setB(15));
+		System.out.println("Result from ComputeAddStrategy's execute():" + i);
+		strategy = new SubtractionStrategy();
+		context = new Context<>(strategy);
+		i = context.execute(new AlgorithmModel().setA(5).setB(15));
+		System.out.println("Result from ComputeSubtractStrategy's execute():" + i);
+		strategy = new MultiplicationStrategy();
+		context = new Context<>(strategy);
+		i = context.execute(new AlgorithmModel().setA(5).setB(15));
+		System.out.println("Result from MultiplicationStrategy's execute():" + i);
+
 	}
 }

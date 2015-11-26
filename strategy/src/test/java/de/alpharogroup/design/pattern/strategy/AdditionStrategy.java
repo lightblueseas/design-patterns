@@ -22,18 +22,18 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.designpattern.strategy;
+package de.alpharogroup.design.pattern.strategy;
 
+import de.alpharogroup.design.pattern.strategy.Strategy;
 import de.alpharogroup.test.objects.AlgorithmModel;
 
-public class MultiplicationStrategy implements Strategy<Integer, AlgorithmModel>
+// A strategy for addition
+public class AdditionStrategy implements Strategy<Integer, AlgorithmModel>
 {
-
 	@Override
 	public Integer execute(final AlgorithmModel model)
 	{
-		System.out.println("Called MultiplicationStrategy's execute()");
-		return model.getA() * model.getB(); // Do an multiplication with a and b
+		System.out.println("Called AdditionStrategy's execute()");
+		return model.getA() + model.getB(); // Do an addition with a and b
 	}
-
 }

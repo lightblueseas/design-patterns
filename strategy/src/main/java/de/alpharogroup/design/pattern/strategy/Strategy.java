@@ -22,27 +22,25 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.designpattern.strategy;
+package de.alpharogroup.design.pattern.strategy;
 
-import de.alpharogroup.test.objects.AlgorithmModel;
-
-public class StrategyExample
+/**
+ * The Interface Strategy.
+ *
+ * @param <R>
+ *            the generic return type
+ * @param <M>
+ *            the generic algorithm model type
+ */
+public interface Strategy<R, M>
 {
 
-	public static void main(final String[] args)
-	{
-		Strategy<Integer, AlgorithmModel> strategy = new AdditionStrategy();
-		Context<Integer, AlgorithmModel> context = new Context<>(strategy);
-		Integer i = context.execute(new AlgorithmModel().setA(5).setB(15));
-		System.out.println("Result from ComputeAddStrategy's execute():" + i);
-		strategy = new SubtractionStrategy();
-		context = new Context<>(strategy);
-		i = context.execute(new AlgorithmModel().setA(5).setB(15));
-		System.out.println("Result from ComputeSubtractStrategy's execute():" + i);
-		strategy = new MultiplicationStrategy();
-		context = new Context<>(strategy);
-		i = context.execute(new AlgorithmModel().setA(5).setB(15));
-		System.out.println("Result from MultiplicationStrategy's execute():" + i);
-
-	}
+	/**
+	 * Executes the specified algorithm with the given model.
+	 *
+	 * @param model
+	 *            generic algorithm model type.
+	 * @return the generic return type.
+	 */
+	R execute(final M model);
 }
