@@ -22,35 +22,28 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.designpattern.state;
+package de.alpharogroup.design.pattern.state;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 /**
  * The class StateContext.
  */
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class StateContext
 {
-
-	/**
-	 * The main method.
-	 *
-	 * @param args
-	 *            the arguments
-	 * @throws InterruptedException
-	 *             the interrupted exception
-	 */
-	public static void main(final String[] args) throws InterruptedException
-	{
-		final StateContext context = new StateContext();
-		context.start();
-		Thread.sleep(1000);
-		context.pause();
-		Thread.sleep(1000);
-		context.start();
-		Thread.sleep(1000);
-		context.stop();
-		context.reset();
-		context.start();
-	}
 
 	/** The stop watch. */
 	private StopWatch stopWatch = new StopWatch();
@@ -58,25 +51,6 @@ public class StateContext
 	/** The current. */
 	private State current = State.READY;
 
-	/**
-	 * Gets the current.
-	 *
-	 * @return the current
-	 */
-	public State getCurrent()
-	{
-		return current;
-	}
-
-	/**
-	 * Gets the stop watch.
-	 *
-	 * @return the stop watch
-	 */
-	public StopWatch getStopWatch()
-	{
-		return stopWatch;
-	}
 
 	/**
 	 * Pause.
@@ -92,29 +66,6 @@ public class StateContext
 	public void reset()
 	{
 		getCurrent().reset(this);
-	}
-
-
-	/**
-	 * Sets the current.
-	 *
-	 * @param current
-	 *            the new current
-	 */
-	public void setCurrent(final State current)
-	{
-		this.current = current;
-	}
-
-	/**
-	 * Sets the stop watch.
-	 *
-	 * @param stopWatch
-	 *            the new stop watch
-	 */
-	public void setStopWatch(final StopWatch stopWatch)
-	{
-		this.stopWatch = stopWatch;
 	}
 
 	/**
