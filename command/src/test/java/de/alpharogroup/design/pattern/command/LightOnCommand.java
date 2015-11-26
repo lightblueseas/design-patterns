@@ -22,20 +22,23 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.designpattern.command.ifaces;
+package de.alpharogroup.design.pattern.command;
 
-//Invoker
-public class Invoker<R>
+import de.alpharogroup.test.objects.Light;
+
+
+//Concrete Command that extends the abstract command class
+public class LightOnCommand extends AbstractCommand<Light>
 {
-	private Command<R> command;
 
-	public void invoke()
+	public LightOnCommand(final Light light)
 	{
-		command.execute();
+		super(light);
 	}
 
-	public void setCommand(final Command<R> command)
+	@Override
+	public void execute()
 	{
-		this.command = command;
+		getReceiver().switchOn();
 	}
 }

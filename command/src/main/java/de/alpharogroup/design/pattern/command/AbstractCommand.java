@@ -22,9 +22,9 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.designpattern.command;
+package de.alpharogroup.design.pattern.command;
 
-import de.alpharogroup.designpattern.command.ifaces.Command;
+import de.alpharogroup.design.pattern.command.api.Command;
 
 //Abstract Command class
 public abstract class AbstractCommand<R> implements Command<R>

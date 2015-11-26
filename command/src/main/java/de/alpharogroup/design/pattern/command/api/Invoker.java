@@ -22,25 +22,20 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.designpattern.command.tv;
+package de.alpharogroup.design.pattern.command.api;
 
-
-/**
- * The Class DemonstrateCommandPattern.
- */
-public class DemonstrateCommandPattern
+//Invoker
+public class Invoker<R>
 {
+	private Command<R> command;
 
-	/**
-	 * The main method.
-	 *
-	 * @param args
-	 *            the arguments
-	 */
-	public static void main(final String[] args)
+	public void invoke()
 	{
-		// final Television television = new Television();
-
+		command.execute();
 	}
 
+	public void setCommand(final Command<R> command)
+	{
+		this.command = command;
+	}
 }

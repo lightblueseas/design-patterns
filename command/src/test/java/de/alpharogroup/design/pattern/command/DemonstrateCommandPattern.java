@@ -22,25 +22,41 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.designpattern.command;
+package de.alpharogroup.design.pattern.command;
 
-import de.alpharogroup.designpattern.command.ifaces.Command;
+import de.alpharogroup.design.pattern.command.api.Invoker;
+import de.alpharogroup.design.pattern.command.api.Command;
 import de.alpharogroup.test.objects.Light;
 
-//Concrete Command that implements the command interface
-public class LightOffCommand implements Command<Light>
+
+/**
+ * The Class DemonstrateCommandPattern.
+ */
+public class DemonstrateCommandPattern
 {
-	// reference to the light
-	Light light;
 
-	public LightOffCommand(final Light light)
+	/**
+	 * The main method.
+	 *
+	 * @param args
+	 *            the arguments
+	 */
+	public static void main(final String[] args)
 	{
-		this.light = light;
+		final Invoker<Light> invoker = new Invoker<>();
+
+		final Light light = new Light();
+
+		final Command<Light> lightsOn = new LightOnCommand(light);
+		final Command<Light> lightsOff = new LightOffCommand(light);
+
+		// switch on
+		invoker.setCommand(lightsOn);
+		invoker.invoke();
+
+		// switch off
+		invoker.setCommand(lightsOff);
+		invoker.invoke();
 	}
 
-	@Override
-	public void execute()
-	{
-		light.switchOff();
-	}
 }

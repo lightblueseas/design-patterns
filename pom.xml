@@ -39,6 +39,7 @@
 
 	<modules>
 		<module>builder</module>
+		<module>command</module>
 	</modules>
 	
 	<properties>
