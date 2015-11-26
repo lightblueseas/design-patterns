@@ -22,61 +22,19 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.designpattern.visitor.example.second;
-
-import java.util.Collection;
-
-import de.alpharogroup.designpattern.visitor.GenericVisitor;
-
+package de.alpharogroup.design.pattern.visitor;
 
 /**
- * The Class FileVisitor.
+ * The Interface GenericVisitor.
+ *
+ * @param <GV>
+ *            the type from the visitor
+ * @param <GVSTABLE>
+ *            the type from the visitable
  */
-public class FileVisitor implements GenericVisitor<FileVisitor, FileVisitable>
+public interface GenericVisitor<GV extends GenericVisitor<GV, GVSTABLE>, GVSTABLE extends GenericVisitable<GV, GVSTABLE>>
 {
 
-	/** The files counted. */
-	private int filesCounted;
-
-	/**
-	 * Instantiates a new file visitor.
-	 */
-	public FileVisitor()
-	{
-		super();
-	}
-
-	/**
-	 * Gets the files counted.
-	 *
-	 * @return the files counted
-	 */
-	public int getFilesCounted()
-	{
-		return filesCounted;
-	}
-
-	/**
-	 * (non-Javadoc).
-	 *
-	 * @param visitable
-	 *            the visitable
-	 * @see de.alpharogroup.designpattern.visitor.GenericVisitor#visit(de.alpharogroup.designpattern.visitor.GenericVisitable)
-	 */
-	@Override
-	public void visit(final FileVisitable visitable)
-	{
-		filesCounted++;
-		System.out.println(visitable.getAbsolutePath());
-		if (visitable.isDirectory())
-		{
-			final Collection<FileVisitable> children = visitable.getChildren();
-			for (final FileVisitable fileVisitable : children)
-			{
-				fileVisitable.accept(this);
-			}
-		}
-	}
-
+	void visit(final GVSTABLE visitable);
 
 }

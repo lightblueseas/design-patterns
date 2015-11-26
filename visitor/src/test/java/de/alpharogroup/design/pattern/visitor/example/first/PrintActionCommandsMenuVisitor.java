@@ -22,30 +22,51 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.designpattern.visitor.example.first;
+package de.alpharogroup.design.pattern.visitor.example.first;
 
-import de.alpharogroup.designpattern.visitor.GenericVisitor;
+import java.util.Iterator;
 
 /**
- * The Interface MenuVisitor.
+ * The Class PrintActionCommandsMenuVisitor.
  */
-public interface MenuVisitor extends GenericVisitor<MenuVisitor, MenuVisitableObject>
+public class PrintActionCommandsMenuVisitor implements MenuVisitor
 {
 
 	/**
-	 * Visit.
-	 *
-	 * @param menu
-	 *            the menu
+	 * (non-Javadoc)
+	 * 
+	 * @see de.alpharogroup.design.pattern.visitor.example.first.MenuVisitor#visit(de.alpharogroup.design.pattern.visitor.example.first.Menu)
 	 */
-	void visit(final Menu menu);
+	@Override
+	public void visit(final Menu menu)
+	{
+		System.out.println(menu.getName());
+		final Iterator<MenuVisitableObject> iterator = menu.getChildren().iterator();
+		while (iterator.hasNext())
+		{
+			final MenuVisitableObject menuVisitableObject = iterator.next();
+			menuVisitableObject.accept(this);
+		}
+	}
 
 	/**
-	 * Visit.
-	 *
-	 * @param menuItem
-	 *            the menu item
+	 * (non-Javadoc)
+	 * 
+	 * @see de.alpharogroup.design.pattern.visitor.example.first.MenuVisitor#visit(de.alpharogroup.design.pattern.visitor.example.first.MenuItem)
 	 */
-	void visit(final MenuItem menuItem);
+	@Override
+	public void visit(final MenuItem menuItem)
+	{
+		System.out.println(menuItem.getActionCommand());
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void visit(final MenuVisitableObject visitable)
+	{
+		visitable.accept(this);
+	}
 
 }

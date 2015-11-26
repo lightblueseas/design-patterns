@@ -42,6 +42,7 @@
 		<module>command</module>
 		<module>observer</module>
 		<module>strategy</module>
+		<module>visitor</module>
 	</modules>
 	
 	<properties>

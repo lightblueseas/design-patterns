@@ -22,42 +22,30 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.designpattern.visitor.example.second;
+package de.alpharogroup.design.pattern.visitor.example.first;
 
-import java.io.File;
-import java.net.URISyntaxException;
-
-import de.alpharogroup.lang.ClassExtensions;
+import de.alpharogroup.design.pattern.visitor.GenericVisitor;
 
 /**
- * The Class DemonstrateVisitorPattern.
+ * The Interface MenuVisitor.
  */
-public class DemonstrateVisitorPattern
+public interface MenuVisitor extends GenericVisitor<MenuVisitor, MenuVisitableObject>
 {
 
 	/**
-	 * The main method.
+	 * Visit.
 	 *
-	 * @param args
-	 *            the arguments
-	 * @throws URISyntaxException
-	 *             occurs by creation of the file with an uri.
+	 * @param menu
+	 *            the menu
 	 */
-	public static void main(final String[] args) throws URISyntaxException
-	{
+	void visit(final Menu menu);
 
-		final FileVisitor visitor = new FileVisitor();
-
-		// File directory = new File(".");
-
-		File directory = ClassExtensions.getResourceAsFile("DemonstrateVisitorPattern.class",
-			new DemonstrateVisitorPattern());
-		directory = directory.getParentFile();
-		final FileVisitable visitable = new FileVisitable(directory);
-		visitor.visit(visitable);
-		System.out.println(visitor.getFilesCounted());
-
-
-	}
+	/**
+	 * Visit.
+	 *
+	 * @param menuItem
+	 *            the menu item
+	 */
+	void visit(final MenuItem menuItem);
 
 }

@@ -22,51 +22,63 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.designpattern.visitor.example.first;
-
-import java.util.Iterator;
+package de.alpharogroup.design.pattern.visitor.example.first;
 
 /**
- * The Class PrintActionCommandsMenuVisitor.
+ * The Class MenuItem.
  */
-public class PrintActionCommandsMenuVisitor implements MenuVisitor
+public class MenuItem implements MenuVisitableObject
 {
 
-	/**
-	 * (non-Javadoc)
-	 * 
-	 * @see de.alpharogroup.designpattern.visitor.example.first.MenuVisitor#visit(de.alpharogroup.designpattern.visitor.example.first.Menu)
-	 */
-	@Override
-	public void visit(final Menu menu)
-	{
-		System.out.println(menu.getName());
-		final Iterator<MenuVisitableObject> iterator = menu.getChildren().iterator();
-		while (iterator.hasNext())
-		{
-			final MenuVisitableObject menuVisitableObject = iterator.next();
-			menuVisitableObject.accept(this);
-		}
-	}
+	/** The name. */
+	private final String name;
+
+	/** The action command. */
+	private final String actionCommand;
 
 	/**
-	 * (non-Javadoc)
-	 * 
-	 * @see de.alpharogroup.designpattern.visitor.example.first.MenuVisitor#visit(de.alpharogroup.designpattern.visitor.example.first.MenuItem)
+	 * Instantiates a new menu item.
+	 *
+	 * @param name
+	 *            the name
+	 * @param actionCommand
+	 *            the action command
 	 */
-	@Override
-	public void visit(final MenuItem menuItem)
+	public MenuItem(final String name, final String actionCommand)
 	{
-		System.out.println(menuItem.getActionCommand());
+		super();
+		this.name = name;
+		this.actionCommand = actionCommand;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void visit(final MenuVisitableObject visitable)
+	public void accept(final MenuVisitor visitor)
 	{
-		visitable.accept(this);
+		visitor.visit(this);
+	}
+
+	/**
+	 * Gets the action command.
+	 *
+	 * @return the action command
+	 */
+	public String getActionCommand()
+	{
+		return actionCommand;
+	}
+
+	/**
+	 * Gets the name.
+	 *
+	 * @return the name
+	 */
+	@Override
+	public String getName()
+	{
+		return name;
 	}
 
 }

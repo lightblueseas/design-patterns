@@ -22,13 +22,13 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.designpattern.visitor.example.second;
+package de.alpharogroup.design.pattern.visitor.example.second;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import de.alpharogroup.designpattern.visitor.GenericVisitable;
+import de.alpharogroup.design.pattern.visitor.GenericVisitable;
 
 /**
  * The Class FileVisitable.

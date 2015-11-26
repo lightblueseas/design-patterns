@@ -22,63 +22,42 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.designpattern.visitor.example.first;
+package de.alpharogroup.design.pattern.visitor.example.second;
+
+import java.io.File;
+import java.net.URISyntaxException;
+
+import de.alpharogroup.lang.ClassExtensions;
 
 /**
- * The Class MenuItem.
+ * The Class DemonstrateVisitorPattern.
  */
-public class MenuItem implements MenuVisitableObject
+public class DemonstrateVisitorPattern
 {
 
-	/** The name. */
-	private final String name;
-
-	/** The action command. */
-	private final String actionCommand;
-
 	/**
-	 * Instantiates a new menu item.
+	 * The main method.
 	 *
-	 * @param name
-	 *            the name
-	 * @param actionCommand
-	 *            the action command
+	 * @param args
+	 *            the arguments
+	 * @throws URISyntaxException
+	 *             occurs by creation of the file with an uri.
 	 */
-	public MenuItem(final String name, final String actionCommand)
+	public static void main(final String[] args) throws URISyntaxException
 	{
-		super();
-		this.name = name;
-		this.actionCommand = actionCommand;
-	}
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void accept(final MenuVisitor visitor)
-	{
-		visitor.visit(this);
-	}
+		final FileVisitor visitor = new FileVisitor();
 
-	/**
-	 * Gets the action command.
-	 *
-	 * @return the action command
-	 */
-	public String getActionCommand()
-	{
-		return actionCommand;
-	}
+		// File directory = new File(".");
 
-	/**
-	 * Gets the name.
-	 *
-	 * @return the name
-	 */
-	@Override
-	public String getName()
-	{
-		return name;
+		File directory = ClassExtensions.getResourceAsFile("DemonstrateVisitorPattern.class",
+			new DemonstrateVisitorPattern());
+		directory = directory.getParentFile();
+		final FileVisitable visitable = new FileVisitable(directory);
+		visitor.visit(visitable);
+		System.out.println(visitor.getFilesCounted());
+
+
 	}
 
 }

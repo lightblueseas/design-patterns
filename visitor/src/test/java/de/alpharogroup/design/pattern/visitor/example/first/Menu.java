@@ -22,19 +22,65 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.designpattern.visitor;
+package de.alpharogroup.design.pattern.visitor.example.first;
+
+import java.util.Collection;
 
 /**
- * The Interface GenericVisitable.
- *
- * @param <GV>
- *            the type from the visitor
- * @param <GVSTABLE>
- *            the type from the visitable
+ * The Class Menu.
  */
-public interface GenericVisitable<GV extends GenericVisitor<GV, GVSTABLE>, GVSTABLE extends GenericVisitable<GV, GVSTABLE>>
+public class Menu implements MenuVisitableObject
 {
 
-	public void accept(final GV visitor);
+	/** The name. */
+	private final String name;
+
+	/** The children. */
+	private final Collection<MenuVisitableObject> children;
+
+	/**
+	 * Instantiates a new menu.
+	 *
+	 * @param name
+	 *            the name
+	 * @param children
+	 *            the children
+	 */
+	public Menu(final String name, final Collection<MenuVisitableObject> children)
+	{
+		super();
+		this.name = name;
+		this.children = children;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void accept(final MenuVisitor visitor)
+	{
+		visitor.visit(this);
+	}
+
+	/**
+	 * Gets the children.
+	 *
+	 * @return the children
+	 */
+	public Collection<MenuVisitableObject> getChildren()
+	{
+		return children;
+	}
+
+	/**
+	 * Gets the name.
+	 *
+	 * @return the name
+	 */
+	@Override
+	public String getName()
+	{
+		return name;
+	}
 
 }
