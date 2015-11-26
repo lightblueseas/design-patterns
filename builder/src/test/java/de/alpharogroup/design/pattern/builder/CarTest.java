@@ -22,10 +22,12 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.designpattern.builder;
+package de.alpharogroup.design.pattern.builder;
 
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
+
+import de.alpharogroup.design.pattern.builder.Car;
 
 public class CarTest
 {
