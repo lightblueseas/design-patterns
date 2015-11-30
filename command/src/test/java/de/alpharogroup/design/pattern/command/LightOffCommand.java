@@ -42,5 +42,6 @@ public class LightOffCommand implements Command<Light>
 	public void execute()
 	{
 		light.switchOff();
+		System.out.println("light is off...");
 	}
 }

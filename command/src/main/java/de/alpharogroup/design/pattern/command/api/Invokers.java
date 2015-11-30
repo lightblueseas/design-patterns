@@ -22,38 +22,41 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.design.pattern.command;
+package de.alpharogroup.design.pattern.command.api;
 
-import de.alpharogroup.design.pattern.command.api.Command;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * The abstract class {@link AbstractCommand} the implements the {@link Command} interface.
+ * The class {@link Invokers} that have a {@link Command} object to invoke.
  *
  * @param <R> the generic type of the receiver object.
  */
-public abstract class AbstractCommand<R> implements Command<R>
+public class Invokers<R>
 {
 	
-	/** The reference to the receiver object for execute the concrete command. */
-	private final R receiver;
+	/** The command. */
+	private List<Command<R>> commands = new ArrayList<>();
 
 	/**
-	 * Instantiates a new abstract command.
-	 *
-	 * @param receiver the receiver
+	 * Invoke all commands in the list.
 	 */
-	public AbstractCommand(final R receiver)
+	public void invoke()
 	{
-		this.receiver = receiver;
+		for (Command<R> command : commands) {
+			command.execute();
+		}
 	}
 
 	/**
-	 * Gets the receiver.
+	 * Add a {@link Command} object to the list.
 	 *
-	 * @return the receiver
+	 * @param command the {@link Command} object to add
+	 * @return this object, for chaining
 	 */
-	protected R getReceiver()
+	public Invokers<R> add(final Command<R> command)
 	{
-		return this.receiver;
+		commands.add(command);
+		return this;
 	}
 }

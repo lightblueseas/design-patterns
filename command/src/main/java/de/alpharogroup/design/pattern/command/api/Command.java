@@ -24,12 +24,11 @@
  */
 package de.alpharogroup.design.pattern.command.api;
 
-
 /**
- * The Interface Command.
+ * The interface {@link Command} with the execute method.
  *
  * @param <R>
- *            the generic type
+ *            the generic type of the receiver object.
  */
 public interface Command<R>
 {

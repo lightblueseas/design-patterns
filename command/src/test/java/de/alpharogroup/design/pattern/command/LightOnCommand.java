@@ -40,5 +40,6 @@ public class LightOnCommand extends AbstractCommand<Light>
 	public void execute()
 	{
 		getReceiver().switchOn();
+		System.out.println("light is on...");
 	}
 }
