@@ -35,6 +35,11 @@ package de.alpharogroup.design.pattern.visitor;
 public interface GenericVisitable<GV extends GenericVisitor<GV, GVSTABLE>, GVSTABLE extends GenericVisitable<GV, GVSTABLE>>
 {
 
+	/**
+	 * Accept.
+	 *
+	 * @param visitor the visitor
+	 */
 	public void accept(final GV visitor);
 
 }

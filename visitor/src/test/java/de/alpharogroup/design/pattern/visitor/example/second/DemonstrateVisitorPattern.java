@@ -27,6 +27,7 @@ package de.alpharogroup.design.pattern.visitor.example.second;
 import java.io.File;
 import java.net.URISyntaxException;
 
+import de.alpharogroup.file.search.PathFinder;
 import de.alpharogroup.lang.ClassExtensions;
 
 /**
@@ -49,10 +50,11 @@ public class DemonstrateVisitorPattern
 		final FileVisitor visitor = new FileVisitor();
 
 		// File directory = new File(".");
-
 		File directory = ClassExtensions.getResourceAsFile("DemonstrateVisitorPattern.class",
 			new DemonstrateVisitorPattern());
 		directory = directory.getParentFile();
+		directory = 
+				PathFinder.getProjectDirectory();
 		final FileVisitable visitable = new FileVisitable(directory);
 		visitor.visit(visitable);
 		System.out.println(visitor.getFilesCounted());

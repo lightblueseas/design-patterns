@@ -56,9 +56,9 @@ public class FileVisitable implements GenericVisitable<FileVisitor, FileVisitabl
 		{
 			children = new ArrayList<>();
 			final File[] files = file.listFiles();
-			for (final File file2 : files)
+			for (final File childrenFile : files)
 			{
-				children.add(new FileVisitable(file2));
+				children.add(new FileVisitable(childrenFile));
 			}
 		}
 	}
