@@ -28,14 +28,27 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * The class {@link ChatRoomService}.
+ *
+ * @param <M> the generic type
+ */
 public class ChatRoomService<M extends Message<?>> implements Serializable
 {
-	/**
-	 * 
-	 */
+
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+	
+	/** The chat rooms. */
 	private final Map<String, ChatRoom<M>> chatRooms = new HashMap<>();
 
+	/**
+	 * Gets the chat room.
+	 *
+	 * @param observable the observable
+	 * @param name the name
+	 * @return the chat room
+	 */
 	public ChatRoom<M> getChatRoom(final M observable, final String name)
 	{
 		ChatRoom<M> room = chatRooms.get(name);

@@ -29,7 +29,7 @@ import de.alpharogroup.design.pattern.observer.chat.ChatMessage;
 import de.alpharogroup.design.pattern.observer.chat.ChatRoom;
 import de.alpharogroup.design.pattern.observer.chat.ChatRoomService;
 import de.alpharogroup.design.pattern.observer.chat.ChatRoomUser;
-import de.alpharogroup.design.pattern.observer.chat.MessageRoomModel;
+import de.alpharogroup.design.pattern.observer.chat.MessageRoomModelBean;
 import de.alpharogroup.design.pattern.observer.chat.StringMessage;
 import de.alpharogroup.design.pattern.observer.chat.User;
 
@@ -111,26 +111,26 @@ public class DemonstrateChatObserver
 		message = new StringMessage("Im leafing this room");
 		System.out.println("########## New message ##############");
 		antonFirstRoom.send(message);
-		firstRoom.removeObserver(antonFirstRoom);
+		firstRoom.remove(antonFirstRoom);
 		message = new StringMessage("how old are you John");
 		System.out.println("########## New message ##############");
 		alfredFirstRoom.send(message);
 		message = new StringMessage("Im leafing this room");
 		System.out.println("########## New message ##############");
 		johnFirstRoom.send(message);
-		firstRoom.removeObserver(johnFirstRoom);
+		firstRoom.remove(johnFirstRoom);
 		message = new StringMessage("im alone now :-((");
 		System.out.println("########## New message ##############");
 		alfredFirstRoom.send(message);
 		message = new StringMessage("Im leafing this room too...");
 		System.out.println("########## New message ##############");
 		alfredFirstRoom.send(message);
-		firstRoom.removeObserver(alfredFirstRoom);
+		firstRoom.remove(alfredFirstRoom);
 
 		System.out.println("########## Data message service ##############");
 		final ChatRoomService<ChatMessage> chatRoomSeriveExtended = new ChatRoomService<>();
 		final User rootUser = new User("root", 0);
-		MessageRoomModel messageRoomModel = new MessageRoomModel("", rootUser, "", null);
+		MessageRoomModelBean messageRoomModel = new MessageRoomModelBean("", rootUser, "", null);
 		ChatMessage chatMessage = new ChatMessage().setValue(messageRoomModel);
 		final ChatRoom<ChatMessage> firstFileRoom = chatRoomSeriveExtended.getChatRoom(chatMessage,
 			"file chat room 1");
@@ -139,11 +139,11 @@ public class DemonstrateChatObserver
 			antonUser);
 		final ChatRoomUser<ChatMessage> johnFirstFileRoom = new DataChatRoomUser(firstFileRoom,
 			johnUser);
-		messageRoomModel = new MessageRoomModel(firstFileRoom.getName(), antonUser, "Foo bar", null);
+		messageRoomModel = new MessageRoomModelBean(firstFileRoom.getName(), antonUser, "Foo bar", null);
 		chatMessage = new ChatMessage().setValue(messageRoomModel);
 		System.out.println("########## New message ##############");
 		antonFirstFileRoom.send(chatMessage);
-		messageRoomModel = new MessageRoomModel(firstFileRoom.getName(), johnUser, "Bar foo", null);
+		messageRoomModel = new MessageRoomModelBean(firstFileRoom.getName(), johnUser, "Bar foo", null);
 		chatMessage = new ChatMessage().setValue(messageRoomModel);
 		johnFirstFileRoom.send(chatMessage);
 

@@ -24,11 +24,13 @@
  */
 package de.alpharogroup.design.pattern.observer.chat;
 
+/**
+ * The class {@link User}.
+ */
 public class User implements IUser<User>
 {
-	/**
-	 * 
-	 */
+
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 	/**
 	 * User Name.
@@ -39,6 +41,12 @@ public class User implements IUser<User>
 	 */
 	private Integer id;
 
+	/**
+	 * Instantiates a new user.
+	 *
+	 * @param name the name
+	 * @param id the id
+	 */
 	public User(final String name, final Integer id)
 	{
 		super();
@@ -46,24 +54,36 @@ public class User implements IUser<User>
 		this.id = id;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public User getApplicationUser()
 	{
 		return this;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public Integer getId()
 	{
 		return id;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String getName()
 	{
 		return name;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void setApplicationUser(final User user)
 	{
@@ -71,11 +91,21 @@ public class User implements IUser<User>
 
 	}
 
+	/**
+	 * Sets the id.
+	 *
+	 * @param id the new id
+	 */
 	public void setId(final Integer id)
 	{
 		this.id = id;
 	}
 
+	/**
+	 * Sets the name.
+	 *
+	 * @param name the new name
+	 */
 	public void setName(final String name)
 	{
 		this.name = name;

@@ -81,7 +81,7 @@ public abstract class AbstractSubject<T, O extends Observer<T>> implements Subje
 	 * {@inheritDoc}
 	 */
 	@Override
-	public synchronized void addObserver(final O observer)
+	public synchronized void add(final O observer)
 	{
 		observers.add(observer);
 
@@ -91,7 +91,7 @@ public abstract class AbstractSubject<T, O extends Observer<T>> implements Subje
 	 * {@inheritDoc}
 	 */
 	@Override
-	public synchronized void addObservers(final Collection<O> observers)
+	public synchronized void addAll(final Collection<O> observers)
 	{
 		this.observers.addAll(observers);
 
@@ -110,7 +110,7 @@ public abstract class AbstractSubject<T, O extends Observer<T>> implements Subje
 	 * {@inheritDoc}
 	 */
 	@Override
-	public synchronized void removeObserver(final O observer)
+	public synchronized void remove(final O observer)
 	{
 		final int index = this.observers.indexOf(observer);
 		if (0 <= index)
@@ -123,7 +123,7 @@ public abstract class AbstractSubject<T, O extends Observer<T>> implements Subje
 	 * {@inheritDoc}
 	 */
 	@Override
-	public synchronized void removeObservers(final Collection<O> observers)
+	public synchronized void removeAll(final Collection<O> observers)
 	{
 		this.observers.removeAll(observers);
 

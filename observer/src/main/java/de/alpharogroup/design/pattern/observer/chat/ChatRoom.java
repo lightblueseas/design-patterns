@@ -45,9 +45,7 @@ public class ChatRoom<M extends Message<?>> extends AbstractSubject<M, ChatRoomU
 		Serializable
 {
 
-	/**
-	 * 
-	 */
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -97,7 +95,7 @@ public class ChatRoom<M extends Message<?>> extends AbstractSubject<M, ChatRoomU
 	 * {@inheritDoc}
 	 */
 	@Override
-	public synchronized void addObserver(final ChatRoomUser<M> observer)
+	public synchronized void add(final ChatRoomUser<M> observer)
 	{
 		observers.add(observer);
 
@@ -107,11 +105,11 @@ public class ChatRoom<M extends Message<?>> extends AbstractSubject<M, ChatRoomU
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void addObservers(final Collection<ChatRoomUser<M>> observers)
+	public void addAll(final Collection<ChatRoomUser<M>> observers)
 	{
 		for (final ChatRoomUser<M> chatUser : observers)
 		{
-			addObserver(chatUser);
+			add(chatUser);
 		}
 	}
 
@@ -166,7 +164,7 @@ public class ChatRoom<M extends Message<?>> extends AbstractSubject<M, ChatRoomU
 	 * {@inheritDoc}
 	 */
 	@Override
-	public synchronized void removeObserver(final ChatRoomUser<M> observer)
+	public synchronized void remove(final ChatRoomUser<M> observer)
 	{
 		final int index = this.observers.indexOf(observer);
 		if (0 <= index)
@@ -179,11 +177,11 @@ public class ChatRoom<M extends Message<?>> extends AbstractSubject<M, ChatRoomU
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void removeObservers(final Collection<ChatRoomUser<M>> observers)
+	public void removeAll(final Collection<ChatRoomUser<M>> observers)
 	{
 		for (final ChatRoomUser<M> chatUser : observers)
 		{
-			removeObserver(chatUser);
+			remove(chatUser);
 		}
 	}
 

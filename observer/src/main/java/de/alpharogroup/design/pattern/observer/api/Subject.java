@@ -27,7 +27,7 @@ package de.alpharogroup.design.pattern.observer.api;
 import java.util.Collection;
 
 /**
- * The Interface Subject.
+ * The interface {@link Subject}.
  * 
  * @param <T>
  *            the generic type of the observable.
@@ -43,7 +43,7 @@ public interface Subject<T, O extends Observer<T>>
 	 * @param observer
 	 *            the observer to be added.
 	 */
-	void addObserver(final O observer);
+	void add(final O observer);
 
 	/**
 	 * Removes the given observer.
@@ -51,7 +51,7 @@ public interface Subject<T, O extends Observer<T>>
 	 * @param observer
 	 *            the observer to be remove.
 	 */
-	void removeObserver(final O observer);
+	void remove(final O observer);
 
 	/**
 	 * Adds the given observers.
@@ -59,7 +59,7 @@ public interface Subject<T, O extends Observer<T>>
 	 * @param observers
 	 *            the observers to be added.
 	 */
-	void addObservers(final Collection<O> observers);
+	void addAll(final Collection<O> observers);
 
 	/**
 	 * Removes the given observers.
@@ -67,7 +67,7 @@ public interface Subject<T, O extends Observer<T>>
 	 * @param observers
 	 *            the observers to be remove.
 	 */
-	void removeObservers(final Collection<O> observers);
+	void removeAll(final Collection<O> observers);
 
 	/**
 	 * Update observers.

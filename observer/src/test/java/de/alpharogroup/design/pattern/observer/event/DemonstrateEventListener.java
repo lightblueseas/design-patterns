@@ -77,8 +77,8 @@ public class DemonstrateEventListener
 		final JTextField tx = new JTextField("Hello");
 		final EventObject<JTextField> eventObject = new EventObject<>(tx);
 		final EventSource<EventObject<JTextField>> eventSource = new EventSubject<>();
-		eventSource.addEventListener(printString);
-		eventSource.addEventListener(printStringReverse);
+		eventSource.add(printString);
+		eventSource.add(printStringReverse);
 		eventSource.fireEvent(eventObject);
 		tx.setText("good bye...");
 		eventSource.fireEvent(eventObject);
@@ -107,8 +107,8 @@ public class DemonstrateEventListener
 			}
 		};
 		final EventSource<String> eventSource = new EventSubject<>();
-		eventSource.addEventListener(printString);
-		eventSource.addEventListener(printStringReverse);
+		eventSource.add(printString);
+		eventSource.add(printStringReverse);
 		eventSource.fireEvent("Hallo");
 	}
 }

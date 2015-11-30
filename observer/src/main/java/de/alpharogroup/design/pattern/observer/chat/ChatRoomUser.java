@@ -29,6 +29,11 @@ import java.io.Serializable;
 import de.alpharogroup.design.pattern.observer.api.DisplayViewElement;
 import de.alpharogroup.design.pattern.observer.api.Observer;
 
+/**
+ * The class {@link ChatRoomUser}.
+ *
+ * @param <M> the generic type
+ */
 public abstract class ChatRoomUser<M extends Message<?>>
 	implements
 		Observer<M>,
@@ -36,9 +41,7 @@ public abstract class ChatRoomUser<M extends Message<?>>
 		Serializable
 {
 
-	/**
-	 * 
-	 */
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
 	/** The subject. */
@@ -47,14 +50,21 @@ public abstract class ChatRoomUser<M extends Message<?>>
 	/** The observable. */
 	private M observable;
 
+	/** The user. */
 	private final IUser<?> user;
 
+	/**
+	 * Instantiates a new chat room user.
+	 *
+	 * @param room the room
+	 * @param user the user
+	 */
 	public ChatRoomUser(final ChatRoom<M> room, final IUser<?> user)
 	{
 		this.subject = room;
 		this.observable = this.subject.getObservable();
 		this.user = user;
-		this.subject.addObserver(this);
+		this.subject.add(this);
 	}
 
 	/**
@@ -67,11 +77,21 @@ public abstract class ChatRoomUser<M extends Message<?>>
 		return observable;
 	}
 
+	/**
+	 * Gets the user.
+	 *
+	 * @return the user
+	 */
 	public IUser<?> getUser()
 	{
 		return user;
 	}
 
+	/**
+	 * Send the given message.
+	 *
+	 * @param message the message
+	 */
 	public void send(final M message)
 	{
 		subject.setObservable(message);

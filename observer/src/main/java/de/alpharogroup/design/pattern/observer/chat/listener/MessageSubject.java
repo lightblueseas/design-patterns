@@ -28,6 +28,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * The class {@link MessageSubject}.
+ *
+ * @param <T> the generic type
+ */
 public class MessageSubject<T> implements MessageSource<T>
 {
 	/**
@@ -43,31 +48,46 @@ public class MessageSubject<T> implements MessageSource<T>
 	/** The event listeners. */
 	private final List<MessageListener<T>> messageListeners;
 
+	/**
+	 * Instantiates a new message subject.
+	 */
 	public MessageSubject()
 	{
-		super();
 	}
 
+	/**
+	 * Instantiates a new message subject.
+	 *
+	 * @param source the source
+	 */
 	public MessageSubject(final T source)
 	{
-		super();
 		this.source = source;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
-	public synchronized void addMessageListener(final MessageListener<T> messageListener)
+	public synchronized void add(final MessageListener<T> messageListener)
 	{
 		messageListeners.add(messageListener);
 
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
-	public synchronized void addMessageListeners(
+	public synchronized void addAll(
 		final Collection<MessageListener<T>> messageListeners)
 	{
 		this.messageListeners.addAll(messageListeners);
 	}
 
+	/**
+	 * Fire message.
+	 */
 	private synchronized void fireMessage()
 	{
 		for (final MessageListener<T> messageListener : messageListeners)
@@ -76,6 +96,9 @@ public class MessageSubject<T> implements MessageSource<T>
 		}
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public synchronized void fireMessage(final T source)
 	{
@@ -83,14 +106,20 @@ public class MessageSubject<T> implements MessageSource<T>
 		fireMessage();
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
-	public synchronized void removeMessageListener(final MessageListener<T> messageListener)
+	public synchronized void remove(final MessageListener<T> messageListener)
 	{
 		messageListeners.remove(messageListener);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
-	public synchronized void removeMessageListeners(
+	public synchronized void removeAll(
 		final Collection<MessageListener<T>> messageListeners)
 	{
 		this.messageListeners.removeAll(messageListeners);

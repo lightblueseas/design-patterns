@@ -54,7 +54,7 @@ public abstract class AbstractObserver<T> implements Observer<T>, DisplayViewEle
 	{
 		this.subject = subject;
 		this.observable = subject.getObservable();
-		this.subject.addObserver(this);
+		this.subject.add(this);
 	}
 
 	/**

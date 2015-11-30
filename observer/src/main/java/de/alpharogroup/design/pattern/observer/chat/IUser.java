@@ -26,13 +26,39 @@ package de.alpharogroup.design.pattern.observer.chat;
 
 import java.io.Serializable;
 
+/**
+ * The interface {@link IUser}.
+ *
+ * @param <U> the generic type
+ */
 public interface IUser<U> extends Serializable
 {
+	
+	/**
+	 * Gets the id.
+	 *
+	 * @return the id
+	 */
 	Serializable getId();
 
+	/**
+	 * Gets the name.
+	 *
+	 * @return the name
+	 */
 	String getName();
 
+	/**
+	 * Gets the application user.
+	 *
+	 * @return the application user
+	 */
 	U getApplicationUser();
 
+	/**
+	 * Sets the application user.
+	 *
+	 * @param user the new application user
+	 */
 	void setApplicationUser(final U user);
 }

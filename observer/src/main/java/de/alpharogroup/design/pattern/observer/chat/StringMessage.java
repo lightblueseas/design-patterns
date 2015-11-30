@@ -24,31 +24,47 @@
  */
 package de.alpharogroup.design.pattern.observer.chat;
 
+/**
+ * The class {@link StringMessage}.
+ */
 public class StringMessage implements Message<String>
 {
-	/**
-	 * 
-	 */
+
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+	
+	/** The value. */
 	private String value;
 
+	/**
+	 * Instantiates a new string message.
+	 */
 	public StringMessage()
 	{
-		super();
 	}
 
+	/**
+	 * Instantiates a new string message.
+	 *
+	 * @param value the value
+	 */
 	public StringMessage(final String value)
 	{
-		super();
 		this.value = value;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String getValue()
 	{
 		return value;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public StringMessage setValue(final String value)
 	{
@@ -56,6 +72,9 @@ public class StringMessage implements Message<String>
 		return this;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String toString()
 	{

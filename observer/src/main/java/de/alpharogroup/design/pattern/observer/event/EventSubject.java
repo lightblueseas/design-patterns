@@ -45,7 +45,7 @@ public class EventSubject<T> implements EventSource<T>
 	}
 
 	/** The event listeners. */
-	private List<EventListener<T>> eventListeners;
+	private final List<EventListener<T>> eventListeners;
 
 	/** The source. */
 	private T source;
@@ -55,7 +55,6 @@ public class EventSubject<T> implements EventSource<T>
 	 */
 	public EventSubject()
 	{
-		super();
 	}
 
 	/**
@@ -66,7 +65,6 @@ public class EventSubject<T> implements EventSource<T>
 	 */
 	public EventSubject(final T source)
 	{
-		super();
 		this.source = source;
 	}
 
@@ -74,7 +72,7 @@ public class EventSubject<T> implements EventSource<T>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public synchronized void addEventListener(final EventListener<T> eventListener)
+	public synchronized void add(final EventListener<T> eventListener)
 	{
 		eventListeners.add(eventListener);
 	}
@@ -83,7 +81,7 @@ public class EventSubject<T> implements EventSource<T>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public synchronized void addEventListeners(final Collection<EventListener<T>> eventListeners)
+	public synchronized void addAll(final Collection<EventListener<T>> eventListeners)
 	{
 		this.eventListeners.addAll(eventListeners);
 	}
@@ -99,7 +97,6 @@ public class EventSubject<T> implements EventSource<T>
 		}
 	}
 
-
 	/**
 	 * {@inheritDoc}
 	 */
@@ -114,7 +111,7 @@ public class EventSubject<T> implements EventSource<T>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public synchronized void removeEventListener(final EventListener<T> eventListener)
+	public synchronized void remove(final EventListener<T> eventListener)
 	{
 		eventListeners.remove(eventListener);
 	}
@@ -123,7 +120,7 @@ public class EventSubject<T> implements EventSource<T>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public synchronized void removeEventListeners(final Collection<EventListener<T>> eventListeners)
+	public synchronized void removeAll(final Collection<EventListener<T>> eventListeners)
 	{
 		this.eventListeners.removeAll(eventListeners);
 	}

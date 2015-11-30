@@ -41,7 +41,7 @@ public interface EventSource<T>
 	 * @param eventListener
 	 *            the event listener
 	 */
-	void addEventListener(final EventListener<T> eventListener);
+	void add(final EventListener<T> eventListener);
 
 	/**
 	 * Removes the given event listener from the eventListeners list.
@@ -49,7 +49,7 @@ public interface EventSource<T>
 	 * @param eventListener
 	 *            the event listener
 	 */
-	void removeEventListener(final EventListener<T> eventListener);
+	void remove(final EventListener<T> eventListener);
 
 	/**
 	 * Adds the all given event listeners to the eventListeners list.
@@ -57,7 +57,7 @@ public interface EventSource<T>
 	 * @param eventListeners
 	 *            the event listeners
 	 */
-	void addEventListeners(final Collection<EventListener<T>> eventListeners);
+	void addAll(final Collection<EventListener<T>> eventListeners);
 
 	/**
 	 * Removes the all given event listeners from the eventListeners list.
@@ -65,7 +65,7 @@ public interface EventSource<T>
 	 * @param eventListeners
 	 *            the event listeners
 	 */
-	void removeEventListeners(final Collection<EventListener<T>> eventListeners);
+	void removeAll(final Collection<EventListener<T>> eventListeners);
 
 	/**
 	 * Fire the given event.

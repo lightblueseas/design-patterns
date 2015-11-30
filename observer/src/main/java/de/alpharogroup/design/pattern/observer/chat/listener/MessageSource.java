@@ -41,7 +41,7 @@ public interface MessageSource<T>
 	 * @param messageListener
 	 *            the MessageListener object
 	 */
-	void addMessageListener(final MessageListener<T> messageListener);
+	void add(final MessageListener<T> messageListener);
 
 	/**
 	 * Adds the all given messageListener to the existing messageListeners list.
@@ -49,7 +49,7 @@ public interface MessageSource<T>
 	 * @param messageListeners
 	 *            the MessageListener objects
 	 */
-	void addMessageListeners(final Collection<MessageListener<T>> messageListeners);
+	void addAll(final Collection<MessageListener<T>> messageListeners);
 
 	/**
 	 * Fire the given message.
@@ -65,7 +65,7 @@ public interface MessageSource<T>
 	 * @param messageListener
 	 *            the MessageListener object
 	 */
-	void removeMessageListener(final MessageListener<T> messageListener);
+	void remove(final MessageListener<T> messageListener);
 
 	/**
 	 * Removes the all given MessageListener objects from the messageListeners list.
@@ -73,6 +73,6 @@ public interface MessageSource<T>
 	 * @param messageListeners
 	 *            the MessageListener objects
 	 */
-	void removeMessageListeners(final Collection<MessageListener<T>> messageListeners);
+	void removeAll(final Collection<MessageListener<T>> messageListeners);
 
 }

@@ -26,23 +26,32 @@ package de.alpharogroup.design.pattern.observer.chat;
 
 import java.io.Serializable;
 
-public class ChatMessage implements Message<MessageRoomModel>, Serializable
+/**
+ * The class {@link ChatMessage}.
+ */
+public class ChatMessage implements Message<MessageRoomModelBean>, Serializable
 {
 
-	/**
-	 * 
-	 */
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
-	private MessageRoomModel value;
+	
+	/** The value. */
+	private MessageRoomModelBean value;
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
-	public MessageRoomModel getValue()
+	public MessageRoomModelBean getValue()
 	{
 		return value;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
-	public ChatMessage setValue(final MessageRoomModel value)
+	public ChatMessage setValue(final MessageRoomModelBean value)
 	{
 		this.value = value;
 		return this;

@@ -28,10 +28,10 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * The Class MessageRoomModel.
+ * The class {@link MessageRoomModelBean}.
  *
  */
-public class MessageRoomModel implements Serializable
+public class MessageRoomModelBean implements Serializable
 {
 
 	/** The Constant serialVersionUID. */
@@ -64,7 +64,7 @@ public class MessageRoomModel implements Serializable
 	 * @param data
 	 *            the data
 	 */
-	public MessageRoomModel(final String chatRoomName, final IUser<?> user, final String message,
+	public MessageRoomModelBean(final String chatRoomName, final IUser<?> user, final String message,
 		final Byte[] data)
 	{
 		super();

@@ -28,7 +28,7 @@ package de.alpharogroup.design.pattern.observer.api;
  * The Interface Observer.
  * 
  * @param <T>
- *            the generic type
+ *            the generic type of the observable.
  */
 public interface Observer<T>
 {

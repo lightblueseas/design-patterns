@@ -26,11 +26,27 @@ package de.alpharogroup.design.pattern.observer.chat;
 
 import java.io.Serializable;
 
+/**
+ * The interface {@link Message}.
+ *
+ * @param <T> the generic type
+ */
 public interface Message<T> extends Serializable
 {
 
+	/**
+	 * Gets the value.
+	 *
+	 * @return the value
+	 */
 	public T getValue();
 
+	/**
+	 * Sets the value.
+	 *
+	 * @param value the value
+	 * @return the message
+	 */
 	public Message<T> setValue(final T value);
 
 }
