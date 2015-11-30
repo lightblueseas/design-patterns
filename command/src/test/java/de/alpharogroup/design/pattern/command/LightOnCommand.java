@@ -26,16 +26,26 @@ package de.alpharogroup.design.pattern.command;
 
 import de.alpharogroup.test.objects.Light;
 
-
-//Concrete Command that extends the abstract command class
+/**
+ * The class {@link LightOnCommand}. Concrete Command that extends the abstract class {@link AbstractCommand}.
+ */
+//
 public class LightOnCommand extends AbstractCommand<Light>
 {
 
+	/**
+	 * Instantiates a new light on command.
+	 *
+	 * @param light the light
+	 */
 	public LightOnCommand(final Light light)
 	{
 		super(light);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void execute()
 	{

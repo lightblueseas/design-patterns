@@ -27,17 +27,28 @@ package de.alpharogroup.design.pattern.command;
 import de.alpharogroup.design.pattern.command.api.Command;
 import de.alpharogroup.test.objects.Light;
 
-//Concrete Command that implements the command interface
+/**
+ * The class {@link LightOffCommand}. Concrete Command that implements the {@link Command} interface.
+ */
 public class LightOffCommand implements Command<Light>
 {
-	// reference to the light
-	Light light;
+	
+	/** The reference to the light. */
+	private final Light light;
 
+	/**
+	 * Instantiates a new light off command.
+	 *
+	 * @param light the light
+	 */
 	public LightOffCommand(final Light light)
 	{
 		this.light = light;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void execute()
 	{
