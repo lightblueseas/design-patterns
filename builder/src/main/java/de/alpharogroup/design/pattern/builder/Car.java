@@ -24,33 +24,67 @@
  */
 package de.alpharogroup.design.pattern.builder;
 
+/**
+ * The class {@link Car}.
+ */
 public final class Car
 {
-
+	
+	/**
+	 * The class {@link Builder}.
+	 */
 	public static class Builder
 	{
-		// mandatory fields
-		private final String type;
+
 		// optional fields
+		/** The construction year. */
 		private int constructionYear;
+		
+		/** The model. */
 		private String model;
 
+		// mandatory fields
+		/** The type. */
+		private final String type;
+
+		/**
+		 * Instantiates a new builder.
+		 *
+		 * @param type the type
+		 */
 		public Builder(final String type)
 		{
 			this.type = type;
 		}
 
+		/**
+		 * Builds the.
+		 *
+		 * @return the car
+		 */
 		public Car build()
 		{
 			return new Car(this);
 		}
 
+		/**
+		 * Construction year.
+		 *
+		 * @param constructionYear the construction year
+		 * @return the builder
+		 */
 		public Builder constructionYear(final int constructionYear)
 		{
 			this.constructionYear = constructionYear;
 			return this;
 		}
 
+		/**
+		 * Model.
+		 *
+		 * @param model the model
+		 * @return the builder
+		 */
 		public Builder model(final String model)
 		{
 			this.model = model;
@@ -58,22 +92,31 @@ public final class Car
 		}
 	}
 
-	public static void main(final String... args)
-	{
-		// create the builder object...
-		final Car.Builder builder = new Car.Builder("Lamborgini");
-		// create Car object using the builder...
-		final Car lamborgini = builder.model("Diablo").constructionYear(2006).build();
-		System.out.println(lamborgini);
+	/**
+	 * Builder.
+	 *
+	 * @param type the type
+	 * @return the builder
+	 */
+	public static Builder builder(final String type) {
+		return new Builder(type);
 	}
-
 	// all fields must be final so they are immutable objects
-	private final String model;
+	/** The construction year. */
 	private final int constructionYear;
+	
+	/** The model. */
+	private final String model;
 
+	/** The type. */
 	private final String type;
 
-	// private Constructor. Only the Builder can call it.
+	/**
+	 * Instantiates a new car. 
+	 * Note: private constructor. Only the Builder can call it.
+	 *
+	 * @param builder the builder
+	 */
 	private Car(final Builder builder)
 	{
 		this.model = builder.model;
@@ -81,21 +124,39 @@ public final class Car
 		this.constructionYear = builder.constructionYear;
 	}
 
+	/**
+	 * Gets the construction year.
+	 *
+	 * @return the construction year
+	 */
 	public int getConstructionYear()
 	{
 		return constructionYear;
 	}
 
+	/**
+	 * Gets the model.
+	 *
+	 * @return the model
+	 */
 	public String getModel()
 	{
 		return model;
 	}
 
+	/**
+	 * Gets the type.
+	 *
+	 * @return the type
+	 */
 	public String getType()
 	{
 		return type;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String toString()
 	{

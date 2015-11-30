@@ -29,23 +29,45 @@ import org.testng.annotations.Test;
 
 import de.alpharogroup.design.pattern.builder.Car;
 
+/**
+ * The class {@link CarTest} is the unit test class for the class {@link Car}.
+ */
 public class CarTest
 {
 
+	/**
+	 * Test build car.
+	 */
 	@Test
 	public void testBuildCar()
 	{
 		// create the builder object...
-		final Car.Builder builder = new Car.Builder("Lamborgini");
+		final Car.Builder builder = Car.builder("Lamborgini");
 		// create Car object using the builder...
 		final Car lamborgini = builder.model("Diablo").constructionYear(2006).build();
 
-		final String expectedType = "Lamborgini";
-		final String expectedModel = "Diablo";
-		final int expectedConstructionYear = 2006;
-		final String actualType = lamborgini.getType();
-		final String actualModel = lamborgini.getModel();
-		final int actualConstructionYear = lamborgini.getConstructionYear();
+		String expectedType = "Lamborgini";
+		String expectedModel = "Diablo";
+		int expectedConstructionYear = 2006;
+		String actualType = lamborgini.getType();
+		String actualModel = lamborgini.getModel();
+		int actualConstructionYear = lamborgini.getConstructionYear();
+		AssertJUnit.assertTrue("The expected type from the car object was " + expectedType
+			+ " but is " + actualType + ".", actualType.equals(expectedType));
+		AssertJUnit.assertTrue("The expected model from the car object was " + expectedModel
+			+ " but is " + actualModel + ".", actualModel.equals(expectedModel));
+		AssertJUnit.assertTrue("The expected constructionYear from the car object was "
+			+ expectedConstructionYear + " but is " + actualConstructionYear + ".",
+			actualConstructionYear == expectedConstructionYear);
+		// create Car object with the static builder object...
+		final Car ferrari = Car.builder("Ferrari").model("F40").constructionYear(1992).build();
+
+		expectedType = "Ferrari";
+		expectedModel = "F40";
+		expectedConstructionYear = 1992;
+		actualType = ferrari.getType();
+		actualModel = ferrari.getModel();
+		actualConstructionYear = ferrari.getConstructionYear();
 		AssertJUnit.assertTrue("The expected type from the car object was " + expectedType
 			+ " but is " + actualType + ".", actualType.equals(expectedType));
 		AssertJUnit.assertTrue("The expected model from the car object was " + expectedModel
