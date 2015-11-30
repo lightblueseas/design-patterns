@@ -27,9 +27,15 @@ package de.alpharogroup.design.pattern.strategy;
 import de.alpharogroup.design.pattern.strategy.Strategy;
 import de.alpharogroup.test.objects.AlgorithmModel;
 
-// A strategy for addition
+/**
+ * The class {@link AdditionStrategy} for addition.
+ */
 public class AdditionStrategy implements Strategy<Integer, AlgorithmModel>
 {
+	
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public Integer execute(final AlgorithmModel model)
 	{

@@ -27,9 +27,15 @@ package de.alpharogroup.design.pattern.strategy;
 import de.alpharogroup.design.pattern.strategy.Strategy;
 import de.alpharogroup.test.objects.AlgorithmModel;
 
+/**
+ * The class {@link MultiplicationStrategy} for multiplication.
+ */
 public class MultiplicationStrategy implements Strategy<Integer, AlgorithmModel>
 {
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public Integer execute(final AlgorithmModel model)
 	{

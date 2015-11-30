@@ -28,9 +28,9 @@ package de.alpharogroup.design.pattern.strategy;
  * A context class for the strategy interface.
  *
  * @param <R>
- *            the generic type
+ *            the generic type of the return object
  * @param <M>
- *            the generic type
+ *            the generic type of the algorithm model
  */
 public class Context<R, M>
 {

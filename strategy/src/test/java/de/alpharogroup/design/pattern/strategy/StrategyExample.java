@@ -28,9 +28,17 @@ import de.alpharogroup.design.pattern.strategy.Context;
 import de.alpharogroup.design.pattern.strategy.Strategy;
 import de.alpharogroup.test.objects.AlgorithmModel;
 
+/**
+ * The class {@link StrategyExample}.
+ */
 public class StrategyExample
 {
 
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(final String[] args)
 	{
 		Strategy<Integer, AlgorithmModel> strategy = new AdditionStrategy();

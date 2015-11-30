@@ -25,12 +25,12 @@
 package de.alpharogroup.design.pattern.strategy;
 
 /**
- * The Interface Strategy.
+ * The interface Strategy.
  *
  * @param <R>
- *            the generic return type
+ *            the generic type of the return object
  * @param <M>
- *            the generic algorithm model type
+ *            the generic type of the algorithm model
  */
 public interface Strategy<R, M>
 {
