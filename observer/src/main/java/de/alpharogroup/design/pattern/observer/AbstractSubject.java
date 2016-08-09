@@ -62,7 +62,6 @@ public abstract class AbstractSubject<T, O extends Observer<T>> implements Subje
 	 */
 	public AbstractSubject()
 	{
-		super();
 	}
 
 	/**
@@ -73,7 +72,6 @@ public abstract class AbstractSubject<T, O extends Observer<T>> implements Subje
 	 */
 	public AbstractSubject(final T observable)
 	{
-		super();
 		this.observable = observable;
 	}
 
