@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>design-patterns</artifactId>
-		<version>4.7.0</version>
+		<version>4.8.0</version>
 	</parent>
 	<artifactId>strategy</artifactId>
 </project>
