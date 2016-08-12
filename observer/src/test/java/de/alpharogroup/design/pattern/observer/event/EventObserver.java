@@ -37,7 +37,7 @@ public class EventObserver extends AbstractObserver<State>
 	}
 
 	@Override
-	public void displayView()
+	public void execute()
 	{
 		System.out.println("State of cylinder have changed and is " + getObservable().name());
 	}

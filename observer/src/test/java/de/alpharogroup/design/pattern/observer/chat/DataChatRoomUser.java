@@ -43,7 +43,7 @@ public class DataChatRoomUser extends ChatRoomUser<ChatMessage>
 	}
 
 	@Override
-	public void displayView()
+	public void execute()
 	{
 		final String display = "----------------------------------------------\n"
 			+ getUser().getName() + " sees the Message:\n"

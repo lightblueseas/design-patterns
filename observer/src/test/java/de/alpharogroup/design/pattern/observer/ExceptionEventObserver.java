@@ -49,10 +49,10 @@ public class ExceptionEventObserver extends AbstractObserver<ExceptionEvent>
 	/**
 	 * (non-Javadoc)
 	 * 
-	 * @see de.alpharogroup.design.pattern.observer.api.DisplayViewElement#displayView()
+	 * @see de.alpharogroup.design.pattern.observer.api.ActionCommand#execute()
 	 */
 	@Override
-	public void displayView()
+	public void execute()
 	{
 		System.out
 			.println("From ExceptionEventDisplayView:::" + getObservable().toString() + ":::");

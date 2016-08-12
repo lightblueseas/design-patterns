@@ -25,13 +25,13 @@
 package de.alpharogroup.design.pattern.observer.api;
 
 /**
- * The Interface DisplayViewElement.
+ * The interface {@link ActionCommand}.
  */
-public interface DisplayViewElement
+public interface ActionCommand
 {
 
 	/**
-	 * Display view.
+	 * Executes the command.
 	 */
-	void displayView();
+	void execute();
 }

@@ -74,7 +74,7 @@ public class DemonstrateChatObserver
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public void displayView()
+			public void execute()
 			{
 				final String display = "----------------------------------------------\n"
 					+ alfredUser.getName() + " sees the Message:\n" + getObservable().getValue()

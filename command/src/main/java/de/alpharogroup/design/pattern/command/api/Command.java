@@ -34,7 +34,7 @@ public interface Command<R>
 {
 
 	/**
-	 * Execute.
+	 * Executes the command.
 	 */
-	public void execute();
+	void execute();
 }

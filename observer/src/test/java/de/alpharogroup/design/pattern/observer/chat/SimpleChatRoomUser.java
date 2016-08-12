@@ -43,7 +43,7 @@ public class SimpleChatRoomUser extends ChatRoomUser<StringMessage>
 	}
 
 	@Override
-	public void displayView()
+	public void execute()
 	{
 		final String display = "----------------------------------------------\n"
 			+ getUser().getName() + " sees the Message:\n" + getObservable().getValue()

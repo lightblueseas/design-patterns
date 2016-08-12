@@ -26,7 +26,7 @@ package de.alpharogroup.design.pattern.observer.chat;
 
 import java.io.Serializable;
 
-import de.alpharogroup.design.pattern.observer.api.DisplayViewElement;
+import de.alpharogroup.design.pattern.observer.api.ActionCommand;
 import de.alpharogroup.design.pattern.observer.api.Observer;
 
 /**
@@ -37,7 +37,7 @@ import de.alpharogroup.design.pattern.observer.api.Observer;
 public abstract class ChatRoomUser<M extends Message<?>>
 	implements
 		Observer<M>,
-		DisplayViewElement,
+		ActionCommand,
 		Serializable
 {
 
@@ -104,7 +104,7 @@ public abstract class ChatRoomUser<M extends Message<?>>
 	public synchronized void update(final M observable)
 	{
 		this.observable = observable;
-		displayView();
+		execute();
 	}
 
 }

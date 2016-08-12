@@ -49,10 +49,10 @@ public class GetStacktraceDisplayView extends AbstractObserver<ExceptionEvent>
 	/**
 	 * (non-Javadoc)
 	 * 
-	 * @see de.alpharogroup.design.pattern.observer.api.DisplayViewElement#displayView()
+	 * @see de.alpharogroup.design.pattern.observer.api.ActionCommand#execute()
 	 */
 	@Override
-	public void displayView()
+	public void execute()
 	{
 
 		System.out.print("From GetStacktraceView:");
