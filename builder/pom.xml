@@ -6,7 +6,15 @@
 		<artifactId>design-patterns</artifactId>
 		<version>4.8.0</version>
 	</parent>
-	<artifactId>builder</artifactId>	
+	<artifactId>builder</artifactId>
+	
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>	
 	
 	<build>
 

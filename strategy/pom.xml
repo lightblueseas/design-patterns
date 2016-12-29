@@ -7,4 +7,12 @@
 		<version>4.8.0</version>
 	</parent>
 	<artifactId>strategy</artifactId>
+	
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 </project>
