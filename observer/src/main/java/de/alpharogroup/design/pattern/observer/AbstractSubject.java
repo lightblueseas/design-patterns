@@ -30,6 +30,7 @@ import java.util.List;
 
 import de.alpharogroup.design.pattern.observer.api.Observer;
 import de.alpharogroup.design.pattern.observer.api.Subject;
+import lombok.Getter;
 
 /**
  * The Class AbstractSubject is an implementation from the interface Subject. This class
@@ -52,9 +53,11 @@ public abstract class AbstractSubject<T, O extends Observer<T>> implements Subje
 	}
 
 	/** The observers. */
+	@Getter
 	private final List<O> observers;
 
 	/** The observable object. */
+	@Getter
 	private T observable;
 
 	/**
@@ -62,7 +65,6 @@ public abstract class AbstractSubject<T, O extends Observer<T>> implements Subje
 	 */
 	public AbstractSubject()
 	{
-		super();
 	}
 
 	/**
@@ -73,7 +75,6 @@ public abstract class AbstractSubject<T, O extends Observer<T>> implements Subje
 	 */
 	public AbstractSubject(final T observable)
 	{
-		super();
 		this.observable = observable;
 	}
 
@@ -83,8 +84,7 @@ public abstract class AbstractSubject<T, O extends Observer<T>> implements Subje
 	@Override
 	public synchronized void add(final O observer)
 	{
-		observers.add(observer);
-
+		getObservers().add(observer);
 	}
 
 	/**
@@ -93,17 +93,7 @@ public abstract class AbstractSubject<T, O extends Observer<T>> implements Subje
 	@Override
 	public synchronized void addAll(final Collection<O> observers)
 	{
-		this.observers.addAll(observers);
-
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public synchronized T getObservable()
-	{
-		return observable;
+		getObservers().addAll(observers);
 	}
 
 	/**
@@ -112,10 +102,10 @@ public abstract class AbstractSubject<T, O extends Observer<T>> implements Subje
 	@Override
 	public synchronized void remove(final O observer)
 	{
-		final int index = this.observers.indexOf(observer);
+		final int index = getObservers().indexOf(observer);
 		if (0 <= index)
 		{
-			this.observers.remove(observer);
+			getObservers().remove(observer);
 		}
 	}
 
@@ -125,8 +115,7 @@ public abstract class AbstractSubject<T, O extends Observer<T>> implements Subje
 	@Override
 	public synchronized void removeAll(final Collection<O> observers)
 	{
-		this.observers.removeAll(observers);
-
+		getObservers().removeAll(observers);
 	}
 
 	/**
@@ -145,10 +134,9 @@ public abstract class AbstractSubject<T, O extends Observer<T>> implements Subje
 	@Override
 	public synchronized void updateObservers()
 	{
-		for (final O observer1 : this.observers)
+		for (final O observer : getObservers())
 		{
-			final Observer<T> observer = observer1;
-			observer.update(observable);
+			observer.update(getObservable());
 		}
 	}
 

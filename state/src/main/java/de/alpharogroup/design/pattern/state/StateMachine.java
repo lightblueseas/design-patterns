@@ -42,7 +42,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder=true)
-public final class StateMachine {
+public class StateMachine {
 
 	/** The current {@link State} object. */
 	@Builder.Default

@@ -26,7 +26,7 @@ package de.alpharogroup.design.pattern.observer;
 
 import de.alpharogroup.design.pattern.observer.api.Observer;
 import de.alpharogroup.design.pattern.observer.api.Subject;
-import de.alpharogroup.test.objects.exceptions.ExceptionEvent;
+import de.alpharogroup.design.pattern.observer.exception.ExceptionEvent;
 
 /**
  * The Class DemonstrateObserverPattern.
@@ -39,8 +39,9 @@ public class DemonstrateObserverPattern
 	 *
 	 * @param args
 	 *            the args
+	 * @throws InterruptedException
 	 */
-	public static void main(final String[] args)
+	public static void main(final String[] args) throws InterruptedException
 	{
 		// Create a Subject...
 		System.out.println("Create a Subject...");
@@ -57,6 +58,9 @@ public class DemonstrateObserverPattern
 		// Set the first Observable...
 		System.out.println("Set the first Observable...");
 		eventSubject.setObservable(exceptionEvent);
+		System.out.println("wait 2 seconds...");
+		// wait 2 seconds...
+		Thread.sleep(2000);
 		// Set the second ExceptionEvent as Observable...
 		System.out.println("Set the second ExceptionEvent as Observable...");
 		exceptionEvent = new ExceptionEvent(new Exception("the second ExceptionEvent"));

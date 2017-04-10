@@ -33,12 +33,18 @@ public enum WizardStep implements State {
 	FIRST {
 
 		@Override
-		public void goNext(final StateMachine input) {
-			input.setCurrentState(SECOND);
+		public void goNext(final StateMachine stateMachine) {
+			stateMachine.setCurrentState(SECOND);
 		}
 
 		@Override
-		public void goPrevious(final StateMachine input) {
+		public void goPrevious(final StateMachine stateMachine) {
+		}
+
+		@Override
+		public String getName()
+		{
+			return name();
 		}
 
 		@Override
@@ -56,13 +62,19 @@ public enum WizardStep implements State {
 	SECOND {
 
 		@Override
-		public void goNext(final StateMachine input) {
-			input.setCurrentState(THIRD);
+		public void goNext(final StateMachine stateMachine) {
+			stateMachine.setCurrentState(THIRD);
 		}
 
 		@Override
-		public void goPrevious(final StateMachine input) {
-			input.setCurrentState(FIRST);
+		public void goPrevious(final StateMachine stateMachine) {
+			stateMachine.setCurrentState(FIRST);
+		}
+
+		@Override
+		public String getName()
+		{
+			return name();
 		}
 	},
 
@@ -70,12 +82,12 @@ public enum WizardStep implements State {
 	THIRD {
 
 		@Override
-		public void goNext(final StateMachine input) {
+		public void goNext(final StateMachine stateMachine) {
 		}
 
 		@Override
-		public void goPrevious(final StateMachine input) {
-			input.setCurrentState(SECOND);
+		public void goPrevious(final StateMachine stateMachine) {
+			stateMachine.setCurrentState(SECOND);
 		}
 
 		@Override
@@ -86,6 +98,12 @@ public enum WizardStep implements State {
 		@Override
 		public boolean isLast() {
 			return true;
+		}
+
+		@Override
+		public String getName()
+		{
+			return name();
 		}
 	};
 

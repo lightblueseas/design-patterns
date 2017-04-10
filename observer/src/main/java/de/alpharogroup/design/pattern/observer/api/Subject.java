@@ -25,10 +25,13 @@
 package de.alpharogroup.design.pattern.observer.api;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
- * The interface {@link Subject}.
- * 
+ * The interface {@link Subject} represents the "subject" (which is being "observed") being part of
+ * the object whose state change is being observed, to be communicated to the observers upon
+ * occurrence.
+ *
  * @param <T>
  *            the generic type of the observable.
  * @param <O>
@@ -43,7 +46,10 @@ public interface Subject<T, O extends Observer<T>>
 	 * @param observer
 	 *            the observer to be added.
 	 */
-	void add(final O observer);
+	default void add(final O observer)
+	{
+		getObservers().add(observer);
+	}
 
 	/**
 	 * Removes the given observer.
@@ -51,7 +57,14 @@ public interface Subject<T, O extends Observer<T>>
 	 * @param observer
 	 *            the observer to be remove.
 	 */
-	void remove(final O observer);
+	default void remove(final O observer)
+	{
+		final int index = getObservers().indexOf(observer);
+		if (0 <= index)
+		{
+			getObservers().remove(observer);
+		}
+	}
 
 	/**
 	 * Adds the given observers.
@@ -59,7 +72,10 @@ public interface Subject<T, O extends Observer<T>>
 	 * @param observers
 	 *            the observers to be added.
 	 */
-	void addAll(final Collection<O> observers);
+	default void addAll(final Collection<O> observers)
+	{
+		getObservers().addAll(observers);
+	}
 
 	/**
 	 * Removes the given observers.
@@ -67,12 +83,21 @@ public interface Subject<T, O extends Observer<T>>
 	 * @param observers
 	 *            the observers to be remove.
 	 */
-	void removeAll(final Collection<O> observers);
+	default void removeAll(final Collection<O> observers)
+	{
+		getObservers().removeAll(observers);
+	}
 
 	/**
 	 * Update observers.
 	 */
-	void updateObservers();
+	default void updateObservers()
+	{
+		for (final O observer : getObservers())
+		{
+			observer.update(getObservable());
+		}
+	}
 
 	/**
 	 * Gets the observable.
@@ -88,5 +113,12 @@ public interface Subject<T, O extends Observer<T>>
 	 *            the new observable
 	 */
 	void setObservable(final T observable);
+
+	/**
+	 * Gets the observers that wants to be notified on changes.
+	 *
+	 * @return the observers
+	 */
+	List<O> getObservers();
 
 }

@@ -24,10 +24,9 @@
  */
 package de.alpharogroup.design.pattern.observer;
 
-import de.alpharogroup.design.pattern.observer.AbstractObserver;
 import de.alpharogroup.design.pattern.observer.api.Observer;
 import de.alpharogroup.design.pattern.observer.api.Subject;
-import de.alpharogroup.test.objects.exceptions.ExceptionEvent;
+import de.alpharogroup.design.pattern.observer.exception.ExceptionEvent;
 
 /**
  * The Class ExceptionEventDisplayView.
@@ -48,7 +47,7 @@ public class ExceptionEventObserver extends AbstractObserver<ExceptionEvent>
 
 	/**
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see de.alpharogroup.design.pattern.observer.api.ActionCommand#execute()
 	 */
 	@Override
