@@ -24,11 +24,6 @@
  */
 package de.alpharogroup.design.pattern.observer.chat;
 
-import de.alpharogroup.design.pattern.observer.chat.ChatMessage;
-import de.alpharogroup.design.pattern.observer.chat.ChatRoom;
-import de.alpharogroup.design.pattern.observer.chat.ChatRoomUser;
-import de.alpharogroup.design.pattern.observer.chat.IUser;
-
 public class DataChatRoomUser extends ChatRoomUser<ChatMessage>
 {
 
@@ -46,8 +41,7 @@ public class DataChatRoomUser extends ChatRoomUser<ChatMessage>
 	public void execute()
 	{
 		final String display = "----------------------------------------------\n"
-			+ getUser().getName() + " sees the Message:\n"
-			+ getObservable().getValue().getMessage()
+			+ getUser().getName() + " sees the Message:\n" + getObservable().getValue().getMessage()
 			+ "\n----------------------------------------------";
 		System.out.println(display);
 

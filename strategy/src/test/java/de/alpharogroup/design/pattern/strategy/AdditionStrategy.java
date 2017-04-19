@@ -24,7 +24,6 @@
  */
 package de.alpharogroup.design.pattern.strategy;
 
-import de.alpharogroup.design.pattern.strategy.Strategy;
 import de.alpharogroup.test.objects.AlgorithmModel;
 
 /**
@@ -32,7 +31,7 @@ import de.alpharogroup.test.objects.AlgorithmModel;
  */
 public class AdditionStrategy implements Strategy<Integer, AlgorithmModel>
 {
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

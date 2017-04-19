@@ -27,7 +27,18 @@ package de.alpharogroup.design.pattern.state;
 /**
  * The interface {@link State} represents a State.
  */
-public interface State {
+public interface State
+{
+
+	/**
+	 * Gets the simple name of this {@link State} object.
+	 *
+	 * @return the simple name of this {@link State} object.
+	 */
+	default String getName()
+	{
+		return this.getClass().getSimpleName();
+	}
 
 	/**
 	 * Go to the next {@link State} object.
@@ -50,26 +61,20 @@ public interface State {
 	 *
 	 * @return true, if this {@link State} object has a next {@link State} object otherwise false.
 	 */
-	default boolean hasNext() {
+	default boolean hasNext()
+	{
 		return true;
 	}
 
 	/**
 	 * Checks if this {@link State} object has a previous {@link State} object.
 	 *
-	 * @return true, if this {@link State} object has a previous {@link State} object otherwise false.
+	 * @return true, if this {@link State} object has a previous {@link State} object otherwise
+	 *         false.
 	 */
-	default boolean hasPrevious() {
+	default boolean hasPrevious()
+	{
 		return true;
-	}
-
-	/**
-	 * Gets the simple name of this {@link State} object.
-	 *
-	 * @return the simple name of this {@link State} object.
-	 */
-	default String getName() {
-		return this.getClass().getSimpleName();
 	}
 
 	/**
@@ -77,7 +82,8 @@ public interface State {
 	 *
 	 * @return true, if this {@link State} object is the first {@link State} object otherwise false.
 	 */
-	default boolean isFirst() {
+	default boolean isFirst()
+	{
 		return false;
 	}
 
@@ -86,7 +92,8 @@ public interface State {
 	 *
 	 * @return true, if this {@link State} object is the last {@link State} object otherwise false.
 	 */
-	default boolean isLast() {
+	default boolean isLast()
+	{
 		return false;
 	}
 }

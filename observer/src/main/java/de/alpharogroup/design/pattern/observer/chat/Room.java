@@ -30,17 +30,11 @@ import java.util.List;
 /**
  * The interface {@link Room}.
  *
- * @param <M> the generic type
+ * @param <M>
+ *            the generic type
  */
 public interface Room<M extends Message<?>> extends Serializable
 {
-
-	/**
-	 * Checks if is secure.
-	 *
-	 * @return true, if is secure
-	 */
-	boolean isSecure();
 
 	/**
 	 * Gets the chat room users.
@@ -55,4 +49,11 @@ public interface Room<M extends Message<?>> extends Serializable
 	 * @return the message history
 	 */
 	List<M> getMessageHistory();
+
+	/**
+	 * Checks if is secure.
+	 *
+	 * @return true, if is secure
+	 */
+	boolean isSecure();
 }

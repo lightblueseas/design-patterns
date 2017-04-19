@@ -52,6 +52,31 @@ public interface Subject<T, O extends Observer<T>>
 	}
 
 	/**
+	 * Adds the given observers.
+	 *
+	 * @param observers
+	 *            the observers to be added.
+	 */
+	default void addAll(final Collection<O> observers)
+	{
+		getObservers().addAll(observers);
+	}
+
+	/**
+	 * Gets the observable.
+	 *
+	 * @return the observable
+	 */
+	T getObservable();
+
+	/**
+	 * Gets the observers that wants to be notified on changes.
+	 *
+	 * @return the observers
+	 */
+	List<O> getObservers();
+
+	/**
 	 * Removes the given observer.
 	 *
 	 * @param observer
@@ -67,17 +92,6 @@ public interface Subject<T, O extends Observer<T>>
 	}
 
 	/**
-	 * Adds the given observers.
-	 *
-	 * @param observers
-	 *            the observers to be added.
-	 */
-	default void addAll(final Collection<O> observers)
-	{
-		getObservers().addAll(observers);
-	}
-
-	/**
 	 * Removes the given observers.
 	 *
 	 * @param observers
@@ -89,6 +103,14 @@ public interface Subject<T, O extends Observer<T>>
 	}
 
 	/**
+	 * Sets the observable.
+	 *
+	 * @param observable
+	 *            the new observable
+	 */
+	void setObservable(final T observable);
+
+	/**
 	 * Update observers.
 	 */
 	default void updateObservers()
@@ -98,27 +120,5 @@ public interface Subject<T, O extends Observer<T>>
 			observer.update(getObservable());
 		}
 	}
-
-	/**
-	 * Gets the observable.
-	 *
-	 * @return the observable
-	 */
-	T getObservable();
-
-	/**
-	 * Sets the observable.
-	 *
-	 * @param observable
-	 *            the new observable
-	 */
-	void setObservable(final T observable);
-
-	/**
-	 * Gets the observers that wants to be notified on changes.
-	 *
-	 * @return the observers
-	 */
-	List<O> getObservers();
 
 }

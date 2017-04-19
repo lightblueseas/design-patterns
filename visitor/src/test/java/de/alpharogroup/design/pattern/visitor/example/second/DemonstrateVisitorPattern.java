@@ -53,8 +53,7 @@ public class DemonstrateVisitorPattern
 		File directory = ClassExtensions.getResourceAsFile("DemonstrateVisitorPattern.class",
 			new DemonstrateVisitorPattern());
 		directory = directory.getParentFile();
-		directory = 
-				PathFinder.getProjectDirectory();
+		directory = PathFinder.getProjectDirectory();
 		final FileVisitable visitable = new FileVisitable(directory);
 		visitor.visit(visitable);
 		System.out.println(visitor.getFilesCounted());

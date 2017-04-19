@@ -27,11 +27,12 @@ package de.alpharogroup.design.pattern.command.api;
 /**
  * The class {@link Invoker} that have a {@link Command} object to invoke.
  *
- * @param <R> the generic type of the receiver object.
+ * @param <R>
+ *            the generic type of the receiver object.
  */
 public class Invoker<R>
 {
-	
+
 	/** The command. */
 	private Command<R> command;
 
@@ -46,7 +47,8 @@ public class Invoker<R>
 	/**
 	 * Sets the command.
 	 *
-	 * @param command the new command
+	 * @param command
+	 *            the new command
 	 */
 	public void setCommand(final Command<R> command)
 	{

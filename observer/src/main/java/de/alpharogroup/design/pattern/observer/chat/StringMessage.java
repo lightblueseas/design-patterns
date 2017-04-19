@@ -32,7 +32,7 @@ public class StringMessage implements Message<String>
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
-	
+
 	/** The value. */
 	private String value;
 
@@ -46,7 +46,8 @@ public class StringMessage implements Message<String>
 	/**
 	 * Instantiates a new string message.
 	 *
-	 * @param value the value
+	 * @param value
+	 *            the value
 	 */
 	public StringMessage(final String value)
 	{

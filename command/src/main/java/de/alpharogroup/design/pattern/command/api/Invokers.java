@@ -30,33 +30,36 @@ import java.util.List;
 /**
  * The class {@link Invokers} that have a {@link Command} object to invoke.
  *
- * @param <R> the generic type of the receiver object.
+ * @param <R>
+ *            the generic type of the receiver object.
  */
 public class Invokers<R>
 {
-	
+
 	/** The command. */
 	private List<Command<R>> commands = new ArrayList<>();
 
 	/**
-	 * Invoke all commands in the list.
-	 */
-	public void invoke()
-	{
-		for (Command<R> command : commands) {
-			command.execute();
-		}
-	}
-
-	/**
 	 * Add a {@link Command} object to the list.
 	 *
-	 * @param command the {@link Command} object to add
+	 * @param command
+	 *            the {@link Command} object to add
 	 * @return this object, for chaining
 	 */
 	public Invokers<R> add(final Command<R> command)
 	{
 		commands.add(command);
 		return this;
+	}
+
+	/**
+	 * Invoke all commands in the list.
+	 */
+	public void invoke()
+	{
+		for (Command<R> command : commands)
+		{
+			command.execute();
+		}
 	}
 }

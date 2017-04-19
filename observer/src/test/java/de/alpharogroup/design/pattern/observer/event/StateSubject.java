@@ -24,9 +24,9 @@
  */
 package de.alpharogroup.design.pattern.observer.event;
 
+import de.alpharogroup.design.pattern.observer.AbstractSubject;
 import de.alpharogroup.design.pattern.observer.api.Observer;
 import de.alpharogroup.design.pattern.observer.api.Subject;
-import de.alpharogroup.design.pattern.observer.AbstractSubject;
 
 /**
  * The Class StateSubject.

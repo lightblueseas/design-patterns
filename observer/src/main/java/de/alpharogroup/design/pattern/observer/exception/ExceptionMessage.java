@@ -115,14 +115,16 @@ public class ExceptionMessage<T> implements Serializable
 			return false;
 		}
 		final ExceptionMessage<T> castedObj = (ExceptionMessage<T>)o;
-		return (this.propertiesKey == null ? castedObj.propertiesKey == null : this.propertiesKey
-			.equals(castedObj.propertiesKey))
+		return (this.propertiesKey == null
+			? castedObj.propertiesKey == null
+			: this.propertiesKey.equals(castedObj.propertiesKey))
 			&& (this.propertiesValue == null
 				? castedObj.propertiesValue == null
 				: this.propertiesValue.equals(castedObj.propertiesValue))
 			&& (this.id == null ? castedObj.id == null : this.id.equals(castedObj.id))
-			&& (this.additions == null ? castedObj.additions == null : this.additions
-				.equals(castedObj.additions));
+			&& (this.additions == null
+				? castedObj.additions == null
+				: this.additions.equals(castedObj.additions));
 	}
 
 	/**

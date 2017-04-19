@@ -24,9 +24,9 @@
  */
 package de.alpharogroup.design.pattern.command;
 
+import de.alpharogroup.design.pattern.command.api.Command;
 import de.alpharogroup.design.pattern.command.api.Invoker;
 import de.alpharogroup.design.pattern.command.api.Invokers;
-import de.alpharogroup.design.pattern.command.api.Command;
 import de.alpharogroup.test.objects.Light;
 
 
@@ -60,9 +60,7 @@ public class DemonstrateCommandPattern
 		invoker.invoke();
 		// Invoke several commands with a single invokers object...
 		final Invokers<Light> invokers = new Invokers<>();
-		invokers
-		.add(lightsOn)
-		.add(lightsOff);
+		invokers.add(lightsOn).add(lightsOff);
 		invokers.invoke();
 	}
 

@@ -24,11 +24,6 @@
  */
 package de.alpharogroup.design.pattern.observer.chat;
 
-import de.alpharogroup.design.pattern.observer.chat.ChatRoom;
-import de.alpharogroup.design.pattern.observer.chat.ChatRoomUser;
-import de.alpharogroup.design.pattern.observer.chat.IUser;
-import de.alpharogroup.design.pattern.observer.chat.StringMessage;
-
 public class SimpleChatRoomUser extends ChatRoomUser<StringMessage>
 {
 

@@ -27,19 +27,11 @@ package de.alpharogroup.design.pattern.state;
 /**
  * The enum {@link WizardStep} represents three wizard steps.
  */
-public enum WizardStep implements State {
+public enum WizardStep implements State
+{
 
 	/** The first {@link WizardStep} object. */
 	FIRST {
-
-		@Override
-		public void goNext(final StateMachine stateMachine) {
-			stateMachine.setCurrentState(SECOND);
-		}
-
-		@Override
-		public void goPrevious(final StateMachine stateMachine) {
-		}
 
 		@Override
 		public String getName()
@@ -48,12 +40,25 @@ public enum WizardStep implements State {
 		}
 
 		@Override
-		public boolean hasPrevious() {
+		public void goNext(final StateMachine stateMachine)
+		{
+			stateMachine.setCurrentState(SECOND);
+		}
+
+		@Override
+		public void goPrevious(final StateMachine stateMachine)
+		{
+		}
+
+		@Override
+		public boolean hasPrevious()
+		{
 			return false;
 		}
 
 		@Override
-		public boolean isFirst() {
+		public boolean isFirst()
+		{
 			return true;
 		}
 	},
@@ -62,19 +67,21 @@ public enum WizardStep implements State {
 	SECOND {
 
 		@Override
-		public void goNext(final StateMachine stateMachine) {
+		public String getName()
+		{
+			return name();
+		}
+
+		@Override
+		public void goNext(final StateMachine stateMachine)
+		{
 			stateMachine.setCurrentState(THIRD);
 		}
 
 		@Override
-		public void goPrevious(final StateMachine stateMachine) {
-			stateMachine.setCurrentState(FIRST);
-		}
-
-		@Override
-		public String getName()
+		public void goPrevious(final StateMachine stateMachine)
 		{
-			return name();
+			stateMachine.setCurrentState(FIRST);
 		}
 	},
 
@@ -82,28 +89,32 @@ public enum WizardStep implements State {
 	THIRD {
 
 		@Override
-		public void goNext(final StateMachine stateMachine) {
+		public String getName()
+		{
+			return name();
 		}
 
 		@Override
-		public void goPrevious(final StateMachine stateMachine) {
+		public void goNext(final StateMachine stateMachine)
+		{
+		}
+
+		@Override
+		public void goPrevious(final StateMachine stateMachine)
+		{
 			stateMachine.setCurrentState(SECOND);
 		}
 
 		@Override
-		public boolean hasNext() {
+		public boolean hasNext()
+		{
 			return false;
 		}
 
 		@Override
-		public boolean isLast() {
-			return true;
-		}
-
-		@Override
-		public String getName()
+		public boolean isLast()
 		{
-			return name();
+			return true;
 		}
 	};
 

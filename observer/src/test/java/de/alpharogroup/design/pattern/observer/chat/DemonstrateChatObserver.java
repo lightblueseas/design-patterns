@@ -25,13 +25,6 @@
 package de.alpharogroup.design.pattern.observer.chat;
 
 import de.alpharogroup.design.pattern.observer.api.Subject;
-import de.alpharogroup.design.pattern.observer.chat.ChatMessage;
-import de.alpharogroup.design.pattern.observer.chat.ChatRoom;
-import de.alpharogroup.design.pattern.observer.chat.ChatRoomService;
-import de.alpharogroup.design.pattern.observer.chat.ChatRoomUser;
-import de.alpharogroup.design.pattern.observer.chat.MessageRoomModelBean;
-import de.alpharogroup.design.pattern.observer.chat.StringMessage;
-import de.alpharogroup.design.pattern.observer.chat.User;
 
 /**
  * An asynchronous update interface for receiving notifications about DemonstrateChat information as
@@ -139,11 +132,13 @@ public class DemonstrateChatObserver
 			antonUser);
 		final ChatRoomUser<ChatMessage> johnFirstFileRoom = new DataChatRoomUser(firstFileRoom,
 			johnUser);
-		messageRoomModel = new MessageRoomModelBean(firstFileRoom.getName(), antonUser, "Foo bar", null);
+		messageRoomModel = new MessageRoomModelBean(firstFileRoom.getName(), antonUser, "Foo bar",
+			null);
 		chatMessage = new ChatMessage().setValue(messageRoomModel);
 		System.out.println("########## New message ##############");
 		antonFirstFileRoom.send(chatMessage);
-		messageRoomModel = new MessageRoomModelBean(firstFileRoom.getName(), johnUser, "Bar foo", null);
+		messageRoomModel = new MessageRoomModelBean(firstFileRoom.getName(), johnUser, "Bar foo",
+			null);
 		chatMessage = new ChatMessage().setValue(messageRoomModel);
 		johnFirstFileRoom.send(chatMessage);
 

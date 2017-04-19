@@ -29,18 +29,20 @@ import de.alpharogroup.design.pattern.command.api.Command;
 /**
  * The abstract class {@link AbstractCommand} the implements the {@link Command} interface.
  *
- * @param <R> the generic type of the receiver object.
+ * @param <R>
+ *            the generic type of the receiver object.
  */
 public abstract class AbstractCommand<R> implements Command<R>
 {
-	
+
 	/** The reference to the receiver object for execute the concrete command. */
 	private final R receiver;
 
 	/**
 	 * Instantiates a new abstract command.
 	 *
-	 * @param receiver the receiver
+	 * @param receiver
+	 *            the receiver
 	 */
 	public AbstractCommand(final R receiver)
 	{

@@ -29,7 +29,8 @@ import java.io.Serializable;
 /**
  * The interface {@link Message}.
  *
- * @param <T> the generic type
+ * @param <T>
+ *            the generic type
  */
 public interface Message<T> extends Serializable
 {
@@ -44,7 +45,8 @@ public interface Message<T> extends Serializable
 	/**
 	 * Sets the value.
 	 *
-	 * @param value the value
+	 * @param value
+	 *            the value
 	 * @return the message
 	 */
 	public Message<T> setValue(final T value);

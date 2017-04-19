@@ -35,7 +35,8 @@ public class StrategyExample
 	/**
 	 * The main method.
 	 *
-	 * @param args the arguments
+	 * @param args
+	 *            the arguments
 	 * @throws CloneNotSupportedException
 	 */
 	public static void main(final String[] args) throws CloneNotSupportedException

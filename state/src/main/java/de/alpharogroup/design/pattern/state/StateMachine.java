@@ -41,8 +41,9 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder(toBuilder=true)
-public class StateMachine {
+@Builder(toBuilder = true)
+public class StateMachine
+{
 
 	/** The current {@link State} object. */
 	@Builder.Default
@@ -52,14 +53,16 @@ public class StateMachine {
 	/**
 	 * Go to the next {@link State} object.
 	 */
-	public void next() {
+	public void next()
+	{
 		currentState.goNext(this);
 	}
 
 	/**
 	 * Go to the previous {@link State} object.
 	 */
-	public void previous() {
+	public void previous()
+	{
 		currentState.goPrevious(this);
 	}
 

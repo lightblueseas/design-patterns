@@ -64,8 +64,8 @@ public class MessageRoomModelBean implements Serializable
 	 * @param data
 	 *            the data
 	 */
-	public MessageRoomModelBean(final String chatRoomName, final IUser<?> user, final String message,
-		final Byte[] data)
+	public MessageRoomModelBean(final String chatRoomName, final IUser<?> user,
+		final String message, final Byte[] data)
 	{
 		super();
 		this.chatRoomName = chatRoomName;

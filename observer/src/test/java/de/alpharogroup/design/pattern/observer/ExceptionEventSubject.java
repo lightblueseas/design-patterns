@@ -31,9 +31,7 @@ import de.alpharogroup.design.pattern.observer.exception.ExceptionEvent;
 /**
  * The Class EventSubject.
  */
-public class ExceptionEventSubject
-	extends
-		AbstractSubject<ExceptionEvent, Observer<ExceptionEvent>>
+public class ExceptionEventSubject extends AbstractSubject<ExceptionEvent, Observer<ExceptionEvent>>
 	implements
 		Subject<ExceptionEvent, Observer<ExceptionEvent>>
 {

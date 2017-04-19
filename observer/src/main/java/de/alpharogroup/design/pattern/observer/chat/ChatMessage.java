@@ -34,7 +34,7 @@ public class ChatMessage implements Message<MessageRoomModelBean>, Serializable
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
-	
+
 	/** The value. */
 	private MessageRoomModelBean value;
 

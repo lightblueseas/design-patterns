@@ -38,7 +38,8 @@ public interface GenericVisitable<GV extends GenericVisitor<GV, GVSTABLE>, GVSTA
 	/**
 	 * Accept.
 	 *
-	 * @param visitor the visitor
+	 * @param visitor
+	 *            the visitor
 	 */
 	public void accept(final GV visitor);
 

@@ -27,8 +27,6 @@ package de.alpharogroup.design.pattern.builder;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.design.pattern.builder.Car;
-
 /**
  * The class {@link CarTest} is the unit test class for the class {@link Car}.
  */
@@ -56,8 +54,9 @@ public class CarTest
 			+ " but is " + actualType + ".", actualType.equals(expectedType));
 		AssertJUnit.assertTrue("The expected model from the car object was " + expectedModel
 			+ " but is " + actualModel + ".", actualModel.equals(expectedModel));
-		AssertJUnit.assertTrue("The expected constructionYear from the car object was "
-			+ expectedConstructionYear + " but is " + actualConstructionYear + ".",
+		AssertJUnit.assertTrue(
+			"The expected constructionYear from the car object was " + expectedConstructionYear
+				+ " but is " + actualConstructionYear + ".",
 			actualConstructionYear == expectedConstructionYear);
 		// create Car object with the static builder object...
 		final Car ferrari = Car.builder("Ferrari").model("F40").constructionYear(1992).build();
@@ -72,8 +71,9 @@ public class CarTest
 			+ " but is " + actualType + ".", actualType.equals(expectedType));
 		AssertJUnit.assertTrue("The expected model from the car object was " + expectedModel
 			+ " but is " + actualModel + ".", actualModel.equals(expectedModel));
-		AssertJUnit.assertTrue("The expected constructionYear from the car object was "
-			+ expectedConstructionYear + " but is " + actualConstructionYear + ".",
+		AssertJUnit.assertTrue(
+			"The expected constructionYear from the car object was " + expectedConstructionYear
+				+ " but is " + actualConstructionYear + ".",
 			actualConstructionYear == expectedConstructionYear);
 	}
 

@@ -27,7 +27,6 @@ package de.alpharogroup.design.pattern.observer.chat;
 import java.io.Serializable;
 
 import de.alpharogroup.auth.SimpleUser;
-import de.alpharogroup.design.pattern.observer.chat.IUser;
 
 public class ApplicationUser implements IUser<SimpleUser>
 {

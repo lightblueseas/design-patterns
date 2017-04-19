@@ -32,7 +32,8 @@ import de.alpharogroup.design.pattern.observer.api.Observer;
 /**
  * The class {@link ChatRoomUser}.
  *
- * @param <M> the generic type
+ * @param <M>
+ *            the generic type
  */
 public abstract class ChatRoomUser<M extends Message<?>>
 	implements
@@ -56,8 +57,10 @@ public abstract class ChatRoomUser<M extends Message<?>>
 	/**
 	 * Instantiates a new chat room user.
 	 *
-	 * @param room the room
-	 * @param user the user
+	 * @param room
+	 *            the room
+	 * @param user
+	 *            the user
 	 */
 	public ChatRoomUser(final ChatRoom<M> room, final IUser<?> user)
 	{
@@ -90,7 +93,8 @@ public abstract class ChatRoomUser<M extends Message<?>>
 	/**
 	 * Send the given message.
 	 *
-	 * @param message the message
+	 * @param message
+	 *            the message
 	 */
 	public void send(final M message)
 	{

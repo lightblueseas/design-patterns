@@ -26,11 +26,6 @@ package de.alpharogroup.design.pattern.observer.event;
 
 import javax.swing.JTextField;
 
-import de.alpharogroup.design.pattern.observer.event.EventListener;
-import de.alpharogroup.design.pattern.observer.event.EventObject;
-import de.alpharogroup.design.pattern.observer.event.EventSource;
-import de.alpharogroup.design.pattern.observer.event.EventSubject;
-
 /**
  * This class is to demonstrate the Event Listener interface.
  */
@@ -69,8 +64,8 @@ public class DemonstrateEventListener
 			@Override
 			public void onEvent(final EventObject<JTextField> event)
 			{
-				System.out.println(new StringBuffer(event.getSource().getText()).reverse()
-					.toString());
+				System.out
+					.println(new StringBuffer(event.getSource().getText()).reverse().toString());
 
 			}
 		};

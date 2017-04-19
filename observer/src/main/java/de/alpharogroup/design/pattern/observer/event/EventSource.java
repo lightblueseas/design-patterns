@@ -44,14 +44,6 @@ public interface EventSource<T>
 	void add(final EventListener<T> eventListener);
 
 	/**
-	 * Removes the given event listener from the eventListeners list.
-	 *
-	 * @param eventListener
-	 *            the event listener
-	 */
-	void remove(final EventListener<T> eventListener);
-
-	/**
 	 * Adds the all given event listeners to the eventListeners list.
 	 *
 	 * @param eventListeners
@@ -60,19 +52,27 @@ public interface EventSource<T>
 	void addAll(final Collection<EventListener<T>> eventListeners);
 
 	/**
-	 * Removes the all given event listeners from the eventListeners list.
-	 *
-	 * @param eventListeners
-	 *            the event listeners
-	 */
-	void removeAll(final Collection<EventListener<T>> eventListeners);
-
-	/**
 	 * Fire the given event.
 	 *
 	 * @param source
 	 *            the source
 	 */
 	void fireEvent(final T source);
+
+	/**
+	 * Removes the given event listener from the eventListeners list.
+	 *
+	 * @param eventListener
+	 *            the event listener
+	 */
+	void remove(final EventListener<T> eventListener);
+
+	/**
+	 * Removes the all given event listeners from the eventListeners list.
+	 *
+	 * @param eventListeners
+	 *            the event listeners
+	 */
+	void removeAll(final Collection<EventListener<T>> eventListeners);
 
 }

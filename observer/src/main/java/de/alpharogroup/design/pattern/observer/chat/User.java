@@ -44,8 +44,10 @@ public class User implements IUser<User>
 	/**
 	 * Instantiates a new user.
 	 *
-	 * @param name the name
-	 * @param id the id
+	 * @param name
+	 *            the name
+	 * @param id
+	 *            the id
 	 */
 	public User(final String name, final Integer id)
 	{
@@ -94,7 +96,8 @@ public class User implements IUser<User>
 	/**
 	 * Sets the id.
 	 *
-	 * @param id the new id
+	 * @param id
+	 *            the new id
 	 */
 	public void setId(final Integer id)
 	{
@@ -104,7 +107,8 @@ public class User implements IUser<User>
 	/**
 	 * Sets the name.
 	 *
-	 * @param name the new name
+	 * @param name
+	 *            the new name
 	 */
 	public void setName(final String name)
 	{

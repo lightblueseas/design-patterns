@@ -29,7 +29,7 @@ package de.alpharogroup.design.pattern.builder;
  */
 public final class Car
 {
-	
+
 	/**
 	 * The class {@link Builder}.
 	 */
@@ -39,7 +39,7 @@ public final class Car
 		// optional fields
 		/** The construction year. */
 		private int constructionYear;
-		
+
 		/** The model. */
 		private String model;
 
@@ -50,7 +50,8 @@ public final class Car
 		/**
 		 * Instantiates a new builder.
 		 *
-		 * @param type the type
+		 * @param type
+		 *            the type
 		 */
 		public Builder(final String type)
 		{
@@ -70,7 +71,8 @@ public final class Car
 		/**
 		 * Construction year.
 		 *
-		 * @param constructionYear the construction year
+		 * @param constructionYear
+		 *            the construction year
 		 * @return the builder
 		 */
 		public Builder constructionYear(final int constructionYear)
@@ -82,7 +84,8 @@ public final class Car
 		/**
 		 * Model.
 		 *
-		 * @param model the model
+		 * @param model
+		 *            the model
 		 * @return the builder
 		 */
 		public Builder model(final String model)
@@ -95,16 +98,19 @@ public final class Car
 	/**
 	 * Builder.
 	 *
-	 * @param type the type
+	 * @param type
+	 *            the type
 	 * @return the builder
 	 */
-	public static Builder builder(final String type) {
+	public static Builder builder(final String type)
+	{
 		return new Builder(type);
 	}
+
 	// all fields must be final so they are immutable objects
 	/** The construction year. */
 	private final int constructionYear;
-	
+
 	/** The model. */
 	private final String model;
 
@@ -112,10 +118,10 @@ public final class Car
 	private final String type;
 
 	/**
-	 * Instantiates a new car. 
-	 * Note: private constructor. Only the Builder can call it.
+	 * Instantiates a new car. Note: private constructor. Only the Builder can call it.
 	 *
-	 * @param builder the builder
+	 * @param builder
+	 *            the builder
 	 */
 	private Car(final Builder builder)
 	{
