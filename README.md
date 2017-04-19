@@ -18,9 +18,9 @@ The source code comes under the liberal MIT License, making design-patterns grea
 # Build status and latest maven version
 [![Build Status](https://travis-ci.org/lightblueseas/design-patterns.svg?branch=master)](https://travis-ci.org/lightblueseas/design-patterns)
 
+## Maven Central
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/design-patterns/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/design-patterns)
-
 
 ## Maven dependency
 
