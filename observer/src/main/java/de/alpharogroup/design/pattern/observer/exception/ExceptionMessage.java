@@ -67,7 +67,7 @@ public class ExceptionMessage<T> implements Serializable
 	/** Reference for the id in the database. */
 	private String id;
 
-	/** The additions. */	
+	/** The additions. */
 	private List<T> additions;
 
 	/**
