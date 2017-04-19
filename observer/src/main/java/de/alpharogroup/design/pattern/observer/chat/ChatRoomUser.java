@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -26,18 +26,19 @@ package de.alpharogroup.design.pattern.observer.chat;
 
 import java.io.Serializable;
 
-import de.alpharogroup.design.pattern.observer.api.DisplayViewElement;
+import de.alpharogroup.design.pattern.observer.api.ActionCommand;
 import de.alpharogroup.design.pattern.observer.api.Observer;
 
 /**
  * The class {@link ChatRoomUser}.
  *
- * @param <M> the generic type
+ * @param <M>
+ *            the generic type
  */
 public abstract class ChatRoomUser<M extends Message<?>>
 	implements
 		Observer<M>,
-		DisplayViewElement,
+		ActionCommand,
 		Serializable
 {
 
@@ -56,8 +57,10 @@ public abstract class ChatRoomUser<M extends Message<?>>
 	/**
 	 * Instantiates a new chat room user.
 	 *
-	 * @param room the room
-	 * @param user the user
+	 * @param room
+	 *            the room
+	 * @param user
+	 *            the user
 	 */
 	public ChatRoomUser(final ChatRoom<M> room, final IUser<?> user)
 	{
@@ -90,7 +93,8 @@ public abstract class ChatRoomUser<M extends Message<?>>
 	/**
 	 * Send the given message.
 	 *
-	 * @param message the message
+	 * @param message
+	 *            the message
 	 */
 	public void send(final M message)
 	{
@@ -104,7 +108,7 @@ public abstract class ChatRoomUser<M extends Message<?>>
 	public synchronized void update(final M observable)
 	{
 		this.observable = observable;
-		displayView();
+		execute();
 	}
 
 }

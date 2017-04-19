@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -29,18 +29,20 @@ import de.alpharogroup.design.pattern.command.api.Command;
 /**
  * The abstract class {@link AbstractCommand} the implements the {@link Command} interface.
  *
- * @param <R> the generic type of the receiver object.
+ * @param <R>
+ *            the generic type of the receiver object.
  */
 public abstract class AbstractCommand<R> implements Command<R>
 {
-	
+
 	/** The reference to the receiver object for execute the concrete command. */
 	private final R receiver;
 
 	/**
 	 * Instantiates a new abstract command.
 	 *
-	 * @param receiver the receiver
+	 * @param receiver
+	 *            the receiver
 	 */
 	public AbstractCommand(final R receiver)
 	{

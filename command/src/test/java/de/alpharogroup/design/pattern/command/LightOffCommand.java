@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -28,18 +28,20 @@ import de.alpharogroup.design.pattern.command.api.Command;
 import de.alpharogroup.test.objects.Light;
 
 /**
- * The class {@link LightOffCommand}. Concrete Command that implements the {@link Command} interface.
+ * The class {@link LightOffCommand}. Concrete Command that implements the {@link Command}
+ * interface.
  */
 public class LightOffCommand implements Command<Light>
 {
-	
+
 	/** The reference to the light. */
 	private final Light light;
 
 	/**
 	 * Instantiates a new light off command.
 	 *
-	 * @param light the light
+	 * @param light
+	 *            the light
 	 */
 	public LightOffCommand(final Light light)
 	{

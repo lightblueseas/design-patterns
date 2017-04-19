@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -27,11 +27,12 @@ package de.alpharogroup.design.pattern.command.api;
 /**
  * The class {@link Invoker} that have a {@link Command} object to invoke.
  *
- * @param <R> the generic type of the receiver object.
+ * @param <R>
+ *            the generic type of the receiver object.
  */
 public class Invoker<R>
 {
-	
+
 	/** The command. */
 	private Command<R> command;
 
@@ -46,7 +47,8 @@ public class Invoker<R>
 	/**
 	 * Sets the command.
 	 *
-	 * @param command the new command
+	 * @param command
+	 *            the new command
 	 */
 	public void setCommand(final Command<R> command)
 	{

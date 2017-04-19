@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -36,18 +36,25 @@ public interface Invitation<M extends Message<?>> extends Serializable
 {
 
 	/**
-	 * Gets the sender of this invitation.
-	 *
-	 * @return the sender of this invitation.
-	 */
-	IUser<?> getSender();
-
-	/**
 	 * Gets the recipient of this invitation.
 	 *
 	 * @return the recipient of this invitation.
 	 */
 	IUser<?> getRecipient();
+
+	/**
+	 * Gets the room for this invitation.
+	 *
+	 * @return the room for this invitation.
+	 */
+	Room<M> getRoom();
+
+	/**
+	 * Gets the sender of this invitation.
+	 *
+	 * @return the sender of this invitation.
+	 */
+	IUser<?> getSender();
 
 	/**
 	 * Checks if this invitation is accepted from the recipient.
@@ -63,11 +70,4 @@ public interface Invitation<M extends Message<?>> extends Serializable
 	 *         otherwise false.
 	 */
 	boolean isDeniedVisible();
-
-	/**
-	 * Gets the room for this invitation.
-	 *
-	 * @return the room for this invitation.
-	 */
-	Room<M> getRoom();
 }

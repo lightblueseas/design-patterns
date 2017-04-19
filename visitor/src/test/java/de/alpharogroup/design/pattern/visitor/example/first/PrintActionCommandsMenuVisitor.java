@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -29,16 +29,19 @@ import java.util.Iterator;
 /**
  * The Class PrintActionCommandsMenuVisitor.
  */
-public class PrintActionCommandsMenuVisitor implements MenuVisitor {
+public class PrintActionCommandsMenuVisitor implements MenuVisitor
+{
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void visit(final Menu menu) {
+	public void visit(final Menu menu)
+	{
 		System.out.println(menu.getName());
 		final Iterator<MenuVisitableObject> iterator = menu.getChildren().iterator();
-		while (iterator.hasNext()) {
+		while (iterator.hasNext())
+		{
 			final MenuVisitableObject menuVisitableObject = iterator.next();
 			menuVisitableObject.accept(this);
 		}
@@ -48,7 +51,8 @@ public class PrintActionCommandsMenuVisitor implements MenuVisitor {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void visit(final MenuItem menuItem) {
+	public void visit(final MenuItem menuItem)
+	{
 		System.out.println(menuItem.getActionCommand());
 	}
 
@@ -56,7 +60,8 @@ public class PrintActionCommandsMenuVisitor implements MenuVisitor {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void visit(final MenuVisitableObject visitable) {
+	public void visit(final MenuVisitableObject visitable)
+	{
 		visitable.accept(this);
 	}
 

@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -31,7 +31,8 @@ import java.util.List;
 /**
  * The class {@link MessageSubject}.
  *
- * @param <T> the generic type
+ * @param <T>
+ *            the generic type
  */
 public class MessageSubject<T> implements MessageSource<T>
 {
@@ -58,7 +59,8 @@ public class MessageSubject<T> implements MessageSource<T>
 	/**
 	 * Instantiates a new message subject.
 	 *
-	 * @param source the source
+	 * @param source
+	 *            the source
 	 */
 	public MessageSubject(final T source)
 	{
@@ -79,8 +81,7 @@ public class MessageSubject<T> implements MessageSource<T>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public synchronized void addAll(
-		final Collection<MessageListener<T>> messageListeners)
+	public synchronized void addAll(final Collection<MessageListener<T>> messageListeners)
 	{
 		this.messageListeners.addAll(messageListeners);
 	}
@@ -119,8 +120,7 @@ public class MessageSubject<T> implements MessageSource<T>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public synchronized void removeAll(
-		final Collection<MessageListener<T>> messageListeners)
+	public synchronized void removeAll(final Collection<MessageListener<T>> messageListeners)
 	{
 		this.messageListeners.removeAll(messageListeners);
 	}

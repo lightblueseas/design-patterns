@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -24,11 +24,6 @@
  */
 package de.alpharogroup.design.pattern.observer.chat;
 
-import de.alpharogroup.design.pattern.observer.chat.ChatRoom;
-import de.alpharogroup.design.pattern.observer.chat.ChatRoomUser;
-import de.alpharogroup.design.pattern.observer.chat.IUser;
-import de.alpharogroup.design.pattern.observer.chat.StringMessage;
-
 public class SimpleChatRoomUser extends ChatRoomUser<StringMessage>
 {
 
@@ -43,7 +38,7 @@ public class SimpleChatRoomUser extends ChatRoomUser<StringMessage>
 	}
 
 	@Override
-	public void displayView()
+	public void execute()
 	{
 		final String display = "----------------------------------------------\n"
 			+ getUser().getName() + " sees the Message:\n" + getObservable().getValue()

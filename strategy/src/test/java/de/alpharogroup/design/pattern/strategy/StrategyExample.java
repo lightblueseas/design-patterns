@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -24,8 +24,6 @@
  */
 package de.alpharogroup.design.pattern.strategy;
 
-import de.alpharogroup.design.pattern.strategy.Context;
-import de.alpharogroup.design.pattern.strategy.Strategy;
 import de.alpharogroup.test.objects.AlgorithmModel;
 
 /**
@@ -37,21 +35,24 @@ public class StrategyExample
 	/**
 	 * The main method.
 	 *
-	 * @param args the arguments
+	 * @param args
+	 *            the arguments
+	 * @throws CloneNotSupportedException
 	 */
-	public static void main(final String[] args)
+	public static void main(final String[] args) throws CloneNotSupportedException
 	{
 		Strategy<Integer, AlgorithmModel> strategy = new AdditionStrategy();
 		Context<Integer, AlgorithmModel> context = new Context<>(strategy);
-		Integer i = context.execute(new AlgorithmModel().setA(5).setB(15));
+		final AlgorithmModel algorithmModel = AlgorithmModel.builder().a(5).b(15).build();
+		Integer i = context.execute(algorithmModel);
 		System.out.println("Result from ComputeAddStrategy's execute():" + i);
 		strategy = new SubtractionStrategy();
 		context = new Context<>(strategy);
-		i = context.execute(new AlgorithmModel().setA(5).setB(15));
+		i = context.execute(algorithmModel);
 		System.out.println("Result from ComputeSubtractStrategy's execute():" + i);
 		strategy = new MultiplicationStrategy();
 		context = new Context<>(strategy);
-		i = context.execute(new AlgorithmModel().setA(5).setB(15));
+		i = context.execute(algorithmModel);
 		System.out.println("Result from MultiplicationStrategy's execute():" + i);
 
 	}

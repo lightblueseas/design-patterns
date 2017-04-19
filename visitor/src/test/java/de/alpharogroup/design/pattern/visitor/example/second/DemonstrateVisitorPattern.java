@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -53,8 +53,7 @@ public class DemonstrateVisitorPattern
 		File directory = ClassExtensions.getResourceAsFile("DemonstrateVisitorPattern.class",
 			new DemonstrateVisitorPattern());
 		directory = directory.getParentFile();
-		directory = 
-				PathFinder.getProjectDirectory();
+		directory = PathFinder.getProjectDirectory();
 		final FileVisitable visitable = new FileVisitable(directory);
 		visitor.visit(visitable);
 		System.out.println(visitor.getFilesCounted());

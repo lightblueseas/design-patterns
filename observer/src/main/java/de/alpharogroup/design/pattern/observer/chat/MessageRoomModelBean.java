@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -64,8 +64,8 @@ public class MessageRoomModelBean implements Serializable
 	 * @param data
 	 *            the data
 	 */
-	public MessageRoomModelBean(final String chatRoomName, final IUser<?> user, final String message,
-		final Byte[] data)
+	public MessageRoomModelBean(final String chatRoomName, final IUser<?> user,
+		final String message, final Byte[] data)
 	{
 		super();
 		this.chatRoomName = chatRoomName;

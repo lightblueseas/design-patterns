@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -22,16 +22,48 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.design.pattern.observer.api;
+package de.alpharogroup.design.pattern.state;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 /**
- * The Interface DisplayViewElement.
+ * The class {@link StateMachine}.
  */
-public interface DisplayViewElement
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder(toBuilder = true)
+public class StateMachine
 {
 
+	/** The current {@link State} object. */
+	@Builder.Default
+	private State currentState = WizardStep.FIRST;
+
+
 	/**
-	 * Display view.
+	 * Go to the next {@link State} object.
 	 */
-	void displayView();
+	public void next()
+	{
+		currentState.goNext(this);
+	}
+
+	/**
+	 * Go to the previous {@link State} object.
+	 */
+	public void previous()
+	{
+		currentState.goPrevious(this);
+	}
+
 }

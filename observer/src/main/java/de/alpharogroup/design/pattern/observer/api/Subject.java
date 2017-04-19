@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -25,10 +25,13 @@
 package de.alpharogroup.design.pattern.observer.api;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
- * The interface {@link Subject}.
- * 
+ * The interface {@link Subject} represents the "subject" (which is being "observed") being part of
+ * the object whose state change is being observed, to be communicated to the observers upon
+ * occurrence.
+ *
  * @param <T>
  *            the generic type of the observable.
  * @param <O>
@@ -43,15 +46,10 @@ public interface Subject<T, O extends Observer<T>>
 	 * @param observer
 	 *            the observer to be added.
 	 */
-	void add(final O observer);
-
-	/**
-	 * Removes the given observer.
-	 *
-	 * @param observer
-	 *            the observer to be remove.
-	 */
-	void remove(final O observer);
+	default void add(final O observer)
+	{
+		getObservers().add(observer);
+	}
 
 	/**
 	 * Adds the given observers.
@@ -59,20 +57,10 @@ public interface Subject<T, O extends Observer<T>>
 	 * @param observers
 	 *            the observers to be added.
 	 */
-	void addAll(final Collection<O> observers);
-
-	/**
-	 * Removes the given observers.
-	 *
-	 * @param observers
-	 *            the observers to be remove.
-	 */
-	void removeAll(final Collection<O> observers);
-
-	/**
-	 * Update observers.
-	 */
-	void updateObservers();
+	default void addAll(final Collection<O> observers)
+	{
+		getObservers().addAll(observers);
+	}
 
 	/**
 	 * Gets the observable.
@@ -82,11 +70,55 @@ public interface Subject<T, O extends Observer<T>>
 	T getObservable();
 
 	/**
+	 * Gets the observers that wants to be notified on changes.
+	 *
+	 * @return the observers
+	 */
+	List<O> getObservers();
+
+	/**
+	 * Removes the given observer.
+	 *
+	 * @param observer
+	 *            the observer to be remove.
+	 */
+	default void remove(final O observer)
+	{
+		final int index = getObservers().indexOf(observer);
+		if (0 <= index)
+		{
+			getObservers().remove(observer);
+		}
+	}
+
+	/**
+	 * Removes the given observers.
+	 *
+	 * @param observers
+	 *            the observers to be remove.
+	 */
+	default void removeAll(final Collection<O> observers)
+	{
+		getObservers().removeAll(observers);
+	}
+
+	/**
 	 * Sets the observable.
 	 *
 	 * @param observable
 	 *            the new observable
 	 */
 	void setObservable(final T observable);
+
+	/**
+	 * Update observers.
+	 */
+	default void updateObservers()
+	{
+		for (final O observer : getObservers())
+		{
+			observer.update(getObservable());
+		}
+	}
 
 }

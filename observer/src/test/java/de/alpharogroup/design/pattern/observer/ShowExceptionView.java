@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -24,10 +24,9 @@
  */
 package de.alpharogroup.design.pattern.observer;
 
-import de.alpharogroup.design.pattern.observer.AbstractObserver;
 import de.alpharogroup.design.pattern.observer.api.Observer;
 import de.alpharogroup.design.pattern.observer.api.Subject;
-import de.alpharogroup.test.objects.exceptions.ExceptionEvent;
+import de.alpharogroup.design.pattern.observer.exception.ExceptionEvent;
 
 /**
  * The Class ShowExceptionView.
@@ -49,10 +48,10 @@ public class ShowExceptionView extends AbstractObserver<ExceptionEvent>
 	/**
 	 * (non-Javadoc).
 	 *
-	 * @see de.alpharogroup.design.pattern.observer.api.DisplayViewElement#displayView()
+	 * @see de.alpharogroup.design.pattern.observer.api.ActionCommand#execute()
 	 */
 	@Override
-	public void displayView()
+	public void execute()
 	{
 		System.out.println("From ShowExceptionView:::" + getObservable().getValue() + ":::");
 

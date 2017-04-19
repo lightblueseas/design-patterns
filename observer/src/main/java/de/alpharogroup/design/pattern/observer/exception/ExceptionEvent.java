@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -24,70 +24,27 @@
  */
 package de.alpharogroup.design.pattern.observer.exception;
 
-import java.util.Objects;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 /**
- * The Class ExceptionEvent.
+ * The class {@link ExceptionEvent} acts like as an Observable.
  */
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder(toBuilder = true)
 public class ExceptionEvent
 {
-
 	/** The value. */
 	private Throwable value;
-
-	public ExceptionEvent(final Throwable value)
-	{
-		super();
-		this.value = value;
-	}
-
-	@Override
-	public boolean equals(final Object obj)
-	{
-		if (obj == null)
-		{
-			return false;
-		}
-		if (getClass() != obj.getClass())
-		{
-			return false;
-		}
-		final ExceptionEvent other = (ExceptionEvent)obj;
-		return Objects.equals(this.value, other.value);
-	}
-
-	/**
-	 * Gets the value.
-	 *
-	 * @return the value
-	 */
-	public Throwable getValue()
-	{
-		return value;
-	}
-
-	/**
-	 * Override hashCode.
-	 *
-	 * @return the Objects hashcode.
-	 */
-	@Override
-	public int hashCode()
-	{
-		int hashCode = 1;
-		hashCode = 31 * hashCode + (value == null ? 0 : value.hashCode());
-		return hashCode;
-	}
-
-	/**
-	 * Sets the value.
-	 *
-	 * @param value
-	 *            the new value
-	 */
-	public void setValue(final Throwable value)
-	{
-		this.value = value;
-	}
 
 }

@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -29,11 +29,19 @@ import java.io.Serializable;
 /**
  * The interface {@link IUser}.
  *
- * @param <U> the generic type
+ * @param <U>
+ *            the generic type
  */
 public interface IUser<U> extends Serializable
 {
-	
+
+	/**
+	 * Gets the application user.
+	 *
+	 * @return the application user
+	 */
+	U getApplicationUser();
+
 	/**
 	 * Gets the id.
 	 *
@@ -49,16 +57,10 @@ public interface IUser<U> extends Serializable
 	String getName();
 
 	/**
-	 * Gets the application user.
-	 *
-	 * @return the application user
-	 */
-	U getApplicationUser();
-
-	/**
 	 * Sets the application user.
 	 *
-	 * @param user the new application user
+	 * @param user
+	 *            the new application user
 	 */
 	void setApplicationUser(final U user);
 }

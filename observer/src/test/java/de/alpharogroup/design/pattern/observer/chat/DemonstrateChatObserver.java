@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -25,13 +25,6 @@
 package de.alpharogroup.design.pattern.observer.chat;
 
 import de.alpharogroup.design.pattern.observer.api.Subject;
-import de.alpharogroup.design.pattern.observer.chat.ChatMessage;
-import de.alpharogroup.design.pattern.observer.chat.ChatRoom;
-import de.alpharogroup.design.pattern.observer.chat.ChatRoomService;
-import de.alpharogroup.design.pattern.observer.chat.ChatRoomUser;
-import de.alpharogroup.design.pattern.observer.chat.MessageRoomModelBean;
-import de.alpharogroup.design.pattern.observer.chat.StringMessage;
-import de.alpharogroup.design.pattern.observer.chat.User;
 
 /**
  * An asynchronous update interface for receiving notifications about DemonstrateChat information as
@@ -74,7 +67,7 @@ public class DemonstrateChatObserver
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public void displayView()
+			public void execute()
 			{
 				final String display = "----------------------------------------------\n"
 					+ alfredUser.getName() + " sees the Message:\n" + getObservable().getValue()
@@ -139,11 +132,13 @@ public class DemonstrateChatObserver
 			antonUser);
 		final ChatRoomUser<ChatMessage> johnFirstFileRoom = new DataChatRoomUser(firstFileRoom,
 			johnUser);
-		messageRoomModel = new MessageRoomModelBean(firstFileRoom.getName(), antonUser, "Foo bar", null);
+		messageRoomModel = new MessageRoomModelBean(firstFileRoom.getName(), antonUser, "Foo bar",
+			null);
 		chatMessage = new ChatMessage().setValue(messageRoomModel);
 		System.out.println("########## New message ##############");
 		antonFirstFileRoom.send(chatMessage);
-		messageRoomModel = new MessageRoomModelBean(firstFileRoom.getName(), johnUser, "Bar foo", null);
+		messageRoomModel = new MessageRoomModelBean(firstFileRoom.getName(), johnUser, "Bar foo",
+			null);
 		chatMessage = new ChatMessage().setValue(messageRoomModel);
 		johnFirstFileRoom.send(chatMessage);
 

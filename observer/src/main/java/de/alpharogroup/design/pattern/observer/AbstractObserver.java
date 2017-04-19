@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -24,7 +24,7 @@
  */
 package de.alpharogroup.design.pattern.observer;
 
-import de.alpharogroup.design.pattern.observer.api.DisplayViewElement;
+import de.alpharogroup.design.pattern.observer.api.ActionCommand;
 import de.alpharogroup.design.pattern.observer.api.Observer;
 import de.alpharogroup.design.pattern.observer.api.Subject;
 
@@ -35,7 +35,7 @@ import de.alpharogroup.design.pattern.observer.api.Subject;
  * @param <T>
  *            the generic type
  */
-public abstract class AbstractObserver<T> implements Observer<T>, DisplayViewElement
+public abstract class AbstractObserver<T> implements Observer<T>, ActionCommand
 {
 
 	/** The subject. */
@@ -74,7 +74,7 @@ public abstract class AbstractObserver<T> implements Observer<T>, DisplayViewEle
 	public synchronized void update(final T observable)
 	{
 		this.observable = observable;
-		displayView();
+		execute();
 	}
 
 }

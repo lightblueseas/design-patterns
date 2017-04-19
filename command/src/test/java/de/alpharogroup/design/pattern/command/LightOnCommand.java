@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -27,7 +27,8 @@ package de.alpharogroup.design.pattern.command;
 import de.alpharogroup.test.objects.Light;
 
 /**
- * The class {@link LightOnCommand}. Concrete Command that extends the abstract class {@link AbstractCommand}.
+ * The class {@link LightOnCommand}. Concrete Command that extends the abstract class
+ * {@link AbstractCommand}.
  */
 //
 public class LightOnCommand extends AbstractCommand<Light>
@@ -36,7 +37,8 @@ public class LightOnCommand extends AbstractCommand<Light>
 	/**
 	 * Instantiates a new light on command.
 	 *
-	 * @param light the light
+	 * @param light
+	 *            the light
 	 */
 	public LightOnCommand(final Light light)
 	{

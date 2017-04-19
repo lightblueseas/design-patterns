@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -32,7 +32,7 @@ public class StringMessage implements Message<String>
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
-	
+
 	/** The value. */
 	private String value;
 
@@ -46,7 +46,8 @@ public class StringMessage implements Message<String>
 	/**
 	 * Instantiates a new string message.
 	 *
-	 * @param value the value
+	 * @param value
+	 *            the value
 	 */
 	public StringMessage(final String value)
 	{

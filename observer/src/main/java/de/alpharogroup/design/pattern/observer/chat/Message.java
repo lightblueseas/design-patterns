@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -29,7 +29,8 @@ import java.io.Serializable;
 /**
  * The interface {@link Message}.
  *
- * @param <T> the generic type
+ * @param <T>
+ *            the generic type
  */
 public interface Message<T> extends Serializable
 {
@@ -44,7 +45,8 @@ public interface Message<T> extends Serializable
 	/**
 	 * Sets the value.
 	 *
-	 * @param value the value
+	 * @param value
+	 *            the value
 	 * @return the message
 	 */
 	public Message<T> setValue(final T value);

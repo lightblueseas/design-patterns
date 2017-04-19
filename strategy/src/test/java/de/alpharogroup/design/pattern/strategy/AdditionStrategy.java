@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -24,7 +24,6 @@
  */
 package de.alpharogroup.design.pattern.strategy;
 
-import de.alpharogroup.design.pattern.strategy.Strategy;
 import de.alpharogroup.test.objects.AlgorithmModel;
 
 /**
@@ -32,7 +31,7 @@ import de.alpharogroup.test.objects.AlgorithmModel;
  */
 public class AdditionStrategy implements Strategy<Integer, AlgorithmModel>
 {
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
