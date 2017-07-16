@@ -40,25 +40,25 @@ public class StateMachineTest
 	@Test
 	public void testStateMachine()
 	{
-		State expected;
-		State actual;
-		StateMachine stateMachine = StateMachine.builder().currentState(WizardStep.FIRST).build();
+		State<StateMachine> expected;
+		State<StateMachine> actual;
+		StateMachine stateMachine = StateMachine.builder().currentState(Step.FIRST).build();
 
-		expected = WizardStep.FIRST;
+		expected = Step.FIRST;
 		stateMachine.previous();
 		actual = stateMachine.getCurrentState();
 		assertEquals(expected, actual);
 
-		expected = WizardStep.FIRST;
+		expected = Step.FIRST;
 		actual = stateMachine.getCurrentState();
 		assertEquals(expected, actual);
 
-		expected = WizardStep.SECOND;
+		expected = Step.SECOND;
 		stateMachine.next();
 		actual = stateMachine.getCurrentState();
 		assertEquals(expected, actual);
 
-		expected = WizardStep.THIRD;
+		expected = Step.THIRD;
 		stateMachine.next();
 		actual = stateMachine.getCurrentState();
 		assertEquals(expected, actual);

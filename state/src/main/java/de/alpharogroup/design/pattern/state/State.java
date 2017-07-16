@@ -26,8 +26,10 @@ package de.alpharogroup.design.pattern.state;
 
 /**
  * The interface {@link State} represents a State.
+ *
+ * @param <ST> the generic type of the state machine
  */
-public interface State
+public interface State<ST>
 {
 
 	/**
@@ -46,7 +48,7 @@ public interface State
 	 * @param input
 	 *            the {@link StateMachine} object
 	 */
-	void goNext(StateMachine input);
+	void goNext(ST input);
 
 	/**
 	 * Go to the previous {@link State} object.
@@ -54,7 +56,7 @@ public interface State
 	 * @param input
 	 *            the {@link StateMachine} object
 	 */
-	void goPrevious(StateMachine input);
+	void goPrevious(ST input);
 
 	/**
 	 * Checks if this {@link State} object has a next {@link State} object.

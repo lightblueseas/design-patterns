@@ -18,9 +18,9 @@ The source code comes under the liberal MIT License, making design-patterns grea
 # Build status and latest maven version
 [![Build Status](https://travis-ci.org/lightblueseas/design-patterns.svg?branch=master)](https://travis-ci.org/lightblueseas/design-patterns)
 
+## Maven Central
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/design-patterns/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/design-patterns)
-
 
 ## Maven dependency
 
@@ -34,7 +34,7 @@ You can first define the version properties:
 	<properties>
 			...
 		<!-- DESIGN-PATTERNS version -->
-		<design-patterns.version>4.9.0</design-patterns.version>
+		<design-patterns.version>4.10.0</design-patterns.version>
 		<builder.version>${design-patterns.version}</builder.version>
 		<command.version>${design-patterns.version}</command.version>
 		<observer.version>${design-patterns.version}</observer.version>
