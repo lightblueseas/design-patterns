@@ -42,28 +42,30 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
-public class StateMachine
+public class StateMachine implements IStateMachine<State<StateMachine>>
 {
 
 	/** The current {@link State} object. */
 	@Builder.Default
-	private State currentState = WizardStep.FIRST;
+	private State<StateMachine> currentState = Step.FIRST;
 
 
 	/**
-	 * Go to the next {@link State} object.
+	 * {@inheritDoc}
 	 */
+	@Override
 	public void next()
 	{
-		currentState.goNext(this);
+		getCurrentState().goNext(this);
 	}
 
 	/**
-	 * Go to the previous {@link State} object.
+	 * {@inheritDoc}
 	 */
+	@Override
 	public void previous()
 	{
-		currentState.goPrevious(this);
+		getCurrentState().goPrevious(this);
 	}
 
 }

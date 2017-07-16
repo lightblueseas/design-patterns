@@ -25,12 +25,12 @@
 package de.alpharogroup.design.pattern.state;
 
 /**
- * The enum {@link WizardStep} represents three wizard steps.
+ * The enum {@link Step} represents three steps.
  */
-public enum WizardStep implements State
+public enum Step implements State<StateMachine>
 {
 
-	/** The first {@link WizardStep} object. */
+	/** The first {@link Step} object. */
 	FIRST {
 
 		@Override
@@ -63,7 +63,7 @@ public enum WizardStep implements State
 		}
 	},
 
-	/** The second {@link WizardStep} object. */
+	/** The second {@link Step} object. */
 	SECOND {
 
 		@Override
@@ -85,7 +85,7 @@ public enum WizardStep implements State
 		}
 	},
 
-	/** The third {@link WizardStep} object. */
+	/** The third {@link Step} object. */
 	THIRD {
 
 		@Override
