@@ -33,7 +33,8 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * The class {@link WizardModel} act as a model for a wizard. This is only for example wizard model.
+ * The class {@link WizardModel} act as a model for a wizard.<br>
+ * This wizard model serves only as an example.<br>
  * You can create a specific wizard model to your requirements.
  */
 @Getter
@@ -45,11 +46,26 @@ import lombok.ToString;
 @Builder(toBuilder = true)
 public class WizardModel
 {
-	boolean validNext;
 
-	boolean validPrevious;
+	/** The flag that signals if next is valid or not. */
+	private boolean validNext;
 
-	boolean validCancel;
+	/** The flag that signals if previous is valid or not. */
+	private boolean validPrevious;
 
-	boolean validFinish;
+	/** The flag that signals if cancel is valid or not. */
+	private boolean validCancel;
+
+	/** The flag that signals if finish is valid or not. */
+	private boolean validFinish;
+
+	/**
+	 * Reset all flags to false.
+	 */
+	public void reset() {
+		validNext = false;
+		validPrevious = false;
+		validCancel = false;
+		validFinish = false;
+	}
 }
