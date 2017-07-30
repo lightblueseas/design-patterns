@@ -60,6 +60,7 @@ public enum WizardModelState implements WizardState<WizardModelStateMachine<Wiza
 			if (stateMachine.getModelObject().isValidNext())
 			{
 				stateMachine.setCurrentState(WizardModelState.SECOND);
+				stateMachine.getModelObject().reset();
 			}
 		}
 
@@ -115,6 +116,7 @@ public enum WizardModelState implements WizardState<WizardModelStateMachine<Wiza
 			if (stateMachine.getModelObject().isValidNext())
 			{
 				stateMachine.setCurrentState(WizardModelState.THIRD);
+				stateMachine.getModelObject().reset();
 			}
 		}
 
@@ -124,6 +126,7 @@ public enum WizardModelState implements WizardState<WizardModelStateMachine<Wiza
 			if (stateMachine.getModelObject().isValidPrevious())
 			{
 				stateMachine.setCurrentState(WizardModelState.FIRST);
+				stateMachine.getModelObject().reset();
 			}
 		}
 
@@ -167,6 +170,7 @@ public enum WizardModelState implements WizardState<WizardModelStateMachine<Wiza
 			if (stateMachine.getModelObject().isValidPrevious())
 			{
 				stateMachine.setCurrentState(SECOND);
+				stateMachine.getModelObject().reset();
 			}
 		}
 

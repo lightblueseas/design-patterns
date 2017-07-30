@@ -68,8 +68,6 @@ public class WizardModelStateMachineTest
 		stateMachine.next();
 		actual = stateMachine.getCurrentState();
 		assertEquals(expected, actual);
-		// reset wizard model
-		stateMachine.getModelObject().reset();
 
 		expected = WizardModelState.SECOND;
 		stateMachine.next();
@@ -82,8 +80,6 @@ public class WizardModelStateMachineTest
 		stateMachine.next();
 		actual = stateMachine.getCurrentState();
 		assertEquals(expected, actual);
-		// reset wizard model
-		stateMachine.getModelObject().reset();
 
 		stateMachine.next();
 		actual = stateMachine.getCurrentState();
