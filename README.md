@@ -133,7 +133,7 @@ The source code for design-patterns are on GitHub. Please feel free to fork and 
 
 Create your own fork of [lightblueseas/design-patterns/fork](https://github.com/lightblueseas/design-patterns/fork)
 
-To share your changes, [submit a pull request](https://github.com/lightblueseas/design-patterns/pull/new/master).
+To share your changes, [submit a pull request](https://github.com/lightblueseas/design-patterns/pull/new/develop).
 
 Don't forget to add new units tests on your changes.
 
