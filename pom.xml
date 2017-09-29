@@ -55,7 +55,7 @@
 	</modules>
 
 	<properties>
-		<file-worker.version>4.15.0</file-worker.version>
+		<file-worker.version>4.16.0</file-worker.version>
 		<test-objects.version>4.16.0</test-objects.version>
 		<auth-security.version>4.20.0</auth-security.version>
 	</properties>
