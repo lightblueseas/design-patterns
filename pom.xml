@@ -56,9 +56,9 @@
 
 	<properties>
 		<!-- FILE-WORKER version -->
-		<file-worker.version>4.16.1</file-worker.version>
+		<file-worker.version>4.17.0</file-worker.version>
 		<!-- TEST-OBJECTS version -->
-		<test-objects.version>4.16.0</test-objects.version>
+		<test-objects.version>4.17.0</test-objects.version>
 		<!-- MYSTIC-CRYPT versions -->
 		<mystic-crypt.version>4.23.1</mystic-crypt.version>
 		<auth-security.version>${mystic-crypt.version}</auth-security.version>
