@@ -30,15 +30,16 @@ import lombok.ToString;
 /**
  * The class {@link StringDecryptor}.
  */
-@EqualsAndHashCode(callSuper=true)
-@ToString(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
 public class StringDecryptor extends AbstractDecryptor
 {
 
 	/**
 	 * Instantiates a new {@link StringDecryptor}.
 	 *
-	 * @param decryptor the decryptor
+	 * @param decryptor
+	 *            the decryptor
 	 */
 	public StringDecryptor(Decryptor decryptor)
 	{

@@ -25,8 +25,8 @@
 package de.alpharogroup.design.pattern.decorator;
 
 /**
- * The functional interface {@link Encryptor} can encrypt an object and
- * return the encrypted result as object.
+ * The functional interface {@link Encryptor} can encrypt an object and return the encrypted result
+ * as object.
  *
  * @author Asterios Raptis
  */

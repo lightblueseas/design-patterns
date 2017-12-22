@@ -42,7 +42,8 @@ public class WizardStateMachineTest
 	{
 		CustomState expected;
 		WizardState<WizardStateMachine> actual;
-		final WizardStateMachine stateMachine = WizardStateMachine.builder().currentState(CustomState.FIRST).build();
+		final WizardStateMachine stateMachine = WizardStateMachine.builder()
+			.currentState(CustomState.FIRST).build();
 
 		expected = CustomState.FIRST;
 		stateMachine.previous();

@@ -44,6 +44,18 @@ public class WizardStateMachine implements IWizardStateMachine<WizardState<Wizar
 {
 	private WizardState<WizardStateMachine> currentState;
 
+	@Override
+	public void cancel()
+	{
+		getCurrentState().cancel(this);
+	}
+
+	@Override
+	public void finish()
+	{
+		getCurrentState().finish(this);
+	}
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -60,16 +72,6 @@ public class WizardStateMachine implements IWizardStateMachine<WizardState<Wizar
 	public void previous()
 	{
 		getCurrentState().goPrevious(this);
-	}
-
-	@Override
-	public void finish() {
-		getCurrentState().finish(this);
-	}
-
-	@Override
-	public void cancel() {
-		getCurrentState().cancel(this);
 	}
 
 }

@@ -45,7 +45,8 @@ public abstract class AbstractDecryptor implements Decryptor
 	/**
 	 * Constructor with the given {@code Decryptor} to decorate.
 	 *
-	 * @param decryptor the decryptor
+	 * @param decryptor
+	 *            the decryptor
 	 */
 	public AbstractDecryptor(Decryptor decryptor)
 	{

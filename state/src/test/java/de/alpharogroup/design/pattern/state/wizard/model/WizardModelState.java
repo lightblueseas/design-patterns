@@ -55,6 +55,12 @@ public enum WizardModelState implements WizardState<WizardModelStateMachine<Wiza
 		}
 
 		@Override
+		public String getName()
+		{
+			return name();
+		}
+
+		@Override
 		public void goNext(final WizardModelStateMachine<WizardModel> stateMachine)
 		{
 			if (stateMachine.getModelObject().isValidNext())
@@ -67,12 +73,6 @@ public enum WizardModelState implements WizardState<WizardModelStateMachine<Wiza
 		@Override
 		public void goPrevious(final WizardModelStateMachine<WizardModel> input)
 		{
-		}
-
-		@Override
-		public String getName()
-		{
-			return name();
 		}
 
 		@Override
@@ -111,6 +111,12 @@ public enum WizardModelState implements WizardState<WizardModelStateMachine<Wiza
 		}
 
 		@Override
+		public String getName()
+		{
+			return name();
+		}
+
+		@Override
 		public void goNext(final WizardModelStateMachine<WizardModel> stateMachine)
 		{
 			if (stateMachine.getModelObject().isValidNext())
@@ -128,12 +134,6 @@ public enum WizardModelState implements WizardState<WizardModelStateMachine<Wiza
 				stateMachine.setCurrentState(WizardModelState.FIRST);
 				stateMachine.getModelObject().reset();
 			}
-		}
-
-		@Override
-		public String getName()
-		{
-			return name();
 		}
 
 	},
@@ -160,6 +160,12 @@ public enum WizardModelState implements WizardState<WizardModelStateMachine<Wiza
 		}
 
 		@Override
+		public String getName()
+		{
+			return name();
+		}
+
+		@Override
 		public void goNext(final WizardModelStateMachine<WizardModel> stateMachine)
 		{
 		}
@@ -172,12 +178,6 @@ public enum WizardModelState implements WizardState<WizardModelStateMachine<Wiza
 				stateMachine.setCurrentState(SECOND);
 				stateMachine.getModelObject().reset();
 			}
-		}
-
-		@Override
-		public String getName()
-		{
-			return name();
 		}
 
 		@Override
@@ -217,6 +217,12 @@ public enum WizardModelState implements WizardState<WizardModelStateMachine<Wiza
 		}
 
 		@Override
+		public String getName()
+		{
+			return name();
+		}
+
+		@Override
 		public void goNext(final WizardModelStateMachine<WizardModel> stateMachine)
 		{
 		}
@@ -224,12 +230,6 @@ public enum WizardModelState implements WizardState<WizardModelStateMachine<Wiza
 		@Override
 		public void goPrevious(final WizardModelStateMachine<WizardModel> stateMachine)
 		{
-		}
-
-		@Override
-		public String getName()
-		{
-			return name();
 		}
 
 	},
@@ -256,6 +256,12 @@ public enum WizardModelState implements WizardState<WizardModelStateMachine<Wiza
 		}
 
 		@Override
+		public String getName()
+		{
+			return name();
+		}
+
+		@Override
 		public void goNext(final WizardModelStateMachine<WizardModel> stateMachine)
 		{
 		}
@@ -263,12 +269,6 @@ public enum WizardModelState implements WizardState<WizardModelStateMachine<Wiza
 		@Override
 		public void goPrevious(final WizardModelStateMachine<WizardModel> stateMachine)
 		{
-		}
-
-		@Override
-		public String getName()
-		{
-			return name();
 		}
 
 	};

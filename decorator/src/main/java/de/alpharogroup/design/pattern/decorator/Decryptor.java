@@ -25,8 +25,8 @@
 package de.alpharogroup.design.pattern.decorator;
 
 /**
- * The functional interface {@link Decryptor} can decrypt an object (that
- * was previously encrypted) and return the decrypted result as object.
+ * The functional interface {@link Decryptor} can decrypt an object (that was previously encrypted)
+ * and return the decrypted result as object.
  *
  * @author Asterios Raptis
  */

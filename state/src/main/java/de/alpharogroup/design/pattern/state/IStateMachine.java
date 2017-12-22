@@ -35,6 +35,13 @@ public interface IStateMachine<S>
 {
 
 	/**
+	 * Gets the current state.
+	 *
+	 * @return the current state
+	 */
+	S getCurrentState();
+
+	/**
 	 * Go to the next {@link State} object.
 	 */
 	void next();
@@ -43,13 +50,6 @@ public interface IStateMachine<S>
 	 * Go to the previous {@link State} object.
 	 */
 	void previous();
-
-	/**
-	 * Gets the current state.
-	 *
-	 * @return the current state
-	 */
-	S getCurrentState();
 
 	/**
 	 * Sets the current state.

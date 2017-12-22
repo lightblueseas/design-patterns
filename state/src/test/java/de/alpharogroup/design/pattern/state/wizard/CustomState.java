@@ -25,7 +25,8 @@
 package de.alpharogroup.design.pattern.state.wizard;
 
 /**
- * The enum {@link CustomState} represents three wizard states and the cancel with the finish states.
+ * The enum {@link CustomState} represents three wizard states and the cancel with the finish
+ * states.
  */
 public enum CustomState implements WizardState<WizardStateMachine>
 {
@@ -46,6 +47,12 @@ public enum CustomState implements WizardState<WizardStateMachine>
 		}
 
 		@Override
+		public String getName()
+		{
+			return name();
+		}
+
+		@Override
 		public void goNext(final WizardStateMachine stateMachine)
 		{
 			stateMachine.setCurrentState(CustomState.SECOND);
@@ -54,12 +61,6 @@ public enum CustomState implements WizardState<WizardStateMachine>
 		@Override
 		public void goPrevious(final WizardStateMachine input)
 		{
-		}
-
-		@Override
-		public String getName()
-		{
-			return name();
 		}
 
 		@Override
@@ -92,6 +93,12 @@ public enum CustomState implements WizardState<WizardStateMachine>
 		}
 
 		@Override
+		public String getName()
+		{
+			return name();
+		}
+
+		@Override
 		public void goNext(final WizardStateMachine stateMachine)
 		{
 			stateMachine.setCurrentState(CustomState.THIRD);
@@ -101,12 +108,6 @@ public enum CustomState implements WizardState<WizardStateMachine>
 		public void goPrevious(final WizardStateMachine stateMachine)
 		{
 			stateMachine.setCurrentState(CustomState.FIRST);
-		}
-
-		@Override
-		public String getName()
-		{
-			return name();
 		}
 
 	},
@@ -127,6 +128,12 @@ public enum CustomState implements WizardState<WizardStateMachine>
 		}
 
 		@Override
+		public String getName()
+		{
+			return name();
+		}
+
+		@Override
 		public void goNext(final WizardStateMachine stateMachine)
 		{
 		}
@@ -135,12 +142,6 @@ public enum CustomState implements WizardState<WizardStateMachine>
 		public void goPrevious(final WizardStateMachine stateMachine)
 		{
 			stateMachine.setCurrentState(SECOND);
-		}
-
-		@Override
-		public String getName()
-		{
-			return name();
 		}
 
 		@Override
@@ -174,6 +175,12 @@ public enum CustomState implements WizardState<WizardStateMachine>
 		}
 
 		@Override
+		public String getName()
+		{
+			return name();
+		}
+
+		@Override
 		public void goNext(final WizardStateMachine stateMachine)
 		{
 		}
@@ -181,12 +188,6 @@ public enum CustomState implements WizardState<WizardStateMachine>
 		@Override
 		public void goPrevious(final WizardStateMachine stateMachine)
 		{
-		}
-
-		@Override
-		public String getName()
-		{
-			return name();
 		}
 
 	},
@@ -207,6 +208,12 @@ public enum CustomState implements WizardState<WizardStateMachine>
 		}
 
 		@Override
+		public String getName()
+		{
+			return name();
+		}
+
+		@Override
 		public void goNext(final WizardStateMachine stateMachine)
 		{
 		}
@@ -214,12 +221,6 @@ public enum CustomState implements WizardState<WizardStateMachine>
 		@Override
 		public void goPrevious(final WizardStateMachine stateMachine)
 		{
-		}
-
-		@Override
-		public String getName()
-		{
-			return name();
 		}
 
 	};

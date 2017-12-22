@@ -62,7 +62,8 @@ public class WizardModel
 	/**
 	 * Reset all flags to false.
 	 */
-	public void reset() {
+	public void reset()
+	{
 		validNext = false;
 		validPrevious = false;
 		validCancel = false;

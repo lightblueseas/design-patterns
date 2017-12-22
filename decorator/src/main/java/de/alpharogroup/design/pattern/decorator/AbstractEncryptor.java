@@ -45,7 +45,8 @@ public abstract class AbstractEncryptor implements Encryptor
 	/**
 	 * Constructor with the given {@code Encryptor} to decorate.
 	 *
-	 * @param encryptor the encryptor
+	 * @param encryptor
+	 *            the encryptor
 	 */
 	public AbstractEncryptor(Encryptor encryptor)
 	{

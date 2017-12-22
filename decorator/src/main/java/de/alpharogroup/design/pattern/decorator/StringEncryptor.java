@@ -30,15 +30,16 @@ import lombok.ToString;
 /**
  * The class {@link StringEncryptor}.
  */
-@EqualsAndHashCode(callSuper=true)
-@ToString(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
 public class StringEncryptor extends AbstractEncryptor
 {
 
 	/**
 	 * Instantiates a new {@link StringEncryptor}.
 	 *
-	 * @param encryptor the encryptor
+	 * @param encryptor
+	 *            the encryptor
 	 */
 	public StringEncryptor(Encryptor encryptor)
 	{

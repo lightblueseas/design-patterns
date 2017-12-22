@@ -42,11 +42,25 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
-public class WizardModelStateMachine<T> implements IWizardStateMachine<WizardState<WizardModelStateMachine<T>>>
+public class WizardModelStateMachine<T>
+	implements
+		IWizardStateMachine<WizardState<WizardModelStateMachine<T>>>
 {
 	private WizardState<WizardModelStateMachine<T>> currentState;
 
 	private T modelObject;
+
+	@Override
+	public void cancel()
+	{
+		getCurrentState().cancel(this);
+	}
+
+	@Override
+	public void finish()
+	{
+		getCurrentState().finish(this);
+	}
 
 	/**
 	 * {@inheritDoc}
@@ -64,16 +78,6 @@ public class WizardModelStateMachine<T> implements IWizardStateMachine<WizardSta
 	public void previous()
 	{
 		getCurrentState().goPrevious(this);
-	}
-
-	@Override
-	public void finish() {
-		getCurrentState().finish(this);
-	}
-
-	@Override
-	public void cancel() {
-		getCurrentState().cancel(this);
 	}
 
 }
