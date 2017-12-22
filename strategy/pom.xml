@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>design-patterns</artifactId>
-		<version>4.12.0-SNAPSHOT</version>
+		<version>4.12.0</version>
 	</parent>
 
 	<artifactId>strategy</artifactId>
