@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -5,12 +6,12 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>2.27.0</version>
+		<version>3.3.0</version>
 		<relativePath></relativePath>
 	</parent>
 
 	<artifactId>design-patterns</artifactId>
-	<version>4.10.0</version>
+	<version>4.12.0</version>
 	<packaging>pom</packaging>
 
 	<name>${project.artifactId}</name>
@@ -19,31 +20,17 @@
 		Project that holds a view examples of the famous design patterns in java
 	</description>
 	
-	<licenses>
-		<license>
-			<name>MIT License</name>
-			<url>http://www.opensource.org/licenses/mit-license.php</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
-
 	<url>https://github.com/lightblueseas/design-patterns</url>
 
-	<scm>
-		<connection>scm:git:git:@github.com:lightblueseas/design-patterns.git</connection>
-		<developerConnection>scm:git:git@github.com:lightblueseas/design-patterns.git</developerConnection>
-		<url>git:@github.com:lightblueseas/design-patterns.git</url>
-	</scm>
-
-	<ciManagement>
-		<system>travis-ci</system>
-		<url>https://travis-ci.org/lightblueseas/design-patterns</url>
-	</ciManagement>
-
-	<issueManagement>
-		<system>github</system>
-		<url>https://github.com/lightblueseas/design-patterns/issues</url>
-	</issueManagement>
+	<properties>
+		<!-- FILE-WORKER version -->
+		<file-worker.version>4.18.0</file-worker.version>
+		<!-- TEST-OBJECTS version -->
+		<test-objects.version>4.18.0</test-objects.version>
+		<!-- MYSTIC-CRYPT versions -->
+		<mystic-crypt.version>4.24.0</mystic-crypt.version>
+		<auth-security.version>${mystic-crypt.version}</auth-security.version>
+	</properties>
 
 	<modules>
 		<module>builder</module>
@@ -52,13 +39,32 @@
 		<module>strategy</module>
 		<module>visitor</module>
 		<module>state</module>
+		<module>decorator</module>
 	</modules>
 
-	<properties>
-		<file-worker.version>4.15.0</file-worker.version>
-		<test-objects.version>4.16.0</test-objects.version>
-		<auth-security.version>4.20.0</auth-security.version>
-	</properties>
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:git:@github.com:lightblueseas/design-patterns.git</connection>
+		<developerConnection>scm:git:git@github.com:lightblueseas/design-patterns.git</developerConnection>
+		<url>git:@github.com:lightblueseas/design-patterns.git</url>
+	</scm>
+
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/lightblueseas/design-patterns/issues</url>
+	</issueManagement>
+
+	<ciManagement>
+		<system>travis-ci</system>
+		<url>https://travis-ci.org/lightblueseas/design-patterns</url>
+	</ciManagement>
 
 	<dependencyManagement>
 

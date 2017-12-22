@@ -34,7 +34,7 @@ You can first define the version properties:
 	<properties>
 			...
 		<!-- DESIGN-PATTERNS version -->
-		<design-patterns.version>4.10.0</design-patterns.version>
+		<design-patterns.version>4.12.0</design-patterns.version>
 		<builder.version>${design-patterns.version}</builder.version>
 		<command.version>${design-patterns.version}</command.version>
 		<observer.version>${design-patterns.version}</observer.version>
@@ -133,7 +133,7 @@ The source code for design-patterns are on GitHub. Please feel free to fork and 
 
 Create your own fork of [lightblueseas/design-patterns/fork](https://github.com/lightblueseas/design-patterns/fork)
 
-To share your changes, [submit a pull request](https://github.com/lightblueseas/design-patterns/pull/new/master).
+To share your changes, [submit a pull request](https://github.com/lightblueseas/design-patterns/pull/new/develop).
 
 Don't forget to add new units tests on your changes.
 
@@ -146,10 +146,21 @@ Do not hesitate to contact the design-patterns developers with your questions, c
 
 No animals were harmed in the making of this library.
 
-# Donate
+# Donations
 
-If you like this library, please consider a donation through 
-<a href="https://flattr.com/submit/auto?fid=r7vp62&url=https%3A%2F%2Fgithub.com%2Flightblueseas%2Fdesign-patterns" target="_blank"><img src="//button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
+If you like this library, please consider a donation through paypal: <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B37J9DZF6G9ZC" target="_blank">
+<img src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" alt="PayPal this" title="PayPal – The safer, easier way to pay online!" border="0" />
+</a>
+
+or over bitcoin or bitcoin-cash with:
+
+1Jzso5h7U82QCNmgxxSCya1yUK7UVcSXsW
+
+or over ether with:
+
+0xaB6EaE10F352268B0CA672Dd6e999C86344D49D8
+
+or over flattr: <a href="https://flattr.com/submit/auto?fid=r7vp62&url=https%3A%2F%2Fgithub.com%2Flightblueseas%2Fdesign-patterns" target="_blank"><img src="//button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
 
 # Similar projects
 

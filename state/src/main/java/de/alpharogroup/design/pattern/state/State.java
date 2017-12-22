@@ -27,7 +27,8 @@ package de.alpharogroup.design.pattern.state;
 /**
  * The interface {@link State} represents a State.
  *
- * @param <ST> the generic type of the state machine
+ * @param <ST>
+ *            the generic type of the state machine
  */
 public interface State<ST>
 {

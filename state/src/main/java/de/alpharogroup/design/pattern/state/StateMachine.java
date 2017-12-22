@@ -46,8 +46,7 @@ public class StateMachine implements IStateMachine<State<StateMachine>>
 {
 
 	/** The current {@link State} object. */
-	@Builder.Default
-	private State<StateMachine> currentState = Step.FIRST;
+	private State<StateMachine> currentState;
 
 
 	/**
