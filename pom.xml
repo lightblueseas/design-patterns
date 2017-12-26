@@ -26,7 +26,7 @@
 		<!-- FILE-WORKER version -->
 		<file-worker.version>4.18.0</file-worker.version>
 		<!-- TEST-OBJECTS version -->
-		<test-objects.version>4.18.0</test-objects.version>
+		<test-objects.version>4.19.0</test-objects.version>
 		<!-- MYSTIC-CRYPT versions -->
 		<mystic-crypt.version>4.24.0</mystic-crypt.version>
 		<auth-security.version>${mystic-crypt.version}</auth-security.version>
