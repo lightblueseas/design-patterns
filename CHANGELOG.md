@@ -10,10 +10,10 @@ ADDED:
 
 CHANGED:
 
-- update of parent version to 3.11
+- update of parent version to 4
 - removed unneeded .0 at the end of version
-- update of file-worker version to 4.20
-- update of test-objects version to 4.24.0
+- update of file-worker version to 4.22
+- update of test-objects version to 4.28
 - update of mystic-crypt version to 5.1.0
 
 Notable links:
