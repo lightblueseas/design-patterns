@@ -6,12 +6,12 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>4.1</version>
+		<version>4.5</version>
 		<relativePath></relativePath>
 	</parent>
 
 	<artifactId>design-patterns</artifactId>
-	<version>4.14-SNAPSHOT</version>
+	<version>4.14</version>
 	<packaging>pom</packaging>
 
 	<name>${project.artifactId}</name>
@@ -24,11 +24,11 @@
 
 	<properties>
 		<!-- FILE-WORKER version -->
-		<file-worker.version>4.23</file-worker.version>
+		<file-worker.version>5.0.1</file-worker.version>
 		<!-- TEST-OBJECTS version -->
-		<test-objects.version>4.28</test-objects.version>
+		<test-objects.version>5</test-objects.version>
 		<!-- AUTH versions -->
-		<auth.version>5.2</auth.version>
+		<auth.version>5.2.1</auth.version>
 		<auth-security.version>${auth.version}</auth-security.version>
 	</properties>
 

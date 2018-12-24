@@ -1,7 +1,7 @@
 ## Change log
 ----------------------
 
-Version 4.14-SNAPSHOT
+Version 4.14
 -------------
 
 ADDED:
@@ -10,11 +10,11 @@ ADDED:
 
 CHANGED:
 
-- update of parent version to 4
+- update of parent version to 4.5
 - removed unneeded .0 at the end of version
-- update of file-worker version to 4.23
-- update of test-objects version to 4.28
-- update of auth version to 5.2
+- update of file-worker version to 5.0.1
+- update of test-objects version to 5
+- update of auth version to 5.2.1
 
 Notable links:
 [keep a changelog](http://keepachangelog.com/en/1.0.0/) Don’t let your friends dump git logs into changelogs
