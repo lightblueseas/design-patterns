@@ -1,6 +1,18 @@
 ## Change log
 ----------------------
 
+Version 4.15
+-------------
+
+ADDED:
+
+- gradle as build system
+
+CHANGED:
+
+- changed to new package io.github.astrapi69
+- update of lombok version to 1.18.20
+
 Version 4.14
 -------------
 

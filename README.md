@@ -16,16 +16,16 @@ Here a some design patterns that this library holds:
 The source code comes under the liberal MIT License, making design-patterns great for all types of applications.
 
 # Build status and latest maven version
-[![Build Status](https://travis-ci.org/lightblueseas/design-patterns.svg?branch=master)](https://travis-ci.org/lightblueseas/design-patterns)
+[![Build Status](https://api.travis-ci.com/lightblueseas/design-patterns.svg?branch=master)](https://travis-ci.com/github/lightblueseas/design-patterns)
 
 ## Maven Central
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/design-patterns/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/design-patterns)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/design-patterns/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/design-patterns)
 
 ## Maven dependency
 
 Maven dependency is now on sonatype.
-Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~de.alpharogroup~design-patterns~~~) for latest snapshots and releases.
+Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~design-patterns~~~) for latest snapshots and releases.
 
 Add the following maven dependencies to your project `pom.xml` if you want to import the core functionality:
 
@@ -34,7 +34,7 @@ You can first define the version properties:
 	<properties>
 			...
 		<!-- DESIGN-PATTERNS version -->
-		<design-patterns.version>4.14</design-patterns.version>
+		<design-patterns.version>4.15</design-patterns.version>
 		<builder.version>${design-patterns.version}</builder.version>
 		<command.version>${design-patterns.version}</command.version>
 		<observer.version>${design-patterns.version}</observer.version>
@@ -50,7 +50,7 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 		<dependencies>
 			...
 			<dependency>
-				<groupId>de.alpharogroup</groupId>
+				<groupId>io.github.astrapi69</groupId>
 				<artifactId>builder</artifactId>
 				<version>${builder.version}</version>
 			</dependency>
@@ -64,7 +64,7 @@ Than you can add the dependency to your dependencies:
 		<dependencies>
 			...
 			<dependency>
-				<groupId>de.alpharogroup</groupId>
+				<groupId>io.github.astrapi69</groupId>
 				<artifactId>command</artifactId>
 				<version>${command.version}</version>
 			</dependency>
@@ -78,7 +78,7 @@ Than you can add the dependency to your dependencies:
 		<dependencies>
 			...
 			<dependency>
-				<groupId>de.alpharogroup</groupId>
+				<groupId>io.github.astrapi69</groupId>
 				<artifactId>observer</artifactId>
 				<version>${observer.version}</version>
 			</dependency>
@@ -92,7 +92,7 @@ Than you can add the dependency to your dependencies:
 		<dependencies>
 			...
 			<dependency>
-				<groupId>de.alpharogroup</groupId>
+				<groupId>io.github.astrapi69</groupId>
 				<artifactId>state</artifactId>
 				<version>${state.version}</version>
 			</dependency>
@@ -106,7 +106,7 @@ Than you can add the dependency to your dependencies:
 		<dependencies>
 			...
 			<dependency>
-				<groupId>de.alpharogroup</groupId>
+				<groupId>io.github.astrapi69</groupId>
 				<artifactId>strategy</artifactId>
 				<version>${strategy.version}</version>
 			</dependency>
@@ -120,7 +120,7 @@ Than you can add the dependency to your dependencies:
 		<dependencies>
 			...
 			<dependency>
-				<groupId>de.alpharogroup</groupId>
+				<groupId>io.github.astrapi69</groupId>
 				<artifactId>visitor</artifactId>
 				<version>${visitor.version}</version>
 			</dependency>
