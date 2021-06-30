@@ -34,7 +34,7 @@ You can first define the version properties:
 	<properties>
 			...
 		<!-- DESIGN-PATTERNS version -->
-		<design-patterns.version>4.14</design-patterns.version>
+		<design-patterns.version>4.15</design-patterns.version>
 		<builder.version>${design-patterns.version}</builder.version>
 		<command.version>${design-patterns.version}</command.version>
 		<observer.version>${design-patterns.version}</observer.version>
