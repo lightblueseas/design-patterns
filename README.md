@@ -16,7 +16,7 @@ Here a some design patterns that this library holds:
 The source code comes under the liberal MIT License, making design-patterns great for all types of applications.
 
 # Build status and latest maven version
-[![Build Status](https://travis-ci.org/lightblueseas/design-patterns.svg?branch=master)](https://travis-ci.org/lightblueseas/design-patterns)
+[![Build Status](https://api.travis-ci.com/lightblueseas/design-patterns.svg?branch=master)](https://travis-ci.com/github/lightblueseas/design-patterns)
 
 ## Maven Central
 
