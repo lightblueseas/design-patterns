@@ -4,6 +4,12 @@
 Version 4.15-SNAPSHOT
 -------------
 
+CHANGED:
+
+- changed to new package io.github.astrapi69
+- update gradle to new version 6.9
+- update of lombok version to 1.18.20
+
 Version 4.14
 -------------
 

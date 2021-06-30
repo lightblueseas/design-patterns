@@ -20,12 +20,12 @@ The source code comes under the liberal MIT License, making design-patterns grea
 
 ## Maven Central
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/design-patterns/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/design-patterns)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/design-patterns/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/design-patterns)
 
 ## Maven dependency
 
 Maven dependency is now on sonatype.
-Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~de.alpharogroup~design-patterns~~~) for latest snapshots and releases.
+Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~design-patterns~~~) for latest snapshots and releases.
 
 Add the following maven dependencies to your project `pom.xml` if you want to import the core functionality:
 
@@ -50,7 +50,7 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 		<dependencies>
 			...
 			<dependency>
-				<groupId>de.alpharogroup</groupId>
+				<groupId>io.github.astrapi69</groupId>
 				<artifactId>builder</artifactId>
 				<version>${builder.version}</version>
 			</dependency>
@@ -64,7 +64,7 @@ Than you can add the dependency to your dependencies:
 		<dependencies>
 			...
 			<dependency>
-				<groupId>de.alpharogroup</groupId>
+				<groupId>io.github.astrapi69</groupId>
 				<artifactId>command</artifactId>
 				<version>${command.version}</version>
 			</dependency>
@@ -78,7 +78,7 @@ Than you can add the dependency to your dependencies:
 		<dependencies>
 			...
 			<dependency>
-				<groupId>de.alpharogroup</groupId>
+				<groupId>io.github.astrapi69</groupId>
 				<artifactId>observer</artifactId>
 				<version>${observer.version}</version>
 			</dependency>
@@ -92,7 +92,7 @@ Than you can add the dependency to your dependencies:
 		<dependencies>
 			...
 			<dependency>
-				<groupId>de.alpharogroup</groupId>
+				<groupId>io.github.astrapi69</groupId>
 				<artifactId>state</artifactId>
 				<version>${state.version}</version>
 			</dependency>
@@ -106,7 +106,7 @@ Than you can add the dependency to your dependencies:
 		<dependencies>
 			...
 			<dependency>
-				<groupId>de.alpharogroup</groupId>
+				<groupId>io.github.astrapi69</groupId>
 				<artifactId>strategy</artifactId>
 				<version>${strategy.version}</version>
 			</dependency>
@@ -120,7 +120,7 @@ Than you can add the dependency to your dependencies:
 		<dependencies>
 			...
 			<dependency>
-				<groupId>de.alpharogroup</groupId>
+				<groupId>io.github.astrapi69</groupId>
 				<artifactId>visitor</artifactId>
 				<version>${visitor.version}</version>
 			</dependency>
