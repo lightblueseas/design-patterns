@@ -1,8 +1,6 @@
 package io.github.astrapi69.design.pattern.state.button;
 
-import io.github.astrapi69.design.pattern.state.wizard.WizardStateMachine;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,12 +20,13 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-public abstract class ButtonStateMachine<T , ST> implements ButtonState<ST>
+public abstract class ButtonStateMachine<T, ST> implements ButtonState<ST>
 {
 	ButtonState<ST> current;
 	@NonNull
 	T button;
 
 	protected abstract void updateButtonState();
+
 	protected abstract void setEnabled(boolean b);
 }
