@@ -24,28 +24,79 @@
  */
 package io.github.astrapi69.design.pattern.state.wizard;
 
-import io.github.astrapi69.design.pattern.state.State;
-
 /**
- * The interface {@link WizardState} represents a wizard state.
+ * The interface {@link WizardState} represents a WizardState.
+ *
+ * @param <ST>
+ *            the generic type of the state machine
  */
-public interface WizardState<ST> extends State<ST>
+public interface WizardState<ST>
 {
 
 	/**
-	 * Cancel the {@link WizardState}.
+	 * Gets the simple name of this {@link WizardState} object.
 	 *
-	 * @param input
-	 *            the {@link WizardStateMachine} object
+	 * @return the simple name of this {@link WizardState} object.
 	 */
-	void cancel(ST input);
+	default String getName()
+	{
+		return this.getClass().getSimpleName();
+	}
 
 	/**
-	 * Finish the {@link WizardState}.
+	 * Go to the next {@link WizardState} object.
 	 *
 	 * @param input
 	 *            the {@link WizardStateMachine} object
 	 */
-	void finish(ST input);
+	void goNext(ST input);
 
+	/**
+	 * Go to the previous {@link WizardState} object.
+	 *
+	 * @param input
+	 *            the {@link WizardStateMachine} object
+	 */
+	void goPrevious(ST input);
+
+	/**
+	 * Checks if this {@link WizardState} object has a next {@link WizardState} object.
+	 *
+	 * @return true, if this {@link WizardState} object has a next {@link WizardState} object otherwise false.
+	 */
+	default boolean hasNext()
+	{
+		return true;
+	}
+
+	/**
+	 * Checks if this {@link WizardState} object has a previous {@link WizardState} object.
+	 *
+	 * @return true, if this {@link WizardState} object has a previous {@link WizardState} object otherwise
+	 *         false.
+	 */
+	default boolean hasPrevious()
+	{
+		return true;
+	}
+
+	/**
+	 * Checks if this {@link WizardState} object is the first {@link WizardState} object.
+	 *
+	 * @return true, if this {@link WizardState} object is the first {@link WizardState} object otherwise false.
+	 */
+	default boolean isFirst()
+	{
+		return false;
+	}
+
+	/**
+	 * Checks if this {@link WizardState} object is the last {@link WizardState} object.
+	 *
+	 * @return true, if this {@link WizardState} object is the last {@link WizardState} object otherwise false.
+	 */
+	default boolean isLast()
+	{
+		return false;
+	}
 }

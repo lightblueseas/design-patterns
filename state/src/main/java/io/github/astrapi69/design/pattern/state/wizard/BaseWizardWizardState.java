@@ -22,21 +22,18 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.design.pattern.state;
+package io.github.astrapi69.design.pattern.state.wizard;
 
 /**
- * The interface {@link State} represents a State.
- *
- * @param <ST>
- *            the generic type of the state machine
+ * The interface {@link BaseWizardWizardState} represents a wizard state.
  */
-public interface State<ST>
+public interface BaseWizardWizardState<ST> extends WizardState<ST>
 {
 
 	/**
-	 * Gets the simple name of this {@link State} object.
+	 * Gets the simple name of this {@link WizardState} object.
 	 *
-	 * @return the simple name of this {@link State} object.
+	 * @return the simple name of this {@link WizardState} object.
 	 */
 	default String getName()
 	{
@@ -44,25 +41,25 @@ public interface State<ST>
 	}
 
 	/**
-	 * Go to the next {@link State} object.
+	 * Go to the next {@link WizardState} object.
 	 *
 	 * @param input
-	 *            the {@link StateMachine} object
+	 *            the {@link WizardStateMachine} object
 	 */
 	void goNext(ST input);
 
 	/**
-	 * Go to the previous {@link State} object.
+	 * Go to the previous {@link WizardState} object.
 	 *
 	 * @param input
-	 *            the {@link StateMachine} object
+	 *            the {@link WizardStateMachine} object
 	 */
 	void goPrevious(ST input);
 
 	/**
-	 * Checks if this {@link State} object has a next {@link State} object.
+	 * Checks if this {@link WizardState} object has a next {@link WizardState} object.
 	 *
-	 * @return true, if this {@link State} object has a next {@link State} object otherwise false.
+	 * @return true, if this {@link WizardState} object has a next {@link WizardState} object otherwise false.
 	 */
 	default boolean hasNext()
 	{
@@ -70,9 +67,9 @@ public interface State<ST>
 	}
 
 	/**
-	 * Checks if this {@link State} object has a previous {@link State} object.
+	 * Checks if this {@link WizardState} object has a previous {@link WizardState} object.
 	 *
-	 * @return true, if this {@link State} object has a previous {@link State} object otherwise
+	 * @return true, if this {@link WizardState} object has a previous {@link WizardState} object otherwise
 	 *         false.
 	 */
 	default boolean hasPrevious()
@@ -81,9 +78,9 @@ public interface State<ST>
 	}
 
 	/**
-	 * Checks if this {@link State} object is the first {@link State} object.
+	 * Checks if this {@link WizardState} object is the first {@link WizardState} object.
 	 *
-	 * @return true, if this {@link State} object is the first {@link State} object otherwise false.
+	 * @return true, if this {@link WizardState} object is the first {@link WizardState} object otherwise false.
 	 */
 	default boolean isFirst()
 	{
@@ -91,12 +88,29 @@ public interface State<ST>
 	}
 
 	/**
-	 * Checks if this {@link State} object is the last {@link State} object.
+	 * Checks if this {@link WizardState} object is the last {@link WizardState} object.
 	 *
-	 * @return true, if this {@link State} object is the last {@link State} object otherwise false.
+	 * @return true, if this {@link WizardState} object is the last {@link WizardState} object otherwise false.
 	 */
 	default boolean isLast()
 	{
 		return false;
 	}
+
+	/**
+	 * Cancel the {@link BaseWizardWizardState}.
+	 *
+	 * @param input
+	 *            the {@link BaseWizardWizardStateMachine} object
+	 */
+	void cancel(ST input);
+
+	/**
+	 * Finish the {@link BaseWizardWizardState}.
+	 *
+	 * @param input
+	 *            the {@link BaseWizardWizardStateMachine} object
+	 */
+	void finish(ST input);
+
 }

@@ -22,51 +22,61 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.design.pattern.state;
+package io.github.astrapi69.design.pattern.state.wizard.model;
 
-import static org.testng.AssertJUnit.assertEquals;
 
-import org.testng.annotations.Test;
+import io.github.astrapi69.design.pattern.state.wizard.BaseWizardWizardState;
+import io.github.astrapi69.design.pattern.state.wizard.IBaseWizardWizardStateMachine;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
-/**
- * Test class for class {@link StateMachine}.
- */
-public class StateMachineTest
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder(toBuilder = true)
+public class BaseWizardModelWizardStateMachine<T>
+	implements IBaseWizardWizardStateMachine<BaseWizardWizardState<BaseWizardModelWizardStateMachine<T>>>
 {
+	private BaseWizardWizardState<BaseWizardModelWizardStateMachine<T>> currentState;
+
+	private T modelObject;
+
+	@Override
+	public void cancel()
+	{
+		getCurrentState().cancel(this);
+	}
+
+	@Override
+	public void finish()
+	{
+		getCurrentState().finish(this);
+	}
 
 	/**
-	 * Test method for the methods previous and next of the {@link StateMachine}.
+	 * {@inheritDoc}
 	 */
-	@Test
-	public void testStateMachine()
+	@Override
+	public void next()
 	{
-		State<StateMachine> expected;
-		State<StateMachine> actual;
-		StateMachine stateMachine = StateMachine.builder().currentState(Step.FIRST).build();
+		getCurrentState().goNext(this);
+	}
 
-		expected = Step.FIRST;
-		stateMachine.previous();
-		actual = stateMachine.getCurrentState();
-		assertEquals(expected, actual);
-
-		expected = Step.FIRST;
-		actual = stateMachine.getCurrentState();
-		assertEquals(expected, actual);
-
-		expected = Step.SECOND;
-		stateMachine.next();
-		actual = stateMachine.getCurrentState();
-		assertEquals(expected, actual);
-
-		expected = Step.THIRD;
-		stateMachine.next();
-		actual = stateMachine.getCurrentState();
-		assertEquals(expected, actual);
-
-		stateMachine.next();
-		actual = stateMachine.getCurrentState();
-		assertEquals(expected, actual);
-
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void previous()
+	{
+		getCurrentState().goPrevious(this);
 	}
 
 }

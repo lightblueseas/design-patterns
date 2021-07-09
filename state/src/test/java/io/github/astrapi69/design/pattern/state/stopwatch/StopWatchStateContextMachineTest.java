@@ -22,62 +22,25 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.design.pattern.state.wizard.model;
+package io.github.astrapi69.design.pattern.state.stopwatch;
 
+import org.testng.annotations.Test;
 
-import io.github.astrapi69.design.pattern.state.wizard.IWizardStateMachine;
-import io.github.astrapi69.design.pattern.state.wizard.WizardState;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
-public class WizardModelStateMachine<T>
-	implements
-		IWizardStateMachine<WizardState<WizardModelStateMachine<T>>>
+public class StopWatchStateContextMachineTest
 {
-	private WizardState<WizardModelStateMachine<T>> currentState;
 
-	private T modelObject;
-
-	@Override
-	public void cancel()
-	{
-		getCurrentState().cancel(this);
-	}
-
-	@Override
-	public void finish()
-	{
-		getCurrentState().finish(this);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void next()
-	{
-		getCurrentState().goNext(this);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void previous()
-	{
-		getCurrentState().goPrevious(this);
+	@Test
+	public void testStart() throws InterruptedException {
+		final StopWatchStateContextMachine context = new StopWatchStateContextMachine();
+		context.start();
+		Thread.sleep(1000);
+		context.pause();
+		Thread.sleep(2000);
+		context.start();
+		Thread.sleep(3000);
+		context.stop();
+		context.reset();
+		context.start();
 	}
 
 }

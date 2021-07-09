@@ -22,7 +22,7 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.design.pattern.state.test;
+package io.github.astrapi69.design.pattern.state.stopwatch;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -33,7 +33,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * The class StateContext.
+ * The class StopWatchStateContextMachine.
  */
 @Getter
 @Setter
@@ -42,7 +42,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class StateContext
+public class StopWatchStateContextMachine
 {
 
 	/** The stop watch. */
@@ -51,7 +51,7 @@ public class StateContext
 
 	/** The current. */
 	@Builder.Default
-	private State current = State.READY;
+	private StopWatchState current = StopWatchState.READY;
 
 
 	/**

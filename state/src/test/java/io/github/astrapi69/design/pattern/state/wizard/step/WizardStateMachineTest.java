@@ -22,7 +22,7 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.design.pattern.state.wizard;
+package io.github.astrapi69.design.pattern.state.wizard.step;
 
 import static org.testng.AssertJUnit.assertEquals;
 
@@ -30,54 +30,44 @@ import io.github.astrapi69.design.pattern.state.wizard.WizardState;
 import io.github.astrapi69.design.pattern.state.wizard.WizardStateMachine;
 import org.testng.annotations.Test;
 
-import io.github.astrapi69.design.pattern.state.StateMachine;
-
+/**
+ * Test class for class {@link WizardStateMachine}.
+ */
 public class WizardStateMachineTest
 {
 
-
 	/**
-	 * Test method for the methods previous and next of the {@link StateMachine}.
+	 * Test method for the methods previous and next of the {@link WizardStateMachine}.
 	 */
 	@Test
-	public void testWizardStateMachine()
+	public void testStateMachine()
 	{
-		CustomState expected;
+		WizardState<WizardStateMachine> expected;
 		WizardState<WizardStateMachine> actual;
-		final WizardStateMachine stateMachine = WizardStateMachine.builder()
-			.currentState(CustomState.FIRST).build();
-
-		expected = CustomState.FIRST;
-		stateMachine.previous();
-		actual = stateMachine.getCurrentState();
+		WizardStateMachine wizardStateMachine = WizardStateMachine.builder().currentState(
+			WizardStep.FIRST).build();
+		// test case that no operation the current state is WizardStep.FIRST
+		expected = WizardStep.FIRST;
+		actual = wizardStateMachine.getCurrentState();
 		assertEquals(expected, actual);
-
-		expected = CustomState.FIRST;
-		actual = stateMachine.getCurrentState();
+		// test case that previous operation the current state is still WizardStep.FIRST
+		expected = WizardStep.FIRST;
+		wizardStateMachine.previous();
+		actual = wizardStateMachine.getCurrentState();
 		assertEquals(expected, actual);
-
-		expected = CustomState.SECOND;
-		stateMachine.next();
-		actual = stateMachine.getCurrentState();
+		// test case that next operation the current state goes from WizardStep.FIRST to WizardStep.SECOND
+		expected = WizardStep.SECOND;
+		wizardStateMachine.next();
+		actual = wizardStateMachine.getCurrentState();
 		assertEquals(expected, actual);
-
-		expected = CustomState.THIRD;
-		stateMachine.next();
-		actual = stateMachine.getCurrentState();
+		// test case that next operation the current state goes from WizardStep.SECOND to WizardStep.THIRD
+		expected = WizardStep.THIRD;
+		wizardStateMachine.next();
+		actual = wizardStateMachine.getCurrentState();
 		assertEquals(expected, actual);
-
-		stateMachine.next();
-		actual = stateMachine.getCurrentState();
-		assertEquals(expected, actual);
-
-		expected = CustomState.CANCELED;
-		stateMachine.cancel();
-		actual = stateMachine.getCurrentState();
-		assertEquals(expected, actual);
-
-		expected = CustomState.FINISHED;
-		stateMachine.finish();
-		actual = stateMachine.getCurrentState();
+		// test case that next operation the current state is still WizardStep.THIRD because it is the last step
+		wizardStateMachine.next();
+		actual = wizardStateMachine.getCurrentState();
 		assertEquals(expected, actual);
 
 	}

@@ -22,24 +22,56 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.design.pattern.state.test;
+package io.github.astrapi69.design.pattern.state.wizard;
 
-import org.testng.annotations.Test;
 
-public class StateContextTest {
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
-	@Test
-	public void testStart() throws InterruptedException {
-		final StateContext context = new StateContext();
-		context.start();
-		Thread.sleep(1000);
-		context.pause();
-		Thread.sleep(2000);
-		context.start();
-		Thread.sleep(3000);
-		context.stop();
-		context.reset();
-		context.start();
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder(toBuilder = true)
+public class BaseWizardWizardStateMachine implements IBaseWizardWizardStateMachine<BaseWizardWizardState<BaseWizardWizardStateMachine>>
+{
+	private BaseWizardWizardState<BaseWizardWizardStateMachine> currentState;
+
+	@Override
+	public void cancel()
+	{
+		getCurrentState().cancel(this);
+	}
+
+	@Override
+	public void finish()
+	{
+		getCurrentState().finish(this);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void next()
+	{
+		getCurrentState().goNext(this);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void previous()
+	{
+		getCurrentState().goPrevious(this);
 	}
 
 }

@@ -22,43 +22,11 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.design.pattern.state.test;
+package io.github.astrapi69.design.pattern.state.wizard;
 
-/**
- * The interface transition.
- */
-public interface Transition
+public interface IBaseWizardWizardStateMachine<S> extends IWizardStateMachine<S>
 {
+	void cancel();
 
-	/**
-	 * Stop.
-	 *
-	 * @param context
-	 *            the state context
-	 */
-	void stop(final StateContext context);
-
-	/**
-	 * Start.
-	 *
-	 * @param context
-	 *            the state context
-	 */
-	void start(final StateContext context);
-
-	/**
-	 * Reset.
-	 *
-	 * @param context
-	 *            the state context
-	 */
-	void reset(final StateContext context);
-
-	/**
-	 * Pause.
-	 *
-	 * @param context
-	 *            the state context
-	 */
-	void pause(final StateContext context);
+	void finish();
 }

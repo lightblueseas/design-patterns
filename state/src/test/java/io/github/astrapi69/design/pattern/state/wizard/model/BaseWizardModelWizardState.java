@@ -24,33 +24,33 @@
  */
 package io.github.astrapi69.design.pattern.state.wizard.model;
 
-import io.github.astrapi69.design.pattern.state.wizard.WizardState;
+import io.github.astrapi69.design.pattern.state.wizard.BaseWizardWizardState;
 
 /**
- * The enum {@link WizardModelState} represents three wizard states and the cancel with the finish
+ * The enum {@link BaseWizardModelWizardState} represents three wizard states and the cancel with the finish
  * states. The state is only changing if the wizard model is valid.
  */
-public enum WizardModelState implements WizardState<WizardModelStateMachine<WizardModel>>
+public enum BaseWizardModelWizardState implements BaseWizardWizardState<BaseWizardModelWizardStateMachine<WizardModel>>
 {
 
-	/** The first {@link WizardModelState} object. */
+	/** The first {@link BaseWizardModelWizardState} object. */
 	FIRST {
 
 		@Override
-		public void cancel(final WizardModelStateMachine<WizardModel> stateMachine)
+		public void cancel(final BaseWizardModelWizardStateMachine<WizardModel> stateMachine)
 		{
 			if (stateMachine.getModelObject().isValidCancel())
 			{
-				stateMachine.setCurrentState(WizardModelState.CANCELED);
+				stateMachine.setCurrentState(BaseWizardModelWizardState.CANCELED);
 			}
 		}
 
 		@Override
-		public void finish(final WizardModelStateMachine<WizardModel> stateMachine)
+		public void finish(final BaseWizardModelWizardStateMachine<WizardModel> stateMachine)
 		{
 			if (stateMachine.getModelObject().isValidFinish())
 			{
-				stateMachine.setCurrentState(WizardModelState.FINISHED);
+				stateMachine.setCurrentState(BaseWizardModelWizardState.FINISHED);
 			}
 		}
 
@@ -61,17 +61,17 @@ public enum WizardModelState implements WizardState<WizardModelStateMachine<Wiza
 		}
 
 		@Override
-		public void goNext(final WizardModelStateMachine<WizardModel> stateMachine)
+		public void goNext(final BaseWizardModelWizardStateMachine<WizardModel> stateMachine)
 		{
 			if (stateMachine.getModelObject().isValidNext())
 			{
-				stateMachine.setCurrentState(WizardModelState.SECOND);
+				stateMachine.setCurrentState(BaseWizardModelWizardState.SECOND);
 				stateMachine.getModelObject().reset();
 			}
 		}
 
 		@Override
-		public void goPrevious(final WizardModelStateMachine<WizardModel> input)
+		public void goPrevious(final BaseWizardModelWizardStateMachine<WizardModel> input)
 		{
 		}
 
@@ -89,24 +89,24 @@ public enum WizardModelState implements WizardState<WizardModelStateMachine<Wiza
 
 	},
 
-	/** The second {@link WizardModelState} object. */
+	/** The second {@link BaseWizardModelWizardState} object. */
 	SECOND {
 
 		@Override
-		public void cancel(final WizardModelStateMachine<WizardModel> stateMachine)
+		public void cancel(final BaseWizardModelWizardStateMachine<WizardModel> stateMachine)
 		{
 			if (stateMachine.getModelObject().isValidCancel())
 			{
-				stateMachine.setCurrentState(WizardModelState.CANCELED);
+				stateMachine.setCurrentState(BaseWizardModelWizardState.CANCELED);
 			}
 		}
 
 		@Override
-		public void finish(final WizardModelStateMachine<WizardModel> stateMachine)
+		public void finish(final BaseWizardModelWizardStateMachine<WizardModel> stateMachine)
 		{
 			if (stateMachine.getModelObject().isValidFinish())
 			{
-				stateMachine.setCurrentState(WizardModelState.FINISHED);
+				stateMachine.setCurrentState(BaseWizardModelWizardState.FINISHED);
 			}
 		}
 
@@ -117,45 +117,45 @@ public enum WizardModelState implements WizardState<WizardModelStateMachine<Wiza
 		}
 
 		@Override
-		public void goNext(final WizardModelStateMachine<WizardModel> stateMachine)
+		public void goNext(final BaseWizardModelWizardStateMachine<WizardModel> stateMachine)
 		{
 			if (stateMachine.getModelObject().isValidNext())
 			{
-				stateMachine.setCurrentState(WizardModelState.THIRD);
+				stateMachine.setCurrentState(BaseWizardModelWizardState.THIRD);
 				stateMachine.getModelObject().reset();
 			}
 		}
 
 		@Override
-		public void goPrevious(final WizardModelStateMachine<WizardModel> stateMachine)
+		public void goPrevious(final BaseWizardModelWizardStateMachine<WizardModel> stateMachine)
 		{
 			if (stateMachine.getModelObject().isValidPrevious())
 			{
-				stateMachine.setCurrentState(WizardModelState.FIRST);
+				stateMachine.setCurrentState(BaseWizardModelWizardState.FIRST);
 				stateMachine.getModelObject().reset();
 			}
 		}
 
 	},
 
-	/** The third {@link WizardModelState} object. */
+	/** The third {@link BaseWizardModelWizardState} object. */
 	THIRD {
 
 		@Override
-		public void cancel(final WizardModelStateMachine<WizardModel> stateMachine)
+		public void cancel(final BaseWizardModelWizardStateMachine<WizardModel> stateMachine)
 		{
 			if (stateMachine.getModelObject().isValidCancel())
 			{
-				stateMachine.setCurrentState(WizardModelState.CANCELED);
+				stateMachine.setCurrentState(BaseWizardModelWizardState.CANCELED);
 			}
 		}
 
 		@Override
-		public void finish(final WizardModelStateMachine<WizardModel> stateMachine)
+		public void finish(final BaseWizardModelWizardStateMachine<WizardModel> stateMachine)
 		{
 			if (stateMachine.getModelObject().isValidFinish())
 			{
-				stateMachine.setCurrentState(WizardModelState.FINISHED);
+				stateMachine.setCurrentState(BaseWizardModelWizardState.FINISHED);
 			}
 		}
 
@@ -166,12 +166,12 @@ public enum WizardModelState implements WizardState<WizardModelStateMachine<Wiza
 		}
 
 		@Override
-		public void goNext(final WizardModelStateMachine<WizardModel> stateMachine)
+		public void goNext(final BaseWizardModelWizardStateMachine<WizardModel> stateMachine)
 		{
 		}
 
 		@Override
-		public void goPrevious(final WizardModelStateMachine<WizardModel> stateMachine)
+		public void goPrevious(final BaseWizardModelWizardStateMachine<WizardModel> stateMachine)
 		{
 			if (stateMachine.getModelObject().isValidPrevious())
 			{
@@ -194,25 +194,25 @@ public enum WizardModelState implements WizardState<WizardModelStateMachine<Wiza
 
 	},
 
-	/** The cancel {@link WizardModelState} object. */
+	/** The cancel {@link BaseWizardModelWizardState} object. */
 	CANCELED {
 
 
 		@Override
-		public void cancel(final WizardModelStateMachine<WizardModel> stateMachine)
+		public void cancel(final BaseWizardModelWizardStateMachine<WizardModel> stateMachine)
 		{
 			if (stateMachine.getModelObject().isValidCancel())
 			{
-				stateMachine.setCurrentState(WizardModelState.CANCELED);
+				stateMachine.setCurrentState(BaseWizardModelWizardState.CANCELED);
 			}
 		}
 
 		@Override
-		public void finish(final WizardModelStateMachine<WizardModel> stateMachine)
+		public void finish(final BaseWizardModelWizardStateMachine<WizardModel> stateMachine)
 		{
 			if (stateMachine.getModelObject().isValidFinish())
 			{
-				stateMachine.setCurrentState(WizardModelState.FINISHED);
+				stateMachine.setCurrentState(BaseWizardModelWizardState.FINISHED);
 			}
 		}
 
@@ -223,35 +223,35 @@ public enum WizardModelState implements WizardState<WizardModelStateMachine<Wiza
 		}
 
 		@Override
-		public void goNext(final WizardModelStateMachine<WizardModel> stateMachine)
+		public void goNext(final BaseWizardModelWizardStateMachine<WizardModel> stateMachine)
 		{
 		}
 
 		@Override
-		public void goPrevious(final WizardModelStateMachine<WizardModel> stateMachine)
+		public void goPrevious(final BaseWizardModelWizardStateMachine<WizardModel> stateMachine)
 		{
 		}
 
 	},
 
-	/** The finish {@link WizardModelState} object. */
+	/** The finish {@link BaseWizardModelWizardState} object. */
 	FINISHED {
 
 		@Override
-		public void cancel(final WizardModelStateMachine<WizardModel> stateMachine)
+		public void cancel(final BaseWizardModelWizardStateMachine<WizardModel> stateMachine)
 		{
 			if (stateMachine.getModelObject().isValidCancel())
 			{
-				stateMachine.setCurrentState(WizardModelState.CANCELED);
+				stateMachine.setCurrentState(BaseWizardModelWizardState.CANCELED);
 			}
 		}
 
 		@Override
-		public void finish(final WizardModelStateMachine<WizardModel> stateMachine)
+		public void finish(final BaseWizardModelWizardStateMachine<WizardModel> stateMachine)
 		{
 			if (stateMachine.getModelObject().isValidFinish())
 			{
-				stateMachine.setCurrentState(WizardModelState.FINISHED);
+				stateMachine.setCurrentState(BaseWizardModelWizardState.FINISHED);
 			}
 		}
 
@@ -262,12 +262,12 @@ public enum WizardModelState implements WizardState<WizardModelStateMachine<Wiza
 		}
 
 		@Override
-		public void goNext(final WizardModelStateMachine<WizardModel> stateMachine)
+		public void goNext(final BaseWizardModelWizardStateMachine<WizardModel> stateMachine)
 		{
 		}
 
 		@Override
-		public void goPrevious(final WizardModelStateMachine<WizardModel> stateMachine)
+		public void goPrevious(final BaseWizardModelWizardStateMachine<WizardModel> stateMachine)
 		{
 		}
 

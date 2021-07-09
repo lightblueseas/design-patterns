@@ -22,15 +22,18 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.design.pattern.state;
+package io.github.astrapi69.design.pattern.state.wizard.step;
+
+import io.github.astrapi69.design.pattern.state.wizard.WizardState;
+import io.github.astrapi69.design.pattern.state.wizard.WizardStateMachine;
 
 /**
- * The enum {@link Step} represents three steps.
+ * The enum {@link WizardStep} represents three steps.
  */
-public enum Step implements State<StateMachine>
+public enum WizardStep implements WizardState<WizardStateMachine>
 {
 
-	/** The first {@link Step} object. */
+	/** The first {@link WizardStep} object. */
 	FIRST {
 
 		@Override
@@ -40,13 +43,13 @@ public enum Step implements State<StateMachine>
 		}
 
 		@Override
-		public void goNext(final StateMachine stateMachine)
+		public void goNext(final WizardStateMachine stateMachine)
 		{
 			stateMachine.setCurrentState(SECOND);
 		}
 
 		@Override
-		public void goPrevious(final StateMachine stateMachine)
+		public void goPrevious(final WizardStateMachine stateMachine)
 		{
 		}
 
@@ -63,7 +66,7 @@ public enum Step implements State<StateMachine>
 		}
 	},
 
-	/** The second {@link Step} object. */
+	/** The second {@link WizardStep} object. */
 	SECOND {
 
 		@Override
@@ -73,19 +76,19 @@ public enum Step implements State<StateMachine>
 		}
 
 		@Override
-		public void goNext(final StateMachine stateMachine)
+		public void goNext(final WizardStateMachine stateMachine)
 		{
 			stateMachine.setCurrentState(THIRD);
 		}
 
 		@Override
-		public void goPrevious(final StateMachine stateMachine)
+		public void goPrevious(final WizardStateMachine stateMachine)
 		{
 			stateMachine.setCurrentState(FIRST);
 		}
 	},
 
-	/** The third {@link Step} object. */
+	/** The third {@link WizardStep} object. */
 	THIRD {
 
 		@Override
@@ -95,12 +98,12 @@ public enum Step implements State<StateMachine>
 		}
 
 		@Override
-		public void goNext(final StateMachine stateMachine)
+		public void goNext(final WizardStateMachine stateMachine)
 		{
 		}
 
 		@Override
-		public void goPrevious(final StateMachine stateMachine)
+		public void goPrevious(final WizardStateMachine stateMachine)
 		{
 			stateMachine.setCurrentState(SECOND);
 		}

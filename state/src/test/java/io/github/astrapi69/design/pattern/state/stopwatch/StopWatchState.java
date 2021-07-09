@@ -22,30 +22,30 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.design.pattern.state.test;
+package io.github.astrapi69.design.pattern.state.stopwatch;
 
 /**
- * The class State.
+ * The class WizardState.
  */
-public enum State implements Transition
+public enum StopWatchState implements StopWatchTransition
 {
 
 	/** The READY state. */
 	READY {
 		@Override
-		public void pause(final StateContext context)
+		public void pause(final StopWatchStateContextMachine context)
 		{
 			context.setCurrent(this);
 		}
 
 		@Override
-		public void reset(final StateContext context)
+		public void reset(final StopWatchStateContextMachine context)
 		{
 			context.setCurrent(this);
 		}
 
 		@Override
-		public void start(final StateContext context)
+		public void start(final StopWatchStateContextMachine context)
 		{
 			System.out.println("started time in milliseconds: "
 				+ context.getStopWatch().getElapsedTimeInMilliseconds());
@@ -54,7 +54,7 @@ public enum State implements Transition
 		}
 
 		@Override
-		public void stop(final StateContext context)
+		public void stop(final StopWatchStateContextMachine context)
 		{
 			context.setCurrent(this);
 		}
@@ -63,7 +63,7 @@ public enum State implements Transition
 	/** The RUNNING state. */
 	RUNNING {
 		@Override
-		public void pause(final StateContext context)
+		public void pause(final StopWatchStateContextMachine context)
 		{
 			System.out.println("paused time in milliseconds: "
 				+ context.getStopWatch().getElapsedTimeInMilliseconds());
@@ -72,19 +72,19 @@ public enum State implements Transition
 		}
 
 		@Override
-		public void reset(final StateContext context)
+		public void reset(final StopWatchStateContextMachine context)
 		{
 			context.setCurrent(this);
 		}
 
 		@Override
-		public void start(final StateContext context)
+		public void start(final StopWatchStateContextMachine context)
 		{
 			context.setCurrent(this);
 		}
 
 		@Override
-		public void stop(final StateContext context)
+		public void stop(final StopWatchStateContextMachine context)
 		{
 			System.out.println("stopped time in milliseconds: "
 				+ context.getStopWatch().getElapsedTimeInMilliseconds());
@@ -96,19 +96,19 @@ public enum State implements Transition
 	/** The PAUSED state. */
 	PAUSED {
 		@Override
-		public void pause(final StateContext context)
+		public void pause(final StopWatchStateContextMachine context)
 		{
 			context.setCurrent(this);
 		}
 
 		@Override
-		public void reset(final StateContext context)
+		public void reset(final StopWatchStateContextMachine context)
 		{
 			context.setCurrent(this);
 		}
 
 		@Override
-		public void start(final StateContext context)
+		public void start(final StopWatchStateContextMachine context)
 		{
 			System.out.println("started time in milliseconds: "
 				+ context.getStopWatch().getElapsedTimeInMilliseconds());
@@ -117,7 +117,7 @@ public enum State implements Transition
 		}
 
 		@Override
-		public void stop(final StateContext context)
+		public void stop(final StopWatchStateContextMachine context)
 		{
 			System.out.println("stopped time in milliseconds: "
 				+ context.getStopWatch().getElapsedTimeInMilliseconds());
@@ -129,13 +129,13 @@ public enum State implements Transition
 	/** The STOPPED state. */
 	STOPPED {
 		@Override
-		public void pause(final StateContext context)
+		public void pause(final StopWatchStateContextMachine context)
 		{
 			context.setCurrent(this);
 		}
 
 		@Override
-		public void reset(final StateContext context)
+		public void reset(final StopWatchStateContextMachine context)
 		{
 			System.out.println("reset time in milliseconds: "
 				+ context.getStopWatch().getElapsedTimeInMilliseconds());
@@ -144,7 +144,7 @@ public enum State implements Transition
 		}
 
 		@Override
-		public void start(final StateContext context)
+		public void start(final StopWatchStateContextMachine context)
 		{
 			System.out.println("started time in milliseconds: "
 				+ context.getStopWatch().getElapsedTimeInMilliseconds());
@@ -153,7 +153,7 @@ public enum State implements Transition
 		}
 
 		@Override
-		public void stop(final StateContext context)
+		public void stop(final StopWatchStateContextMachine context)
 		{
 			context.setCurrent(this);
 		}

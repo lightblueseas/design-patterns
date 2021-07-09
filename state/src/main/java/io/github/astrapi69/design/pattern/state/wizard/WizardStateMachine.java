@@ -24,7 +24,6 @@
  */
 package io.github.astrapi69.design.pattern.state.wizard;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -33,6 +32,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * The class {@link WizardStateMachine}.
+ */
 @Getter
 @Setter
 @EqualsAndHashCode
@@ -42,19 +44,9 @@ import lombok.ToString;
 @Builder(toBuilder = true)
 public class WizardStateMachine implements IWizardStateMachine<WizardState<WizardStateMachine>>
 {
+
+	/** The current {@link WizardState} object. */
 	private WizardState<WizardStateMachine> currentState;
-
-	@Override
-	public void cancel()
-	{
-		getCurrentState().cancel(this);
-	}
-
-	@Override
-	public void finish()
-	{
-		getCurrentState().finish(this);
-	}
 
 	/**
 	 * {@inheritDoc}

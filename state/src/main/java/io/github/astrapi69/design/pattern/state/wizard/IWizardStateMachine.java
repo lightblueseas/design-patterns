@@ -24,11 +24,38 @@
  */
 package io.github.astrapi69.design.pattern.state.wizard;
 
-import io.github.astrapi69.design.pattern.state.IStateMachine;
-
-public interface IWizardStateMachine<S> extends IStateMachine<S>
+/**
+ * The interface {@link IWizardStateMachine}.
+ *
+ * @param <S>
+ *            the generic type of the state object
+ */
+public interface IWizardStateMachine<S>
 {
-	void cancel();
 
-	void finish();
+	/**
+	 * Gets the current state.
+	 *
+	 * @return the current state
+	 */
+	S getCurrentState();
+
+	/**
+	 * Go to the next {@link WizardState} object.
+	 */
+	void next();
+
+	/**
+	 * Go to the previous {@link WizardState} object.
+	 */
+	void previous();
+
+	/**
+	 * Sets the current state.
+	 *
+	 * @param currentState
+	 *            the new current state
+	 */
+	void setCurrentState(S currentState);
+
 }

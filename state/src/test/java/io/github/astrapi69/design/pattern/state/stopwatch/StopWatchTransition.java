@@ -22,49 +22,43 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.design.pattern.state;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+package io.github.astrapi69.design.pattern.state.stopwatch;
 
 /**
- * The class {@link StateMachine}.
+ * The interface transition.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
-public class StateMachine implements IStateMachine<State<StateMachine>>
+public interface StopWatchTransition
 {
 
-	/** The current {@link State} object. */
-	private State<StateMachine> currentState;
-
+	/**
+	 * Stop.
+	 *
+	 * @param context
+	 *            the state context
+	 */
+	void stop(final StopWatchStateContextMachine context);
 
 	/**
-	 * {@inheritDoc}
+	 * Start.
+	 *
+	 * @param context
+	 *            the state context
 	 */
-	@Override
-	public void next()
-	{
-		getCurrentState().goNext(this);
-	}
+	void start(final StopWatchStateContextMachine context);
 
 	/**
-	 * {@inheritDoc}
+	 * Reset.
+	 *
+	 * @param context
+	 *            the state context
 	 */
-	@Override
-	public void previous()
-	{
-		getCurrentState().goPrevious(this);
-	}
+	void reset(final StopWatchStateContextMachine context);
 
+	/**
+	 * Pause.
+	 *
+	 * @param context
+	 *            the state context
+	 */
+	void pause(final StopWatchStateContextMachine context);
 }
