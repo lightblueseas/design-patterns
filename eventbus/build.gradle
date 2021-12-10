@@ -1,5 +1,7 @@
 dependencies {
     implementation project(":observer")
+
+    testImplementation("com.google.guava:guava:$guavaVersion")
 }
 
 license {

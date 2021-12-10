@@ -6,6 +6,7 @@ Here a some design patterns that this library holds:
 
 - builder
 - command
+- eventbus (new)
 - observer
 - state
 - strategy

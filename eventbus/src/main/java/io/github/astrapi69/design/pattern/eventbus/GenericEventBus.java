@@ -26,6 +26,7 @@ package io.github.astrapi69.design.pattern.eventbus;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 import lombok.NonNull;
 import io.github.astrapi69.design.pattern.observer.event.EventObject;
@@ -37,9 +38,6 @@ public final class GenericEventBus
 
 	private static final Map<String, EventSource<?>> eventSources = new HashMap<>();
 
-	/** The instance. */
-	private static final GenericEventBus instance = new GenericEventBus();
-
 	private GenericEventBus()
 	{
 	}
@@ -49,25 +47,37 @@ public final class GenericEventBus
 		return eventSources.get(key);
 	}
 
-	public static boolean containsEventSource(final String key)
+	public static boolean containsKey(final String key)
 	{
 		return eventSources.containsKey(key);
+	}
+
+	public static <T> boolean containsKey(@NonNull final Class<T> eventSourceTypeClass)
+	{
+		return eventSources.containsKey(eventSourceTypeClass.getSimpleName());
 	}
 
 	@SuppressWarnings("unchecked")
 	public static <T> EventSource<EventObject<T>> getEventSource(
 		@NonNull final Class<T> eventSourceTypeClass)
 	{
-		if (!containsEventSource(eventSourceTypeClass.getSimpleName()))
+		if (!containsKey(eventSourceTypeClass))
 		{
 			put(eventSourceTypeClass.getSimpleName(), new EventSubject<EventObject<T>>());
 		}
 		return (EventSource<EventObject<T>>)get(eventSourceTypeClass.getSimpleName());
 	}
 
-	public static GenericEventBus getInstance()
+	public static <T> Optional<EventSource<EventObject<T>>> remove(
+		@NonNull final Class<T> eventSourceTypeClass)
 	{
-		return instance;
+		if (containsKey(eventSourceTypeClass))
+		{
+			EventSource<EventObject<T>> removedEventSource = (EventSource<EventObject<T>>)eventSources
+				.remove(eventSourceTypeClass.getSimpleName());
+			return Optional.of(removedEventSource);
+		}
+		return Optional.empty();
 	}
 
 	public static synchronized EventSource<?> put(final String key, final EventSource<?> value)
