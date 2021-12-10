@@ -1,17 +1,19 @@
 package io.github.astrapi69.design.pattern.eventbus;
 
-import com.google.common.eventbus.EventBus;
-import com.google.common.eventbus.Subscribe;
+import static org.testng.Assert.assertEquals;
+
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import com.google.common.eventbus.EventBus;
+import com.google.common.eventbus.Subscribe;
 
 public class GenericEventBusTest
 {
 	private static long counter;
 	private static NavigationEventState navigationEventState;
 
-	@Test public void testApplicationEventBus()
+	@Test
+	public void testApplicationEventBus()
 	{
 		// ApplicationEventBus
 		EventBus guavaEventBus = ApplicationEventBus.getInstance().getApplicationEventBus();
@@ -61,6 +63,6 @@ public class GenericEventBusTest
 	@Subscribe
 	public void onAdditionWithObject(NavigationEventState navigationEventState)
 	{
-		this.navigationEventState = navigationEventState;
+		GenericEventBusTest.navigationEventState = navigationEventState;
 	}
 }

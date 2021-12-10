@@ -23,6 +23,45 @@ The source code comes under the liberal MIT License, making design-patterns grea
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/design-patterns/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/design-patterns)
 
+## gradle dependency
+
+You can first define the version and add than the following gradle dependency to
+your project `build.gradle` if you want to import the core functionality of all design-pattern:
+
+```
+define version in file gradle.properties
+
+designPatternsVersion=4.16
+```
+
+or in build.gradle ext area
+
+```
+ext {
+			...
+    designPatternsVersion = "4.16"
+			...
+}
+```
+
+then add the dependency to the dependencies area
+
+```
+
+dependencies {
+			...
+    implementation("io.github.astrapi69:builder:$designPatternsVersion")
+    implementation("io.github.astrapi69:command:$designPatternsVersion")
+    implementation("io.github.astrapi69:decorator:$designPatternsVersion")
+    implementation("io.github.astrapi69:eventbus:$designPatternsVersion")
+    implementation("io.github.astrapi69:observer:$designPatternsVersion")
+    implementation("io.github.astrapi69:state:$designPatternsVersion")
+    implementation("io.github.astrapi69:strategy:$designPatternsVersion")
+    implementation("io.github.astrapi69:visitor:$designPatternsVersion")
+			...
+}
+```
+
 ## Maven dependency
 
 Maven dependency is now on sonatype.
@@ -35,9 +74,11 @@ You can first define the version properties:
 	<properties>
 			...
 		<!-- DESIGN-PATTERNS version -->
-		<design-patterns.version>4.15</design-patterns.version>
+		<design-patterns.version>4.16</design-patterns.version>
 		<builder.version>${design-patterns.version}</builder.version>
 		<command.version>${design-patterns.version}</command.version>
+		<decorator.version>${design-patterns.version}</decorator.version>
+		<eventbus.version>${design-patterns.version}</eventbus.version>
 		<observer.version>${design-patterns.version}</observer.version>
 		<state.version>${design-patterns.version}</state.version>
 		<strategy.version>${design-patterns.version}</strategy.version>
@@ -68,6 +109,34 @@ Than you can add the dependency to your dependencies:
 				<groupId>io.github.astrapi69</groupId>
 				<artifactId>command</artifactId>
 				<version>${command.version}</version>
+			</dependency>
+			...
+		</dependencies>
+
+Add the following maven dependency to your project `pom.xml` if you want to import the functionality of decorator:
+
+Than you can add the dependency to your dependencies:
+
+		<dependencies>
+			...
+			<dependency>
+				<groupId>io.github.astrapi69</groupId>
+				<artifactId>decorator</artifactId>
+				<version>${decorator.version}</version>
+			</dependency>
+			...
+		</dependencies>
+
+Add the following maven dependency to your project `pom.xml` if you want to import the functionality of eventbus:
+
+Than you can add the dependency to your dependencies:
+
+		<dependencies>
+			...
+			<dependency>
+				<groupId>io.github.astrapi69</groupId>
+				<artifactId>eventbus</artifactId>
+				<version>${eventbus.version}</version>
 			</dependency>
 			...
 		</dependencies>
