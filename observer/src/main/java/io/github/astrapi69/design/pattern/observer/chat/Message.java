@@ -40,7 +40,7 @@ public interface Message<T> extends Serializable
 	 *
 	 * @return the value
 	 */
-	public T getValue();
+	T getValue();
 
 	/**
 	 * Sets the value.
@@ -49,6 +49,6 @@ public interface Message<T> extends Serializable
 	 *            the value
 	 * @return the message
 	 */
-	public Message<T> setValue(final T value);
+	Message<T> setValue(final T value);
 
 }

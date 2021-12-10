@@ -37,7 +37,7 @@ public class Invokers<R>
 {
 
 	/** The command. */
-	private List<Command<R>> commands = new ArrayList<>();
+	private final List<Command<R>> commands = new ArrayList<>();
 
 	/**
 	 * Add a {@link Command} object to the list.

@@ -62,7 +62,8 @@ public interface WizardState<ST>
 	/**
 	 * Checks if this {@link WizardState} object has a next {@link WizardState} object.
 	 *
-	 * @return true, if this {@link WizardState} object has a next {@link WizardState} object otherwise false.
+	 * @return true, if this {@link WizardState} object has a next {@link WizardState} object
+	 *         otherwise false.
 	 */
 	default boolean hasNext()
 	{
@@ -72,8 +73,8 @@ public interface WizardState<ST>
 	/**
 	 * Checks if this {@link WizardState} object has a previous {@link WizardState} object.
 	 *
-	 * @return true, if this {@link WizardState} object has a previous {@link WizardState} object otherwise
-	 *         false.
+	 * @return true, if this {@link WizardState} object has a previous {@link WizardState} object
+	 *         otherwise false.
 	 */
 	default boolean hasPrevious()
 	{
@@ -83,7 +84,8 @@ public interface WizardState<ST>
 	/**
 	 * Checks if this {@link WizardState} object is the first {@link WizardState} object.
 	 *
-	 * @return true, if this {@link WizardState} object is the first {@link WizardState} object otherwise false.
+	 * @return true, if this {@link WizardState} object is the first {@link WizardState} object
+	 *         otherwise false.
 	 */
 	default boolean isFirst()
 	{
@@ -93,7 +95,8 @@ public interface WizardState<ST>
 	/**
 	 * Checks if this {@link WizardState} object is the last {@link WizardState} object.
 	 *
-	 * @return true, if this {@link WizardState} object is the last {@link WizardState} object otherwise false.
+	 * @return true, if this {@link WizardState} object is the last {@link WizardState} object
+	 *         otherwise false.
 	 */
 	default boolean isLast()
 	{

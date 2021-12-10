@@ -26,10 +26,11 @@ package io.github.astrapi69.design.pattern.state.wizard.withenum;
 
 import static org.testng.AssertJUnit.assertEquals;
 
+import org.testng.annotations.Test;
+
 import io.github.astrapi69.design.pattern.state.wizard.BaseWizardWizardState;
 import io.github.astrapi69.design.pattern.state.wizard.BaseWizardWizardStateMachine;
 import io.github.astrapi69.design.pattern.state.wizard.WizardStateMachine;
-import org.testng.annotations.Test;
 
 public class BaseWizardStateMachineTest
 {

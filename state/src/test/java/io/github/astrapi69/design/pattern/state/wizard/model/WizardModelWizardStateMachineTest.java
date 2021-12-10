@@ -26,9 +26,9 @@ package io.github.astrapi69.design.pattern.state.wizard.model;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-import io.github.astrapi69.design.pattern.state.wizard.BaseWizardWizardState;
 import org.testng.annotations.Test;
 
+import io.github.astrapi69.design.pattern.state.wizard.BaseWizardWizardState;
 import io.github.astrapi69.design.pattern.state.wizard.WizardStateMachine;
 
 public class WizardModelWizardStateMachineTest

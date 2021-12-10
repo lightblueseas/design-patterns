@@ -26,9 +26,10 @@ package io.github.astrapi69.design.pattern.state.wizard.step;
 
 import static org.testng.AssertJUnit.assertEquals;
 
+import org.testng.annotations.Test;
+
 import io.github.astrapi69.design.pattern.state.wizard.WizardState;
 import io.github.astrapi69.design.pattern.state.wizard.WizardStateMachine;
-import org.testng.annotations.Test;
 
 /**
  * Test class for class {@link WizardStateMachine}.
@@ -44,8 +45,8 @@ public class WizardStateMachineTest
 	{
 		WizardState<WizardStateMachine> expected;
 		WizardState<WizardStateMachine> actual;
-		WizardStateMachine wizardStateMachine = WizardStateMachine.builder().currentState(
-			WizardStep.FIRST).build();
+		WizardStateMachine wizardStateMachine = WizardStateMachine.builder()
+			.currentState(WizardStep.FIRST).build();
 		// test case that no operation the current state is WizardStep.FIRST
 		expected = WizardStep.FIRST;
 		actual = wizardStateMachine.getCurrentState();
@@ -55,17 +56,20 @@ public class WizardStateMachineTest
 		wizardStateMachine.previous();
 		actual = wizardStateMachine.getCurrentState();
 		assertEquals(expected, actual);
-		// test case that next operation the current state goes from WizardStep.FIRST to WizardStep.SECOND
+		// test case that next operation the current state goes from WizardStep.FIRST to
+		// WizardStep.SECOND
 		expected = WizardStep.SECOND;
 		wizardStateMachine.next();
 		actual = wizardStateMachine.getCurrentState();
 		assertEquals(expected, actual);
-		// test case that next operation the current state goes from WizardStep.SECOND to WizardStep.THIRD
+		// test case that next operation the current state goes from WizardStep.SECOND to
+		// WizardStep.THIRD
 		expected = WizardStep.THIRD;
 		wizardStateMachine.next();
 		actual = wizardStateMachine.getCurrentState();
 		assertEquals(expected, actual);
-		// test case that next operation the current state is still WizardStep.THIRD because it is the last step
+		// test case that next operation the current state is still WizardStep.THIRD because it is
+		// the last step
 		wizardStateMachine.next();
 		actual = wizardStateMachine.getCurrentState();
 		assertEquals(expected, actual);

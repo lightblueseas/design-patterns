@@ -30,6 +30,80 @@ package io.github.astrapi69.design.pattern.builder;
 public final class Car
 {
 
+	/** The construction year. */
+	private final int constructionYear;
+	/** The model. */
+	private final String model;
+
+	// all fields must be final so they are immutable objects
+	/** The type. */
+	private final String type;
+
+	/**
+	 * Instantiates a new car. Note: private constructor. Only the Builder can call it.
+	 *
+	 * @param builder
+	 *            the builder
+	 */
+	private Car(final Builder builder)
+	{
+		this.model = builder.model;
+		this.type = builder.type;
+		this.constructionYear = builder.constructionYear;
+	}
+
+	/**
+	 * Builder.
+	 *
+	 * @param type
+	 *            the type
+	 * @return the builder
+	 */
+	public static Builder builder(final String type)
+	{
+		return new Builder(type);
+	}
+
+	/**
+	 * Gets the construction year.
+	 *
+	 * @return the construction year
+	 */
+	public int getConstructionYear()
+	{
+		return constructionYear;
+	}
+
+	/**
+	 * Gets the model.
+	 *
+	 * @return the model
+	 */
+	public String getModel()
+	{
+		return model;
+	}
+
+	/**
+	 * Gets the type.
+	 *
+	 * @return the type
+	 */
+	public String getType()
+	{
+		return type;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String toString()
+	{
+		return "Car{" + "type='" + type + '\'' + ", model='" + model + '\'' + ", constructionYear="
+			+ constructionYear + '}';
+	}
+
 	/**
 	 * The class {@link Builder}.
 	 */
@@ -37,15 +111,14 @@ public final class Car
 	{
 
 		// optional fields
+		/** The type. */
+		private final String type;
 		/** The construction year. */
 		private int constructionYear;
 
+		// mandatory fields
 		/** The model. */
 		private String model;
-
-		// mandatory fields
-		/** The type. */
-		private final String type;
 
 		/**
 		 * Instantiates a new builder.
@@ -93,81 +166,6 @@ public final class Car
 			this.model = model;
 			return this;
 		}
-	}
-
-	/**
-	 * Builder.
-	 *
-	 * @param type
-	 *            the type
-	 * @return the builder
-	 */
-	public static Builder builder(final String type)
-	{
-		return new Builder(type);
-	}
-
-	// all fields must be final so they are immutable objects
-	/** The construction year. */
-	private final int constructionYear;
-
-	/** The model. */
-	private final String model;
-
-	/** The type. */
-	private final String type;
-
-	/**
-	 * Instantiates a new car. Note: private constructor. Only the Builder can call it.
-	 *
-	 * @param builder
-	 *            the builder
-	 */
-	private Car(final Builder builder)
-	{
-		this.model = builder.model;
-		this.type = builder.type;
-		this.constructionYear = builder.constructionYear;
-	}
-
-	/**
-	 * Gets the construction year.
-	 *
-	 * @return the construction year
-	 */
-	public int getConstructionYear()
-	{
-		return constructionYear;
-	}
-
-	/**
-	 * Gets the model.
-	 *
-	 * @return the model
-	 */
-	public String getModel()
-	{
-		return model;
-	}
-
-	/**
-	 * Gets the type.
-	 *
-	 * @return the type
-	 */
-	public String getType()
-	{
-		return type;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public String toString()
-	{
-		return "Car{" + "type='" + type + '\'' + ", model='" + model + '\'' + ", constructionYear="
-			+ constructionYear + '}';
 	}
 
 }

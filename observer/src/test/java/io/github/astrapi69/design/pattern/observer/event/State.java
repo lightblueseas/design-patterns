@@ -26,5 +26,5 @@ package io.github.astrapi69.design.pattern.observer.event;
 
 public enum State
 {
-	stop, spinning;
+	stop, spinning
 }

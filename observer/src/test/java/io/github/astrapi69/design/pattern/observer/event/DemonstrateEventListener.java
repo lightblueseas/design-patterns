@@ -24,7 +24,7 @@
  */
 package io.github.astrapi69.design.pattern.observer.event;
 
-import javax.swing.JTextField;
+import javax.swing.*;
 
 /**
  * This class is to demonstrate the Event Listener interface.
@@ -65,7 +65,7 @@ public class DemonstrateEventListener
 			public void onEvent(final EventObject<JTextField> event)
 			{
 				System.out
-					.println(new StringBuffer(event.getSource().getText()).reverse().toString());
+					.println(new StringBuffer(event.getSource().getText()).reverse());
 
 			}
 		};
@@ -97,7 +97,7 @@ public class DemonstrateEventListener
 			@Override
 			public void onEvent(final String event)
 			{
-				System.out.println(new StringBuffer(event).reverse().toString());
+				System.out.println(new StringBuffer(event).reverse());
 
 			}
 		};

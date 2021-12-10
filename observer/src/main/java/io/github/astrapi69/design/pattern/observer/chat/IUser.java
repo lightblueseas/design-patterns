@@ -43,6 +43,14 @@ public interface IUser<U> extends Serializable
 	U getApplicationUser();
 
 	/**
+	 * Sets the application user.
+	 *
+	 * @param user
+	 *            the new application user
+	 */
+	void setApplicationUser(final U user);
+
+	/**
 	 * Gets the id.
 	 *
 	 * @return the id
@@ -55,12 +63,4 @@ public interface IUser<U> extends Serializable
 	 * @return the name
 	 */
 	String getName();
-
-	/**
-	 * Sets the application user.
-	 *
-	 * @param user
-	 *            the new application user
-	 */
-	void setApplicationUser(final U user);
 }

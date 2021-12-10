@@ -44,15 +44,12 @@ public abstract class ChatRoomUser<M extends Message<?>>
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
-
-	/** The subject. */
-	protected ChatRoom<M> subject;
-
-	/** The observable. */
-	private M observable;
-
 	/** The user. */
 	private final IUser<?> user;
+	/** The subject. */
+	protected ChatRoom<M> subject;
+	/** The observable. */
+	private M observable;
 
 	/**
 	 * Instantiates a new chat room user.

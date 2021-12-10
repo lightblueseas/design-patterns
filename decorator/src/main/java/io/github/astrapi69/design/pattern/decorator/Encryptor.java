@@ -41,6 +41,6 @@ public interface Encryptor
 	 * @throws Exception
 	 *             is thrown if encryption fails.
 	 */
-	public Object encrypt(final Object toEncrypt) throws Exception;
+	Object encrypt(final Object toEncrypt) throws Exception;
 
 }

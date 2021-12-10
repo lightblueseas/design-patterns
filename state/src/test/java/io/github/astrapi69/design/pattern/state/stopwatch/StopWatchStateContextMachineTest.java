@@ -30,7 +30,8 @@ public class StopWatchStateContextMachineTest
 {
 
 	@Test
-	public void testStart() throws InterruptedException {
+	public void testStart() throws InterruptedException
+	{
 		final StopWatchStateContextMachine context = new StopWatchStateContextMachine();
 		context.start();
 		Thread.sleep(1000);

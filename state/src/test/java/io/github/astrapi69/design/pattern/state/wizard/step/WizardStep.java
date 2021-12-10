@@ -119,6 +119,6 @@ public enum WizardStep implements WizardState<WizardStateMachine>
 		{
 			return true;
 		}
-	};
+	}
 
 }

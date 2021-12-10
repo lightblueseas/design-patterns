@@ -28,7 +28,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-import io.github.astrapi69.search.PathFinder;
+import io.github.astrapi69.file.search.PathFinder;
 import io.github.astrapi69.lang.ClassExtensions;
 
 /**

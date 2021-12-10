@@ -28,8 +28,8 @@ import io.github.astrapi69.design.pattern.state.wizard.BaseWizardWizardState;
 import io.github.astrapi69.design.pattern.state.wizard.BaseWizardWizardStateMachine;
 
 /**
- * The enum {@link EnumBaseWizardWizardState} represents three wizard states and the cancel with the finish
- * states.
+ * The enum {@link EnumBaseWizardWizardState} represents three wizard states and the cancel with the
+ * finish states.
  */
 public enum EnumBaseWizardWizardState implements BaseWizardWizardState<BaseWizardWizardStateMachine>
 {
@@ -226,5 +226,5 @@ public enum EnumBaseWizardWizardState implements BaseWizardWizardState<BaseWizar
 		{
 		}
 
-	};
+	}
 }

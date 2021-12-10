@@ -36,11 +36,10 @@ import io.github.astrapi69.design.pattern.visitor.GenericVisitable;
 public class FileVisitable implements GenericVisitable<FileVisitor, FileVisitable>
 {
 
-	/** The children. */
-	private Collection<FileVisitable> children;
-
 	/** The file. */
 	private final File file;
+	/** The children. */
+	private Collection<FileVisitable> children;
 
 	/**
 	 * Instantiates a new file visitable.

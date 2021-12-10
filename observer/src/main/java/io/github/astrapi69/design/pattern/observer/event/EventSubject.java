@@ -37,18 +37,17 @@ import java.util.List;
 public class EventSubject<T> implements EventSource<T>
 {
 
+	/** The event listeners. */
+	private final List<EventListener<T>> eventListeners;
+	/** The source. */
+	private T source;
+
 	/**
 	 * Initialize block.
 	 **/
 	{
 		eventListeners = new ArrayList<EventListener<T>>();
 	}
-
-	/** The event listeners. */
-	private final List<EventListener<T>> eventListeners;
-
-	/** The source. */
-	private T source;
 
 	/**
 	 * Instantiates a new event subject.

@@ -27,10 +27,11 @@ package io.github.astrapi69.design.pattern.state.wizard.model;
 import io.github.astrapi69.design.pattern.state.wizard.BaseWizardWizardState;
 
 /**
- * The enum {@link BaseWizardModelWizardState} represents three wizard states and the cancel with the finish
- * states. The state is only changing if the wizard model is valid.
+ * The enum {@link BaseWizardModelWizardState} represents three wizard states and the cancel with
+ * the finish states. The state is only changing if the wizard model is valid.
  */
-public enum BaseWizardModelWizardState implements BaseWizardWizardState<BaseWizardModelWizardStateMachine<WizardModel>>
+public enum BaseWizardModelWizardState
+	implements BaseWizardWizardState<BaseWizardModelWizardStateMachine<WizardModel>>
 {
 
 	/** The first {@link BaseWizardModelWizardState} object. */
@@ -271,5 +272,5 @@ public enum BaseWizardModelWizardState implements BaseWizardWizardState<BaseWiza
 		{
 		}
 
-	};
+	}
 }

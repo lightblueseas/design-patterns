@@ -26,8 +26,6 @@ package io.github.astrapi69.design.pattern.decorator;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-import io.github.astrapi69.design.pattern.decorator.Decryptor;
-import io.github.astrapi69.design.pattern.decorator.StringDecryptor;
 import org.apache.commons.lang3.StringUtils;
 import org.testng.annotations.Test;
 

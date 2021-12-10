@@ -47,6 +47,13 @@ public class ChatRoom<M extends Message<?>> extends AbstractSubject<M, ChatRoomU
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+	/** The observers. */
+	private final List<ChatRoomUser<M>> observers;
+	private final List<M> messageHistory = new ArrayList<>();
+	/** The name of the chat room. */
+	private final String name;
+	/** The observable object. */
+	private M observable;
 
 	/**
 	 * Initialize block.
@@ -54,17 +61,6 @@ public class ChatRoom<M extends Message<?>> extends AbstractSubject<M, ChatRoomU
 	{
 		observers = new ArrayList<>();
 	}
-
-	/** The observers. */
-	private final List<ChatRoomUser<M>> observers;
-
-	private final List<M> messageHistory = new ArrayList<>();
-
-	/** The observable object. */
-	private M observable;
-
-	/** The name of the chat room. */
-	private final String name;
 
 	/**
 	 * Constructor for a new subject with an observable.
@@ -154,6 +150,17 @@ public class ChatRoom<M extends Message<?>> extends AbstractSubject<M, ChatRoomU
 		return observable;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public synchronized void setObservable(final M observable)
+	{
+		this.observable = observable;
+		messageHistory.add(observable);
+		updateObservers();
+	}
+
 	@Override
 	public boolean isSecure()
 	{
@@ -183,17 +190,6 @@ public class ChatRoom<M extends Message<?>> extends AbstractSubject<M, ChatRoomU
 		{
 			remove(chatUser);
 		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public synchronized void setObservable(final M observable)
-	{
-		this.observable = observable;
-		messageHistory.add(observable);
-		updateObservers();
 	}
 
 	/**

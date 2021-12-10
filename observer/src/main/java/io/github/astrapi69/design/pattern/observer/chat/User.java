@@ -69,28 +69,19 @@ public class User implements IUser<User>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Integer getId()
-	{
-		return id;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public String getName()
-	{
-		return name;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
 	public void setApplicationUser(final User user)
 	{
 
 
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Integer getId()
+	{
+		return id;
 	}
 
 	/**
@@ -102,6 +93,15 @@ public class User implements IUser<User>
 	public void setId(final Integer id)
 	{
 		this.id = id;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String getName()
+	{
+		return name;
 	}
 
 	/**

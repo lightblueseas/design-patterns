@@ -36,18 +36,17 @@ import java.util.List;
  */
 public class MessageSubject<T> implements MessageSource<T>
 {
+	/** The event listeners. */
+	private final List<MessageListener<T>> messageListeners;
+	/** The source. */
+	private T source;
+
 	/**
 	 * Initialize block.
 	 **/
 	{
 		messageListeners = new ArrayList<>();
 	}
-
-	/** The source. */
-	private T source;
-
-	/** The event listeners. */
-	private final List<MessageListener<T>> messageListeners;
 
 	/**
 	 * Instantiates a new message subject.

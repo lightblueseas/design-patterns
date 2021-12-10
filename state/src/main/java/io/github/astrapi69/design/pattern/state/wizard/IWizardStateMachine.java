@@ -41,6 +41,14 @@ public interface IWizardStateMachine<S>
 	S getCurrentState();
 
 	/**
+	 * Sets the current state.
+	 *
+	 * @param currentState
+	 *            the new current state
+	 */
+	void setCurrentState(S currentState);
+
+	/**
 	 * Go to the next {@link WizardState} object.
 	 */
 	void next();
@@ -49,13 +57,5 @@ public interface IWizardStateMachine<S>
 	 * Go to the previous {@link WizardState} object.
 	 */
 	void previous();
-
-	/**
-	 * Sets the current state.
-	 *
-	 * @param currentState
-	 *            the new current state
-	 */
-	void setCurrentState(S currentState);
 
 }

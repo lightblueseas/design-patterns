@@ -157,6 +157,6 @@ public enum StopWatchState implements StopWatchTransition
 		{
 			context.setCurrent(this);
 		}
-	};
+	}
 
 }

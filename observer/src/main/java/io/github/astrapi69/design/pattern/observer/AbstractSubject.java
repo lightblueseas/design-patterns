@@ -28,9 +28,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import lombok.Getter;
 import io.github.astrapi69.design.pattern.observer.api.Observer;
 import io.github.astrapi69.design.pattern.observer.api.Subject;
-import lombok.Getter;
 
 /**
  * The Class AbstractSubject is an implementation from the interface Subject. This class
@@ -45,20 +45,19 @@ import lombok.Getter;
 public abstract class AbstractSubject<T, O extends Observer<T>> implements Subject<T, O>
 {
 
+	/** The observers. */
+	@Getter
+	private final List<O> observers;
+	/** The observable object. */
+	@Getter
+	private T observable;
+
 	/**
 	 * Initialize block.
 	 **/
 	{
 		observers = new ArrayList<>();
 	}
-
-	/** The observers. */
-	@Getter
-	private final List<O> observers;
-
-	/** The observable object. */
-	@Getter
-	private T observable;
 
 	/**
 	 * Default constructor for a new subject.

@@ -42,6 +42,6 @@ public interface Decryptor
 	 * @throws Exception
 	 *             is thrown if decryption fails.
 	 */
-	public Object decrypt(final Object encrypted) throws Exception;
+	Object decrypt(final Object encrypted) throws Exception;
 
 }

@@ -4,6 +4,19 @@
 Version 4.16-SNAPSHOT
 -------------
 
+ADDED:
+
+- new module project for the design pattern eventbus
+
+CHANGED:
+
+- update gradle to new version 7.3.1
+- update of lombok version to 1.18.22
+- update of test dependency test-objects to new version 5.5
+- update of test dependency file-worker to new version 8.1
+- update of test dependency jobj-core to new version to 5
+- update gradle-plugin dependency of gradle.plugin.com.hierynomus.gradle.plugins:license-gradle-plugin to new version 0.16.1
+
 Version 4.15
 -------------
 

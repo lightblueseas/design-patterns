@@ -35,6 +35,15 @@ public class ExceptionObservers
 
 	/** The instance. */
 	private static ExceptionObservers instance = null;
+	/** The exception listeners. */
+	protected List<ExceptionListener> exceptionListeners = new ArrayList<>();
+
+	/**
+	 * Instantiates a new exception observers.
+	 */
+	private ExceptionObservers()
+	{
+	}
 
 	/**
 	 * Gets the single instance of ExceptionObservers.
@@ -51,16 +60,6 @@ public class ExceptionObservers
 			}
 		}
 		return instance;
-	}
-
-	/** The exception listeners. */
-	protected List<ExceptionListener> exceptionListeners = new ArrayList<>();
-
-	/**
-	 * Instantiates a new exception observers.
-	 */
-	private ExceptionObservers()
-	{
 	}
 
 	/**

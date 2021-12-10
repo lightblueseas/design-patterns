@@ -44,6 +44,12 @@ public class ApplicationUser implements IUser<SimpleUser>
 	}
 
 	@Override
+	public void setApplicationUser(final SimpleUser user)
+	{
+		this.applicationUser = user;
+	}
+
+	@Override
 	public Serializable getId()
 	{
 		return this.applicationUser.getId();
@@ -53,12 +59,6 @@ public class ApplicationUser implements IUser<SimpleUser>
 	public String getName()
 	{
 		return this.applicationUser.getUsername();
-	}
-
-	@Override
-	public void setApplicationUser(final SimpleUser user)
-	{
-		this.applicationUser = user;
 	}
 
 }

@@ -70,6 +70,14 @@ public interface Subject<T, O extends Observer<T>>
 	T getObservable();
 
 	/**
+	 * Sets the observable.
+	 *
+	 * @param observable
+	 *            the new observable
+	 */
+	void setObservable(final T observable);
+
+	/**
 	 * Gets the observers that wants to be notified on changes.
 	 *
 	 * @return the observers
@@ -101,14 +109,6 @@ public interface Subject<T, O extends Observer<T>>
 	{
 		getObservers().removeAll(observers);
 	}
-
-	/**
-	 * Sets the observable.
-	 *
-	 * @param observable
-	 *            the new observable
-	 */
-	void setObservable(final T observable);
 
 	/**
 	 * Update observers.
