@@ -25,9 +25,9 @@
 package io.github.astrapi69.design.pattern.state.wizard;
 
 /**
- * The interface {@link BaseWizardWizardState} represents a wizard state.
+ * The interface {@link BaseWizardState} represents a wizard state.
  */
-public interface BaseWizardWizardState<ST> extends WizardState<ST>
+public interface BaseWizardState<ST> extends WizardState<ST>
 {
 
 	/**
@@ -101,18 +101,18 @@ public interface BaseWizardWizardState<ST> extends WizardState<ST>
 	}
 
 	/**
-	 * Cancel the {@link BaseWizardWizardState}.
+	 * Cancel the {@link BaseWizardState}.
 	 *
 	 * @param input
-	 *            the {@link BaseWizardWizardStateMachine} object
+	 *            the {@link BaseWizardStateMachine} object
 	 */
 	void cancel(ST input);
 
 	/**
-	 * Finish the {@link BaseWizardWizardState}.
+	 * Finish the {@link BaseWizardState}.
 	 *
 	 * @param input
-	 *            the {@link BaseWizardWizardStateMachine} object
+	 *            the {@link BaseWizardStateMachine} object
 	 */
 	void finish(ST input);
 

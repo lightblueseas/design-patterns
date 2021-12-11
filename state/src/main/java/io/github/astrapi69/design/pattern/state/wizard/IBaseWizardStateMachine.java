@@ -24,56 +24,9 @@
  */
 package io.github.astrapi69.design.pattern.state.wizard;
 
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
-public class BaseWizardWizardStateMachine
-	implements
-		IBaseWizardWizardStateMachine<BaseWizardWizardState<BaseWizardWizardStateMachine>>
+public interface IBaseWizardStateMachine<S> extends IWizardStateMachine<S>
 {
-	private BaseWizardWizardState<BaseWizardWizardStateMachine> currentState;
+	void cancel();
 
-	@Override
-	public void cancel()
-	{
-		getCurrentState().cancel(this);
-	}
-
-	@Override
-	public void finish()
-	{
-		getCurrentState().finish(this);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void next()
-	{
-		getCurrentState().goNext(this);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void previous()
-	{
-		getCurrentState().goPrevious(this);
-	}
-
+	void finish();
 }

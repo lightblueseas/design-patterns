@@ -28,10 +28,10 @@ import static org.testng.AssertJUnit.assertEquals;
 
 import org.testng.annotations.Test;
 
-import io.github.astrapi69.design.pattern.state.wizard.BaseWizardWizardState;
+import io.github.astrapi69.design.pattern.state.wizard.BaseWizardState;
 import io.github.astrapi69.design.pattern.state.wizard.WizardStateMachine;
 
-public class WizardModelWizardStateMachineTest
+public class BaseWizardStateMachineModelTest
 {
 
 	/**
@@ -40,43 +40,40 @@ public class WizardModelWizardStateMachineTest
 	@Test
 	public void testWizardStateMachine()
 	{
-		BaseWizardModelWizardState expected;
-		BaseWizardWizardState<BaseWizardModelWizardStateMachine<WizardModel>> actual;
-		final BaseWizardModelWizardStateMachine<WizardModel> stateMachine = BaseWizardModelWizardStateMachine
-			.<WizardModel> builder().currentState(BaseWizardModelWizardState.FIRST)
+		BaseWizardStateModel expected;
+		BaseWizardState<BaseWizardStateMachineModel<WizardModel>> actual;
+		final BaseWizardStateMachineModel<WizardModel> stateMachine = BaseWizardStateMachineModel
+			.<WizardModel> builder().currentState(BaseWizardStateModel.FIRST)
 			.modelObject(WizardModel.builder().build()).build();
 
-		expected = BaseWizardModelWizardState.FIRST;
+		expected = BaseWizardStateModel.FIRST;
 		stateMachine.previous();
 		actual = stateMachine.getCurrentState();
 		assertEquals(expected, actual);
 
-		expected = BaseWizardModelWizardState.FIRST;
 		stateMachine.next();
 		actual = stateMachine.getCurrentState();
 		assertEquals(expected, actual);
 
 		// next not valid
-		expected = BaseWizardModelWizardState.FIRST;
 		stateMachine.next();
 		actual = stateMachine.getCurrentState();
 		assertEquals(expected, actual);
 
 		// set next to valid
 		stateMachine.getModelObject().setValidNext(true);
-		expected = BaseWizardModelWizardState.SECOND;
+		expected = BaseWizardStateModel.SECOND;
 		stateMachine.next();
 		actual = stateMachine.getCurrentState();
 		assertEquals(expected, actual);
 
-		expected = BaseWizardModelWizardState.SECOND;
 		stateMachine.next();
 		actual = stateMachine.getCurrentState();
 		assertEquals(expected, actual);
 
 		// set next to valid
 		stateMachine.getModelObject().setValidNext(true);
-		expected = BaseWizardModelWizardState.THIRD;
+		expected = BaseWizardStateModel.THIRD;
 		stateMachine.next();
 		actual = stateMachine.getCurrentState();
 		assertEquals(expected, actual);
@@ -86,20 +83,18 @@ public class WizardModelWizardStateMachineTest
 		assertEquals(expected, actual);
 
 		// cancel not valid
-		expected = BaseWizardModelWizardState.THIRD;
 		stateMachine.cancel();
 		actual = stateMachine.getCurrentState();
 		assertEquals(expected, actual);
 
 		// set cancel to valid
 		stateMachine.getModelObject().setValidCancel(true);
-		expected = BaseWizardModelWizardState.CANCELED;
+		expected = BaseWizardStateModel.CANCELED;
 		stateMachine.cancel();
 		actual = stateMachine.getCurrentState();
 		assertEquals(expected, actual);
 
 		// finish not valid
-		expected = BaseWizardModelWizardState.CANCELED;
 		stateMachine.finish();
 		actual = stateMachine.getCurrentState();
 		assertEquals(expected, actual);
@@ -107,7 +102,7 @@ public class WizardModelWizardStateMachineTest
 		// set cancel to valid
 		stateMachine.getModelObject().setValidFinish(true);
 
-		expected = BaseWizardModelWizardState.FINISHED;
+		expected = BaseWizardStateModel.FINISHED;
 		stateMachine.finish();
 		actual = stateMachine.getCurrentState();
 		assertEquals(expected, actual);

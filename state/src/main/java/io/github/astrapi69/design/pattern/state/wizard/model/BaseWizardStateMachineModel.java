@@ -22,11 +22,61 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.design.pattern.state.wizard;
+package io.github.astrapi69.design.pattern.state.wizard.model;
 
-public interface IBaseWizardWizardStateMachine<S> extends IWizardStateMachine<S>
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import io.github.astrapi69.design.pattern.state.wizard.BaseWizardState;
+import io.github.astrapi69.design.pattern.state.wizard.IBaseWizardStateMachine;
+
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder(toBuilder = true)
+public class BaseWizardStateMachineModel<T>
+	implements IBaseWizardStateMachine<BaseWizardState<BaseWizardStateMachineModel<T>>>
 {
-	void cancel();
+	private BaseWizardState<BaseWizardStateMachineModel<T>> currentState;
 
-	void finish();
+	private T modelObject;
+
+	@Override
+	public void cancel()
+	{
+		getCurrentState().cancel(this);
+	}
+
+	@Override
+	public void finish()
+	{
+		getCurrentState().finish(this);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void next()
+	{
+		getCurrentState().goNext(this);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void previous()
+	{
+		getCurrentState().goPrevious(this);
+	}
+
 }

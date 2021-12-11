@@ -28,8 +28,8 @@ import static org.testng.AssertJUnit.assertEquals;
 
 import org.testng.annotations.Test;
 
-import io.github.astrapi69.design.pattern.state.wizard.BaseWizardWizardState;
-import io.github.astrapi69.design.pattern.state.wizard.BaseWizardWizardStateMachine;
+import io.github.astrapi69.design.pattern.state.wizard.BaseWizardState;
+import io.github.astrapi69.design.pattern.state.wizard.BaseWizardStateMachine;
 import io.github.astrapi69.design.pattern.state.wizard.WizardStateMachine;
 
 public class BaseWizardStateMachineTest
@@ -43,8 +43,8 @@ public class BaseWizardStateMachineTest
 	public void testWizardStateMachine()
 	{
 		EnumBaseWizardWizardState expected;
-		BaseWizardWizardState<BaseWizardWizardStateMachine> actual;
-		final BaseWizardWizardStateMachine stateMachine = BaseWizardWizardStateMachine.builder()
+		BaseWizardState<BaseWizardStateMachine> actual;
+		final BaseWizardStateMachine stateMachine = BaseWizardStateMachine.builder()
 			.currentState(EnumBaseWizardWizardState.FIRST).build();
 
 		expected = EnumBaseWizardWizardState.FIRST;
@@ -52,7 +52,6 @@ public class BaseWizardStateMachineTest
 		actual = stateMachine.getCurrentState();
 		assertEquals(expected, actual);
 
-		expected = EnumBaseWizardWizardState.FIRST;
 		actual = stateMachine.getCurrentState();
 		assertEquals(expected, actual);
 

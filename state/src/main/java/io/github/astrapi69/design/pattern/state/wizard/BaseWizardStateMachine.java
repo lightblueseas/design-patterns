@@ -22,7 +22,7 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.design.pattern.state.wizard.model;
+package io.github.astrapi69.design.pattern.state.wizard;
 
 
 import lombok.AllArgsConstructor;
@@ -32,8 +32,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import io.github.astrapi69.design.pattern.state.wizard.BaseWizardWizardState;
-import io.github.astrapi69.design.pattern.state.wizard.IBaseWizardWizardStateMachine;
 
 @Getter
 @Setter
@@ -42,13 +40,10 @@ import io.github.astrapi69.design.pattern.state.wizard.IBaseWizardWizardStateMac
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
-public class BaseWizardModelWizardStateMachine<T>
-	implements
-		IBaseWizardWizardStateMachine<BaseWizardWizardState<BaseWizardModelWizardStateMachine<T>>>
+public class BaseWizardStateMachine
+	implements IBaseWizardStateMachine<BaseWizardState<BaseWizardStateMachine>>
 {
-	private BaseWizardWizardState<BaseWizardModelWizardStateMachine<T>> currentState;
-
-	private T modelObject;
+	private BaseWizardState<BaseWizardStateMachine> currentState;
 
 	@Override
 	public void cancel()
