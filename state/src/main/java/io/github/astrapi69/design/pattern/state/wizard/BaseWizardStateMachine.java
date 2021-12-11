@@ -41,7 +41,8 @@ import lombok.ToString;
 @AllArgsConstructor
 @Builder(toBuilder = true)
 public class BaseWizardStateMachine
-	implements IBaseWizardStateMachine<BaseWizardState<BaseWizardStateMachine>>
+	implements
+		IBaseWizardStateMachine<BaseWizardState<BaseWizardStateMachine>>
 {
 	private BaseWizardState<BaseWizardStateMachine> currentState;
 

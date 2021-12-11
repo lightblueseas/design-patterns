@@ -43,7 +43,8 @@ import io.github.astrapi69.design.pattern.state.wizard.IBaseWizardStateMachine;
 @AllArgsConstructor
 @Builder(toBuilder = true)
 public class BaseWizardStateMachineModel<T>
-	implements IBaseWizardStateMachine<BaseWizardState<BaseWizardStateMachineModel<T>>>
+	implements
+		IBaseWizardStateMachine<BaseWizardState<BaseWizardStateMachineModel<T>>>
 {
 	private BaseWizardState<BaseWizardStateMachineModel<T>> currentState;
 
