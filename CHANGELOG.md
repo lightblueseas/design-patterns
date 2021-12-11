@@ -1,6 +1,14 @@
 ## Change log
 ----------------------
 
+Version 5-SNAPSHOT
+-------------
+
+CHANGED:
+
+- rename of all misspelled classes in state module
+- update of test dependency guava to new version to 31.0.1-jre
+
 Version 4.16
 -------------
 

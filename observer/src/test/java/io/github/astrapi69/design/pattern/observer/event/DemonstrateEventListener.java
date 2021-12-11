@@ -64,8 +64,7 @@ public class DemonstrateEventListener
 			@Override
 			public void onEvent(final EventObject<JTextField> event)
 			{
-				System.out
-					.println(new StringBuffer(event.getSource().getText()).reverse());
+				System.out.println(new StringBuffer(event.getSource().getText()).reverse());
 
 			}
 		};
