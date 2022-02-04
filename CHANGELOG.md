@@ -1,8 +1,21 @@
 ## Change log
 ----------------------
 
-Version 5.1-SNAPSHOT
+Version 5.1
 -------------
+
+ADDED:
+
+- new classes for the state of components
+- new test-dependency crypt-api
+- new test-dependency crypt-data
+
+CHANGED:
+
+- update gradle to new version 7.3.3
+- update of test-dependency jobj-core to new version 5.3
+- update of test-dependency test-objects to new version 5.7
+- update of test-dependency testng to new version 7.5
 
 Version 5
 -------------
@@ -10,7 +23,7 @@ Version 5
 CHANGED:
 
 - rename of all misspelled classes in state module
-- update of test dependency guava to new version to 31.0.1-jre
+- update of test dependency guava to new version 31.0.1-jre
 
 Version 4.16
 -------------

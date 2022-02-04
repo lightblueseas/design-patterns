@@ -31,7 +31,7 @@ your project `build.gradle` if you want to import the core functionality of all 
 ```
 define version in file gradle.properties
 
-designPatternsVersion=5
+designPatternsVersion=5.1
 ```
 
 or in build.gradle ext area
@@ -39,7 +39,7 @@ or in build.gradle ext area
 ```
 ext {
 			...
-    designPatternsVersion = "5"
+    designPatternsVersion = "5.1"
 			...
 }
 ```
@@ -74,7 +74,7 @@ You can first define the version properties:
 	<properties>
 			...
 		<!-- DESIGN-PATTERNS version -->
-		<design-patterns.version>5</design-patterns.version>
+		<design-patterns.version>5.1</design-patterns.version>
 		<builder.version>${design-patterns.version}</builder.version>
 		<command.version>${design-patterns.version}</command.version>
 		<decorator.version>${design-patterns.version}</decorator.version>
