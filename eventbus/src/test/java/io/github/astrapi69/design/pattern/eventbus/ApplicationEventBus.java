@@ -25,6 +25,7 @@
 package io.github.astrapi69.design.pattern.eventbus;
 
 
+import io.github.astrapi69.design.pattern.eventbus.eventobject.ImportWizardModel;
 import lombok.Getter;
 
 import com.google.common.eventbus.EventBus;
@@ -52,6 +53,11 @@ public class ApplicationEventBus
 	public static EventSource<EventObject<NavigationEventState>> getImportNavigationState()
 	{
 		return GenericEventBus.getEventSource(NavigationEventState.class);
+	}
+
+	public static EventSource<EventObject<ImportWizardModel>> getImportWizardModel()
+	{
+		return GenericEventBus.getEventSource(ImportWizardModel.class);
 	}
 
 	public static ApplicationEventBus getInstance()
