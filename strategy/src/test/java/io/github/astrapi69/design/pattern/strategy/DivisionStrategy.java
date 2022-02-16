@@ -22,42 +22,24 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.design.pattern.state.component;
+package io.github.astrapi69.design.pattern.strategy;
 
-import java.io.File;
-import java.security.PrivateKey;
-
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.experimental.FieldDefaults;
-import lombok.experimental.SuperBuilder;
-import io.github.astrapi69.crypto.key.KeySize;
+import io.github.astrapi69.test.objects.AlgorithmModel;
 
 /**
- * The class {@link NewPrivateKeyModelBean}
+ * The class {@link DivisionStrategy} for division.
  */
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@SuperBuilder(toBuilder = true)
-@FieldDefaults(level = AccessLevel.PRIVATE)
-public class NewPrivateKeyModelBean
+public class DivisionStrategy implements Strategy<Integer, AlgorithmModel>
 {
-	int keyLength;
 
-	@Builder.Default
-	KeySize keySize = KeySize.KEYSIZE_2048;
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Integer execute(final AlgorithmModel model)
+	{
+		System.out.println("Called MultiplicationStrategy's execute()");
+		return model.getA() / model.getB(); // Do a division with a and b
+	}
 
-	PrivateKey privateKey;
-
-	/** The private key directory */
-	File privateKeyDirectory;
-
-	String filenameOfPrivateKey;
-
-	/** The private key file */
-	File privateKeyFile;
 }

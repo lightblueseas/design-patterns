@@ -39,7 +39,7 @@ public class MultiplicationStrategy implements Strategy<Integer, AlgorithmModel>
 	public Integer execute(final AlgorithmModel model)
 	{
 		System.out.println("Called MultiplicationStrategy's execute()");
-		return model.getA() * model.getB(); // Do an multiplication with a and b
+		return model.getA() * model.getB(); // Do a multiplication with a and b
 	}
 
 }

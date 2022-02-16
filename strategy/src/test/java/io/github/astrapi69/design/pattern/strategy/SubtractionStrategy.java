@@ -39,6 +39,6 @@ public class SubtractionStrategy implements Strategy<Integer, AlgorithmModel>
 	public Integer execute(final AlgorithmModel model)
 	{
 		System.out.println("Called SubtractionStrategy's execute()");
-		return model.getA() - model.getB(); // Do an subtraction with a and b
+		return model.getA() - model.getB(); // Do a subtraction with a and b
 	}
 }

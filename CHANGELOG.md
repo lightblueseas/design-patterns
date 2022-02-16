@@ -4,6 +4,15 @@
 Version 5.2-SNAPSHOT
 -------------
 
+ADDED:
+
+- new gradle plugin spotless in version 6.3.0 for formatting source code
+
+CHANGED:
+
+- update gradle to new version 7.4
+- update of test-dependency crypt-api to new version 7.7
+- update of test-dependency crypt-data to new version 7.11.1
 
 
 Version 5.1

@@ -25,35 +25,45 @@
 package io.github.astrapi69.design.pattern.strategy;
 
 import io.github.astrapi69.test.objects.AlgorithmModel;
+import org.testng.annotations.Test;
+import static org.testng.AssertJUnit.assertEquals;
 
 /**
- * The class {@link StrategyExample}.
+ * The class {@link StrategyTest}.
  */
-public class StrategyExample
+public class StrategyTest
 {
 
-	/**
-	 * The main method.
-	 *
-	 * @param args
-	 *            the arguments
-	 * @throws CloneNotSupportedException
-	 */
-	public static void main(final String[] args) throws CloneNotSupportedException
+	@Test
+	public void testStrategy()
 	{
-		Strategy<Integer, AlgorithmModel> strategy = new AdditionStrategy();
-		Context<Integer, AlgorithmModel> context = new Context<>(strategy);
-		final AlgorithmModel algorithmModel = AlgorithmModel.builder().a(5).b(15).build();
-		Integer i = context.execute(algorithmModel);
-		System.out.println("Result from ComputeAddStrategy's execute():" + i);
+		Strategy<Integer, AlgorithmModel> strategy;
+		Context<Integer, AlgorithmModel> context;
+		AlgorithmModel algorithmModel;
+		Integer actual;
+		Integer expected;
+		strategy = new AdditionStrategy();
+		context = new Context<>(strategy);
+		algorithmModel = AlgorithmModel.builder().a(15).b(5).build();
+		actual = context.execute(algorithmModel);
+		expected = 20;
+		assertEquals(expected, actual);
 		strategy = new SubtractionStrategy();
 		context = new Context<>(strategy);
-		i = context.execute(algorithmModel);
-		System.out.println("Result from ComputeSubtractStrategy's execute():" + i);
+		actual = context.execute(algorithmModel);
+		expected = 10;
+		assertEquals(expected, actual);
 		strategy = new MultiplicationStrategy();
 		context = new Context<>(strategy);
-		i = context.execute(algorithmModel);
-		System.out.println("Result from MultiplicationStrategy's execute():" + i);
-
+		actual = context.execute(algorithmModel);
+		expected = 75;
+		assertEquals(expected, actual);
+		strategy = new DivisionStrategy();
+		context = new Context<>(strategy);
+		algorithmModel = AlgorithmModel.builder().a(15).b(5).build();
+		actual = context.execute(algorithmModel);
+		expected = 3;
+		assertEquals(expected, actual);
 	}
+
 }
