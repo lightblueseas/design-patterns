@@ -26,7 +26,7 @@ package io.github.astrapi69.design.pattern.observer.chat;
 
 import java.io.Serializable;
 
-import de.alpharogroup.auth.SimpleUser;
+import io.github.astrapi69.auth.SimpleUser;
 
 public class ApplicationUser implements IUser<SimpleUser>
 {

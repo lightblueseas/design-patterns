@@ -1,5 +1,6 @@
 dependencies {
-    testImplementation("de.alpharogroup:auth-security:$authSecurityVersion")
+    testImplementation("io.github.astrapi69:auth-api:$authApiVersion")
+    testImplementation("io.github.astrapi69:auth:$authVersion")
 }
 
 license {
