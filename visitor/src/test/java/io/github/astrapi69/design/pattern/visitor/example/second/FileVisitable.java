@@ -29,6 +29,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import io.github.astrapi69.design.pattern.visitor.GenericVisitable;
+import io.github.astrapi69.design.pattern.visitor.GenericVisitor;
 
 /**
  * The Class FileVisitable.
@@ -67,7 +68,7 @@ public class FileVisitable implements GenericVisitable<FileVisitor, FileVisitabl
 	 *
 	 * @param visitor
 	 *            the visitor
-	 * @see io.github.astrapi69.designpattern.visitor.GenericVisitable#accept(io.github.astrapi69.designpattern.visitor.GenericVisitor)
+	 * @see GenericVisitable#accept(GenericVisitor)
 	 */
 	@Override
 	public void accept(final FileVisitor visitor)

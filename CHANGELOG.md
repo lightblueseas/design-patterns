@@ -7,10 +7,11 @@ Version 5.2-SNAPSHOT
 ADDED:
 
 - new gradle plugin spotless in version 6.3.0 for formatting source code
+- new interface Visitor and Acceptable that provides the 'Visitor-Pattern'
 
 CHANGED:
 
-- update gradle to new version 7.4
+- update gradle to new version 7.4.1
 - update of test-dependency crypt-api to new version 7.7
 - update of test-dependency crypt-data to new version 7.11.1
 - replaced test-dependency 'de.alpharogroup:auth-security' with new 'io.github.astrapi69:auth' and 'io.github.astrapi69:auth-api' in major version 6

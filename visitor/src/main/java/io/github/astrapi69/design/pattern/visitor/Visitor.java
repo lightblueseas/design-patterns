@@ -22,62 +22,22 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.design.pattern.visitor.example.second;
-
-import java.util.Collection;
-
-import io.github.astrapi69.design.pattern.visitor.GenericVisitable;
-import io.github.astrapi69.design.pattern.visitor.GenericVisitor;
-
+package io.github.astrapi69.design.pattern.visitor;
 
 /**
- * The Class FileVisitor.
+ * The interface {@link Visitor} represents the visitor of the 'Visitor Pattern'
+ *
+ * @param <T>
+ *            the generic type from the object to visit
  */
-public class FileVisitor implements GenericVisitor<FileVisitor, FileVisitable>
+public interface Visitor<T>
 {
 
-	/** The files counted. */
-	private int filesCounted;
-
 	/**
-	 * Instantiates a new file visitor.
-	 */
-	public FileVisitor()
-	{
-		super();
-	}
-
-	/**
-	 * Gets the files counted.
+	 * Visits the given acceptable object
 	 *
-	 * @return the files counted
+	 * @param acceptable
+	 *            the acceptable object to visit
 	 */
-	public int getFilesCounted()
-	{
-		return filesCounted;
-	}
-
-	/**
-	 * (non-Javadoc).
-	 *
-	 * @param visitable
-	 *            the visitable
-	 * @see GenericVisitor#visit(GenericVisitable)
-	 */
-	@Override
-	public void visit(final FileVisitable visitable)
-	{
-		filesCounted++;
-		System.out.println(visitable.getAbsolutePath());
-		if (visitable.isDirectory())
-		{
-			final Collection<FileVisitable> children = visitable.getChildren();
-			for (final FileVisitable fileVisitable : children)
-			{
-				fileVisitable.accept(this);
-			}
-		}
-	}
-
-
+	public void visit(T acceptable);
 }
