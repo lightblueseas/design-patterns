@@ -21,7 +21,14 @@ The source code comes under the liberal MIT License, making design-patterns grea
 
 ## Maven Central
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/design-patterns/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/design-patterns)
+- builder [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/builder/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/builder)
+- command [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/command/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/command)
+- decorator [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/decorator/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/decorator)
+- eventbus [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/eventbus/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/eventbus)
+- observer [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/observer/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/observer)
+- state [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/state/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/state)
+- strategy [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/strategy/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/strategy)
+- visitor [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/visitor/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/visitor)
 
 ## gradle dependency
 
@@ -31,7 +38,7 @@ your project `build.gradle` if you want to import the core functionality of all 
 ```
 define version in file gradle.properties
 
-designPatternsVersion=5.1
+designPatternsVersion=5.2
 ```
 
 or in build.gradle ext area
@@ -39,7 +46,7 @@ or in build.gradle ext area
 ```
 ext {
 			...
-    designPatternsVersion = "5.1"
+    designPatternsVersion = "5.2"
 			...
 }
 ```
@@ -74,7 +81,7 @@ You can first define the version properties:
 	<properties>
 			...
 		<!-- DESIGN-PATTERNS version -->
-		<design-patterns.version>5.1</design-patterns.version>
+		<design-patterns.version>5.2</design-patterns.version>
 		<builder.version>${design-patterns.version}</builder.version>
 		<command.version>${design-patterns.version}</command.version>
 		<decorator.version>${design-patterns.version}</decorator.version>
