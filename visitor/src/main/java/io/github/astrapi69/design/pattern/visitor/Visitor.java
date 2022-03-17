@@ -25,7 +25,9 @@
 package io.github.astrapi69.design.pattern.visitor;
 
 /**
- * The interface {@link Visitor} represents the visitor of the 'Visitor Pattern'
+ * The interface {@link Visitor} have to be implemented from all classes that wants to be visitor
+ * objects and provide a custom algorithm. This interface is the counterpart of the
+ * {@link Acceptable} interface
  *
  * @param <T>
  *            the generic type from the object to visit

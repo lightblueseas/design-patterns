@@ -25,7 +25,6 @@
 package io.github.astrapi69.design.pattern.visitor;
 
 /**
- *
  * The interface {@link GenericVisitor} have to be implemented from all classes that wants to be
  * visitor objects and provide a custom algorithm. This interface is restrictive for the visitor and
  * the acceptable objects, if this is not wanted or required then use the less restrictive
@@ -39,6 +38,12 @@ package io.github.astrapi69.design.pattern.visitor;
 public interface GenericVisitor<VISITOR extends GenericVisitor<VISITOR, ACCEPTABLE>, ACCEPTABLE extends GenericAcceptable<VISITOR, ACCEPTABLE>>
 {
 
+	/**
+	 * Visits the given acceptable object
+	 *
+	 * @param visitable
+	 *            the acceptable object to visit
+	 */
 	void visit(final ACCEPTABLE visitable);
 
 }

@@ -26,7 +26,7 @@ package io.github.astrapi69.design.pattern.visitor;
 
 /**
  * The interface {@link Acceptable} have to be implemented from all classes that wants to accept
- * Visitor object
+ * visitor objects. This interface is the counterpart of the {@link Acceptable} interface
  *
  * @param <V>
  *            the generic type from the visitor object
