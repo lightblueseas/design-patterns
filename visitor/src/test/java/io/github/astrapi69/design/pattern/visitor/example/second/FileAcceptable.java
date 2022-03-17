@@ -25,7 +25,6 @@
 package io.github.astrapi69.design.pattern.visitor.example.second;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 

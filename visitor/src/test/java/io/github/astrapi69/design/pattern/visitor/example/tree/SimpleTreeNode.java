@@ -28,8 +28,6 @@ package io.github.astrapi69.design.pattern.visitor.example.tree;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import io.github.astrapi69.design.pattern.visitor.Acceptable;
-import io.github.astrapi69.design.pattern.visitor.Visitor;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -37,6 +35,8 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.design.pattern.visitor.Acceptable;
+import io.github.astrapi69.design.pattern.visitor.Visitor;
 
 @NoArgsConstructor
 @ToString(exclude = { "parent" })

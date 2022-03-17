@@ -24,21 +24,22 @@
  */
 package io.github.astrapi69.design.pattern.state.component;
 
-import io.github.astrapi69.crypto.algorithm.KeyPairGeneratorAlgorithm;
-import io.github.astrapi69.crypto.factory.KeyPairFactory;
-import io.github.astrapi69.crypto.key.KeySize;
-import io.github.astrapi69.file.search.PathFinder;
-import org.testng.annotations.Test;
-
-import javax.swing.JButton;
+import static org.testng.AssertJUnit.assertFalse;
+import static org.testng.AssertJUnit.assertTrue;
 
 import java.security.KeyPair;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.PrivateKey;
 
-import static org.testng.AssertJUnit.assertFalse;
-import static org.testng.AssertJUnit.assertTrue;
+import javax.swing.JButton;
+
+import org.testng.annotations.Test;
+
+import io.github.astrapi69.crypto.algorithm.KeyPairGeneratorAlgorithm;
+import io.github.astrapi69.crypto.factory.KeyPairFactory;
+import io.github.astrapi69.crypto.key.KeySize;
+import io.github.astrapi69.file.search.PathFinder;
 
 public class BtnSaveStateMachineTest
 {

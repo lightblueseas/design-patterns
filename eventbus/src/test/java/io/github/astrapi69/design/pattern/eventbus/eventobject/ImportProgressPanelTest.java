@@ -24,12 +24,12 @@
  */
 package io.github.astrapi69.design.pattern.eventbus.eventobject;
 
-import org.testng.annotations.Test;
-
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotEquals;
-import static org.testng.Assert.assertNull;
 import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertNull;
+
+import org.testng.annotations.Test;
 
 public class ImportProgressPanelTest
 {

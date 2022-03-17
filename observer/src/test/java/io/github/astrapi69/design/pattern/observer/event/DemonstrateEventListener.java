@@ -24,7 +24,7 @@
  */
 package io.github.astrapi69.design.pattern.observer.event;
 
-import javax.swing.*;
+import javax.swing.JTextField;
 
 /**
  * This class is to demonstrate the Event Listener interface.

@@ -24,9 +24,11 @@
  */
 package io.github.astrapi69.design.pattern.strategy;
 
-import io.github.astrapi69.test.objects.AlgorithmModel;
-import org.testng.annotations.Test;
 import static org.testng.AssertJUnit.assertEquals;
+
+import org.testng.annotations.Test;
+
+import io.github.astrapi69.test.objects.AlgorithmModel;
 
 /**
  * The class {@link StrategyTest}.

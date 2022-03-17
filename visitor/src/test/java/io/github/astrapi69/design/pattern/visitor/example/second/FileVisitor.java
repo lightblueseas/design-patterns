@@ -26,7 +26,6 @@ package io.github.astrapi69.design.pattern.visitor.example.second;
 
 import java.util.Collection;
 
-import io.github.astrapi69.design.pattern.visitor.GenericAcceptable;
 import io.github.astrapi69.design.pattern.visitor.GenericVisitor;
 
 

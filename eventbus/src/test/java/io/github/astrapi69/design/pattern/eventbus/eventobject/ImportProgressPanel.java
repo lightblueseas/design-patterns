@@ -24,11 +24,11 @@
  */
 package io.github.astrapi69.design.pattern.eventbus.eventobject;
 
+import lombok.Getter;
 import io.github.astrapi69.design.pattern.eventbus.ApplicationEventBus;
 import io.github.astrapi69.design.pattern.observer.event.EventListener;
 import io.github.astrapi69.design.pattern.observer.event.EventObject;
 import io.github.astrapi69.design.pattern.observer.event.EventSource;
-import lombok.Getter;
 
 public class ImportProgressPanel implements EventListener<EventObject<ImportWizardModel>>
 {
