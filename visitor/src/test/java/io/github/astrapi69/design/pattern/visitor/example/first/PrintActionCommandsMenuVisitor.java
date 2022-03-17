@@ -39,10 +39,10 @@ public class PrintActionCommandsMenuVisitor implements MenuVisitor
 	public void visit(final Menu menu)
 	{
 		System.out.println(menu.getName());
-		final Iterator<MenuVisitableObject> iterator = menu.getChildren().iterator();
+		final Iterator<MenuAcceptableObject> iterator = menu.getChildren().iterator();
 		while (iterator.hasNext())
 		{
-			final MenuVisitableObject menuVisitableObject = iterator.next();
+			final MenuAcceptableObject menuVisitableObject = iterator.next();
 			menuVisitableObject.accept(this);
 		}
 	}
@@ -60,7 +60,7 @@ public class PrintActionCommandsMenuVisitor implements MenuVisitor
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void visit(final MenuVisitableObject visitable)
+	public void visit(final MenuAcceptableObject visitable)
 	{
 		visitable.accept(this);
 	}

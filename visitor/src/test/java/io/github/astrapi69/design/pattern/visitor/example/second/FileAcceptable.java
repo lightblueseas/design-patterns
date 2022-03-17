@@ -27,20 +27,21 @@ package io.github.astrapi69.design.pattern.visitor.example.second;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.LinkedHashSet;
 
-import io.github.astrapi69.design.pattern.visitor.GenericVisitable;
+import io.github.astrapi69.design.pattern.visitor.GenericAcceptable;
 import io.github.astrapi69.design.pattern.visitor.GenericVisitor;
 
 /**
- * The Class FileVisitable.
+ * The Class FileAcceptable.
  */
-public class FileVisitable implements GenericVisitable<FileVisitor, FileVisitable>
+public class FileAcceptable implements GenericAcceptable<FileVisitor, FileAcceptable>
 {
 
 	/** The file. */
 	private final File file;
 	/** The children. */
-	private Collection<FileVisitable> children;
+	private Collection<FileAcceptable> children;
 
 	/**
 	 * Instantiates a new file visitable.
@@ -48,17 +49,17 @@ public class FileVisitable implements GenericVisitable<FileVisitor, FileVisitabl
 	 * @param file
 	 *            the file
 	 */
-	public FileVisitable(final File file)
+	public FileAcceptable(final File file)
 	{
 		super();
 		this.file = file;
 		if (this.file.isDirectory())
 		{
-			children = new ArrayList<>();
+			children = new LinkedHashSet<>();
 			final File[] files = file.listFiles();
 			for (final File childrenFile : files)
 			{
-				children.add(new FileVisitable(childrenFile));
+				children.add(new FileAcceptable(childrenFile));
 			}
 		}
 	}
@@ -68,7 +69,7 @@ public class FileVisitable implements GenericVisitable<FileVisitor, FileVisitabl
 	 *
 	 * @param visitor
 	 *            the visitor
-	 * @see GenericVisitable#accept(GenericVisitor)
+	 * @see GenericAcceptable#accept(GenericVisitor)
 	 */
 	@Override
 	public void accept(final FileVisitor visitor)
@@ -91,7 +92,7 @@ public class FileVisitable implements GenericVisitable<FileVisitor, FileVisitabl
 	 *
 	 * @return the children
 	 */
-	public Collection<FileVisitable> getChildren()
+	public Collection<FileAcceptable> getChildren()
 	{
 		return children;
 	}

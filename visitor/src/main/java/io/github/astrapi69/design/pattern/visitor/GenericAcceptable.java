@@ -22,14 +22,29 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.design.pattern.visitor.example.first;
-
-import io.github.astrapi69.design.pattern.visitor.GenericVisitable;
+package io.github.astrapi69.design.pattern.visitor;
 
 /**
- * The Interface MenuVisitableObject.
+ * The interface {@link GenericAcceptable} have to be implemented from all classes that wants to
+ * accept visitor objects, and is the counterpart of the interface {@link GenericVisitor}. This
+ * interface is restrictive for the visitor and * the acceptable objects, if this is not required
+ * then use the less restrictive interface {@link Acceptable} and is the counterpart of the
+ * interface {@link Visitor}
+ *
+ * @param <VISITOR>
+ *            the generic type from the visitor
+ * @param <ACCEPTABLE>
+ *            the generic type from the object to visit also called 'visitable' or 'acceptable'
  */
-public interface MenuVisitableObject extends GenericVisitable<MenuVisitor, MenuVisitableObject>
+public interface GenericAcceptable<VISITOR extends GenericVisitor<VISITOR, ACCEPTABLE>, ACCEPTABLE extends GenericAcceptable<VISITOR, ACCEPTABLE>>
 {
-	String getName();
+
+	/**
+	 * Accepts the given visitor that provides a custom algorithm for processing all elements
+	 *
+	 * @param visitor
+	 *            the visitor
+	 */
+	void accept(final VISITOR visitor);
+
 }

@@ -22,25 +22,14 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.design.pattern.visitor;
+package io.github.astrapi69.design.pattern.visitor.example.first;
+
+import io.github.astrapi69.design.pattern.visitor.GenericAcceptable;
 
 /**
- * The Interface GenericVisitable.
- *
- * @param <GV>
- *            the type from the visitor
- * @param <GVSTABLE>
- *            the type from the visitable
+ * The Interface MenuAcceptableObject.
  */
-public interface GenericVisitable<GV extends GenericVisitor<GV, GVSTABLE>, GVSTABLE extends GenericVisitable<GV, GVSTABLE>>
+public interface MenuAcceptableObject extends GenericAcceptable<MenuVisitor, MenuAcceptableObject>
 {
-
-	/**
-	 * Accept.
-	 *
-	 * @param visitor
-	 *            the visitor
-	 */
-	void accept(final GV visitor);
-
+	String getName();
 }

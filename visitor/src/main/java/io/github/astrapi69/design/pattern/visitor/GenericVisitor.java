@@ -25,16 +25,20 @@
 package io.github.astrapi69.design.pattern.visitor;
 
 /**
- * The Interface GenericVisitor.
  *
- * @param <GV>
- *            the type from the visitor
- * @param <GVSTABLE>
- *            the type from the visitable
+ * The interface {@link GenericVisitor} have to be implemented from all classes that wants to be
+ * visitor objects and provide a custom algorithm. This interface is restrictive for the visitor and
+ * the acceptable objects, if this is not wanted or required then use the less restrictive
+ * interfaces {@link Visitor} and is the counterpart of the interface {@link Acceptable}
+ *
+ * @param <VISITOR>
+ *            the generic type from the visitor
+ * @param <ACCEPTABLE>
+ *            the generic type from the object to visit also called 'visitable' or 'acceptable'
  */
-public interface GenericVisitor<GV extends GenericVisitor<GV, GVSTABLE>, GVSTABLE extends GenericVisitable<GV, GVSTABLE>>
+public interface GenericVisitor<VISITOR extends GenericVisitor<VISITOR, ACCEPTABLE>, ACCEPTABLE extends GenericAcceptable<VISITOR, ACCEPTABLE>>
 {
 
-	void visit(final GVSTABLE visitable);
+	void visit(final ACCEPTABLE visitable);
 
 }

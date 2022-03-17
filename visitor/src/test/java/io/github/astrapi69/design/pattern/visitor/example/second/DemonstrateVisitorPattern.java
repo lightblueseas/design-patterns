@@ -57,7 +57,7 @@ public class DemonstrateVisitorPattern
 			new DemonstrateVisitorPattern());
 		directory = directory.getParentFile();
 		directory = PathFinder.getProjectDirectory();
-		final FileVisitable visitable = new FileVisitable(directory);
+		final FileAcceptable visitable = new FileAcceptable(directory);
 		visitor.visit(visitable);
 		System.out.println(visitor.getFilesCounted());
 

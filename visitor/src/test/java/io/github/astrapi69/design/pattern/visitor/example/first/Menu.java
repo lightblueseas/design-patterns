@@ -29,14 +29,14 @@ import java.util.Collection;
 /**
  * The Class Menu.
  */
-public class Menu implements MenuVisitableObject
+public class Menu implements MenuAcceptableObject
 {
 
 	/** The name. */
 	private final String name;
 
 	/** The children. */
-	private final Collection<MenuVisitableObject> children;
+	private final Collection<MenuAcceptableObject> children;
 
 	/**
 	 * Instantiates a new menu.
@@ -46,7 +46,7 @@ public class Menu implements MenuVisitableObject
 	 * @param children
 	 *            the children
 	 */
-	public Menu(final String name, final Collection<MenuVisitableObject> children)
+	public Menu(final String name, final Collection<MenuAcceptableObject> children)
 	{
 		super();
 		this.name = name;
@@ -67,7 +67,7 @@ public class Menu implements MenuVisitableObject
 	 *
 	 * @return the children
 	 */
-	public Collection<MenuVisitableObject> getChildren()
+	public Collection<MenuAcceptableObject> getChildren()
 	{
 		return children;
 	}

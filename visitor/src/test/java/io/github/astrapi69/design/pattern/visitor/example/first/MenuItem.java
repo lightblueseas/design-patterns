@@ -27,7 +27,7 @@ package io.github.astrapi69.design.pattern.visitor.example.first;
 /**
  * The Class MenuItem.
  */
-public class MenuItem implements MenuVisitableObject
+public class MenuItem implements MenuAcceptableObject
 {
 
 	/** The name. */

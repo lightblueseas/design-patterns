@@ -39,5 +39,5 @@ public interface Visitor<T>
 	 * @param acceptable
 	 *            the acceptable object to visit
 	 */
-	void visit(T acceptable);
+	void visit(final T acceptable);
 }

@@ -29,7 +29,7 @@ import io.github.astrapi69.design.pattern.visitor.GenericVisitor;
 /**
  * The Interface MenuVisitor.
  */
-public interface MenuVisitor extends GenericVisitor<MenuVisitor, MenuVisitableObject>
+public interface MenuVisitor extends GenericVisitor<MenuVisitor, MenuAcceptableObject>
 {
 
 	/**

@@ -41,9 +41,9 @@ public class DemonstrateVisitorPattern
 	public static void main(final String[] args)
 	{
 		// The main menu.
-		final Menu mainMenu = new Menu("Main", new ArrayList<MenuVisitableObject>());
+		final Menu mainMenu = new Menu("Main", new ArrayList<MenuAcceptableObject>());
 		// Sub menu 'new' from main menu.
-		final Menu mainMenuNew = new Menu("New", new ArrayList<MenuVisitableObject>());
+		final Menu mainMenuNew = new Menu("New", new ArrayList<MenuAcceptableObject>());
 		// Sub menuitems from the sub menu 'new'.
 		mainMenuNew.getChildren().add(new MenuItem("File", "File action"));
 		mainMenuNew.getChildren().add(new MenuItem("Folder", "Folder action"));

@@ -26,14 +26,14 @@ package io.github.astrapi69.design.pattern.visitor.example.second;
 
 import java.util.Collection;
 
-import io.github.astrapi69.design.pattern.visitor.GenericVisitable;
+import io.github.astrapi69.design.pattern.visitor.GenericAcceptable;
 import io.github.astrapi69.design.pattern.visitor.GenericVisitor;
 
 
 /**
  * The Class FileVisitor.
  */
-public class FileVisitor implements GenericVisitor<FileVisitor, FileVisitable>
+public class FileVisitor implements GenericVisitor<FileVisitor, FileAcceptable>
 {
 
 	/** The files counted. */
@@ -57,22 +57,15 @@ public class FileVisitor implements GenericVisitor<FileVisitor, FileVisitable>
 		return filesCounted;
 	}
 
-	/**
-	 * (non-Javadoc).
-	 *
-	 * @param visitable
-	 *            the visitable
-	 * @see GenericVisitor#visit(GenericVisitable)
-	 */
 	@Override
-	public void visit(final FileVisitable visitable)
+	public void visit(final FileAcceptable visitable)
 	{
 		filesCounted++;
 		System.out.println(visitable.getAbsolutePath());
 		if (visitable.isDirectory())
 		{
-			final Collection<FileVisitable> children = visitable.getChildren();
-			for (final FileVisitable fileVisitable : children)
+			final Collection<FileAcceptable> children = visitable.getChildren();
+			for (final FileAcceptable fileVisitable : children)
 			{
 				fileVisitable.accept(this);
 			}

@@ -35,10 +35,10 @@ public interface Acceptable<V>
 {
 
 	/**
-	 * Accepts the given visitor that provides a custom algorithm for the traversing all elements
+	 * Accepts the given visitor that provides a custom algorithm for processing all elements
 	 *
 	 * @param visitor
 	 *            the visitor
 	 */
-	void accept(V visitor);
+	void accept(final V visitor);
 }
