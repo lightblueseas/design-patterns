@@ -11,11 +11,11 @@ ADDED:
 
 CHANGED:
 
-- update gradle to new version 7.4.1
-- update of test-dependency crypt-api to new version 7.7
-- update of test-dependency crypt-data to new version 7.11.1
+- update gradle to new patch version 7.4.1
+- update of test-dependency crypt-api to new minor version 7.7
+- update of test-dependency crypt-data to new patch version 7.11.1
+- update of test dependency guava to new minor version 31.1-jre
 - replaced test-dependency 'de.alpharogroup:auth-security' with new 'io.github.astrapi69:auth' and 'io.github.astrapi69:auth-api' in major version 6
-
 
 Version 5.1
 -------------
