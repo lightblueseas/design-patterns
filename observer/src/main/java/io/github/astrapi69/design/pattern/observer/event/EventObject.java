@@ -59,4 +59,16 @@ public class EventObject<T>
 		this.source = source;
 	}
 
+	/**
+	 * Factory method for create a new {@link EventObject} object
+	 *
+	 * @param source
+	 *            the source
+	 * @return the new created {@link EventObject} object
+	 */
+	public static <T> EventObject<T> of(final @NonNull T source)
+	{
+		return EventObject.<T> builder().source(source).build();
+	}
+
 }

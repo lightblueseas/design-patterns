@@ -4,7 +4,9 @@
 Version 5.3-SNAPSHOT
 -------------
 
+ADDED:
 
+- new factory method to the class EventObject
 
 Version 5.2
 -------------

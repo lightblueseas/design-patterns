@@ -42,7 +42,6 @@ public class ImportWizardPanel
 
 	public void fireNewEvent()
 	{
-		ApplicationEventBus.getImportWizardModel()
-			.fireEvent(EventObject.<ImportWizardModel> builder().source(this.model).build());
+		ApplicationEventBus.getImportWizardModel().fireEvent(EventObject.of(this.model));
 	}
 }
