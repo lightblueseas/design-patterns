@@ -62,7 +62,7 @@ public class EventSubject<T> implements EventSource<T>
 		return new EventSubject<>(source);
 	}
 
-	/* Initialization block **/
+	/* Initialization block */
 	{
 		eventListeners = new ArrayList<>();
 	}
