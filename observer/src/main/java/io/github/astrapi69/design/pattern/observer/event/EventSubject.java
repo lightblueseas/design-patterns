@@ -50,18 +50,6 @@ public class EventSubject<T> implements EventSource<T>
 	/** The source object */
 	private T source;
 
-	/**
-	 * Factory method for create a new {@link EventSubject} object
-	 *
-	 * @param source
-	 *            the source
-	 * @return the new created {@link EventSubject} object
-	 */
-	public static <T> EventSubject<T> of(final @NonNull T source)
-	{
-		return new EventSubject<>(source);
-	}
-
 	/* Initialization block */
 	{
 		eventListeners = new ArrayList<>();
@@ -83,6 +71,18 @@ public class EventSubject<T> implements EventSource<T>
 	public EventSubject(final T source)
 	{
 		this.source = source;
+	}
+
+	/**
+	 * Factory method for create a new {@link EventSubject} object
+	 *
+	 * @param source
+	 *            the source
+	 * @return the new created {@link EventSubject} object
+	 */
+	public static <T> EventSubject<T> of(final @NonNull T source)
+	{
+		return new EventSubject<>(source);
 	}
 
 	/**
