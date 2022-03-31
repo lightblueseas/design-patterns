@@ -27,10 +27,10 @@ package io.github.astrapi69.design.pattern.observer.event;
 import java.util.Collection;
 
 /**
- * The Interface EventSource.
+ * The interface {@link EventSource}
  *
  * @param <T>
- *            the generic type
+ *            the generic type of the source object
  */
 public interface EventSource<T>
 {

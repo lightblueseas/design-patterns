@@ -26,27 +26,45 @@ package io.github.astrapi69.design.pattern.observer.event;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
+
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.ToString;
 
 /**
- * The Class EventSubject.
+ * The class {@link EventSubject}
  *
  * @param <T>
- *            the generic type
+ *            the generic type of the source object
  */
+@Getter
+@EqualsAndHashCode
+@ToString
 public class EventSubject<T> implements EventSource<T>
 {
 
-	/** The event listeners. */
-	private final List<EventListener<T>> eventListeners;
-	/** The source. */
+	/** The event listeners */
+	private final Collection<EventListener<T>> eventListeners;
+
+	/** The source object */
 	private T source;
 
 	/**
-	 * Initialize block.
-	 **/
+	 * Factory method for create a new {@link EventSubject} object
+	 *
+	 * @param source
+	 *            the source
+	 * @return the new created {@link EventSubject} object
+	 */
+	public static <T> EventSubject<T> of(final @NonNull T source)
 	{
-		eventListeners = new ArrayList<EventListener<T>>();
+		return new EventSubject<>(source);
+	}
+
+	/* Initialization block **/
+	{
+		eventListeners = new ArrayList<>();
 	}
 
 	/**

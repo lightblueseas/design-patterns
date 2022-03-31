@@ -31,10 +31,10 @@ import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 /**
- * The class {@link EventObject}
+ * The class {@link EventObject} serves as the name already tells as an event object
  *
  * @param <T>
- *            the generic type
+ *            the generic type of the source object
  */
 @Getter
 @EqualsAndHashCode
