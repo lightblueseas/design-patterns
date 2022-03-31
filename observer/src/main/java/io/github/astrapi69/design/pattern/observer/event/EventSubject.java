@@ -76,6 +76,8 @@ public class EventSubject<T> implements EventSource<T>
 	/**
 	 * Factory method for create a new {@link EventSubject} object
 	 *
+	 * @param <T>
+	 *            the generic type of the source object
 	 * @param source
 	 *            the source
 	 * @return the new created {@link EventSubject} object

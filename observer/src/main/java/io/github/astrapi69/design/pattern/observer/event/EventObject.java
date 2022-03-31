@@ -62,6 +62,8 @@ public class EventObject<T>
 	/**
 	 * Factory method for create a new {@link EventObject} object
 	 *
+	 * @param <T>
+	 *            the generic type of the source object
 	 * @param source
 	 *            the source
 	 * @return the new created {@link EventObject} object
