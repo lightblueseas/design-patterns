@@ -1,5 +1,8 @@
 dependencies {
     testImplementation("io.github.astrapi69:test-objects:$testObjectsVersion")
+    testImplementation("io.github.astrapi69:xml-api:$xmlApiVersion")
+    testImplementation("io.github.astrapi69:xstream-extensions:$xstreamExtensionsVersion")
+    testImplementation("io.github.astrapi69:xml-jackson-extensions:$xmlJacksonExtensionsVersion")
 }
 
 license {

@@ -40,7 +40,7 @@ public class StrategyTest
 	public void testStrategy()
 	{
 		Strategy<Integer, AlgorithmModel> strategy;
-		Context<Integer, AlgorithmModel> context;
+		Strategy<Integer, AlgorithmModel> context;
 		AlgorithmModel algorithmModel;
 		Integer actual;
 		Integer expected;

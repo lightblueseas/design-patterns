@@ -24,6 +24,8 @@
  */
 package io.github.astrapi69.design.pattern.strategy;
 
+import java.util.Objects;
+
 /**
  * A context class for the strategy interface.
  *
@@ -32,7 +34,7 @@ package io.github.astrapi69.design.pattern.strategy;
  * @param <M>
  *            the generic type of the algorithm model
  */
-public class Context<R, M>
+public class Context<R, M> implements Strategy<R, M>
 {
 
 	/** The strategy. */
@@ -46,6 +48,7 @@ public class Context<R, M>
 	 */
 	public Context(final Strategy<R, M> strategy)
 	{
+		Objects.nonNull(strategy);
 		this.strategy = strategy;
 	}
 
