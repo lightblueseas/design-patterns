@@ -1,12 +1,17 @@
 ## Change log
 ----------------------
 
-Version 5.3-SNAPSHOT
+Version 6-SNAPSHOT
 -------------
 
 ADDED:
 
 - new factory method to the class EventObject
+
+CHANGED:
+
+- update of jdk to version 11 
+- update gradle to new patch version 7.5
 
 Version 5.2
 -------------
