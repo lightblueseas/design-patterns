@@ -28,6 +28,7 @@ import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertNotNull;
 
 import io.github.astrapi69.file.create.FileFactory;
+import io.github.astrapi69.file.delete.DeleteFileExtensions;
 import io.github.astrapi69.file.search.PathFinder;
 import io.github.astrapi69.throwable.RuntimeExceptionDecorator;
 import org.testng.annotations.Test;
@@ -70,6 +71,6 @@ public class XmlConverterStrategyTest
 
 		xmlFile = PathFinder.getRelativePath(PathFinder.getSrcTestResourcesDir(), "newtest.xml");
 		RuntimeExceptionDecorator.decorate(() -> FileFactory.newFile(xmlFile));
-
+		RuntimeExceptionDecorator.decorate(() -> DeleteFileExtensions.delete(xmlFile));
 	}
 }
