@@ -1,0 +1,4 @@
+dependencies {
+    testImplementation("io.github.astrapi69:auth-api:$authApiVersion")
+    testImplementation("io.github.astrapi69:auth:$authVersion")
+}
