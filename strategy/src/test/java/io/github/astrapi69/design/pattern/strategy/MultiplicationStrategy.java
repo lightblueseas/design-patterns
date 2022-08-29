@@ -24,7 +24,7 @@
  */
 package io.github.astrapi69.design.pattern.strategy;
 
-import io.github.astrapi69.test.objects.AlgorithmModel;
+import io.github.astrapi69.test.object.AlgorithmModel;
 
 /**
  * The class {@link MultiplicationStrategy} for multiplication.

@@ -24,7 +24,7 @@
  */
 package io.github.astrapi69.design.pattern.command;
 
-import io.github.astrapi69.test.objects.Light;
+import io.github.astrapi69.test.object.Light;
 
 /**
  * The class {@link LightOnCommand}. Concrete Command that extends the abstract class

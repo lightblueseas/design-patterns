@@ -28,7 +28,7 @@ import static org.testng.AssertJUnit.assertEquals;
 
 import org.testng.annotations.Test;
 
-import io.github.astrapi69.test.objects.AlgorithmModel;
+import io.github.astrapi69.test.object.AlgorithmModel;
 
 /**
  * The class {@link StrategyTest}.

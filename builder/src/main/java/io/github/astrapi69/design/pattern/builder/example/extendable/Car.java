@@ -22,7 +22,7 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.design.pattern.builder;
+package io.github.astrapi69.design.pattern.builder.example.extendable;
 
 /**
  * The class {@link Car}.
@@ -45,7 +45,7 @@ public final class Car
 	 * @param builder
 	 *            the builder
 	 */
-	private Car(final Builder builder)
+	private Car(final AbstractCarBuilder<?, ?> builder)
 	{
 		this.model = builder.model;
 		this.type = builder.type;
@@ -55,13 +55,11 @@ public final class Car
 	/**
 	 * Builder.
 	 *
-	 * @param type
-	 *            the type
 	 * @return the builder
 	 */
-	public static Builder builder(final String type)
+	public static CarBuilder builder()
 	{
-		return new Builder(type);
+		return new CarBuilder();
 	}
 
 	/**
@@ -105,14 +103,14 @@ public final class Car
 	}
 
 	/**
-	 * The class {@link Builder}.
+	 * The class {@link AbstractCarBuilder}.
 	 */
-	public static class Builder
+	public static abstract class AbstractCarBuilder<C extends Car, B extends AbstractCarBuilder<C, B>>
 	{
 
 		// optional fields
 		/** The type. */
-		private final String type;
+		private String type;
 		/** The construction year. */
 		private int constructionYear;
 
@@ -121,37 +119,16 @@ public final class Car
 		private String model;
 
 		/**
-		 * Instantiates a new builder.
-		 *
-		 * @param type
-		 *            the type
-		 */
-		public Builder(final String type)
-		{
-			this.type = type;
-		}
-
-		/**
-		 * Builds the.
-		 *
-		 * @return the car
-		 */
-		public Car build()
-		{
-			return new Car(this);
-		}
-
-		/**
 		 * Construction year.
 		 *
 		 * @param constructionYear
 		 *            the construction year
 		 * @return the builder
 		 */
-		public Builder constructionYear(final int constructionYear)
+		public B constructionYear(final int constructionYear)
 		{
 			this.constructionYear = constructionYear;
-			return this;
+			return self();
 		}
 
 		/**
@@ -161,10 +138,58 @@ public final class Car
 		 *            the model
 		 * @return the builder
 		 */
-		public Builder model(final String model)
+		public B model(final String model)
 		{
 			this.model = model;
+			return self();
+		}
+
+		/**
+		 * type.
+		 *
+		 * @param type
+		 *            the type
+		 * @return the builder
+		 */
+		public B type(final String type)
+		{
+			this.type = type;
+			return self();
+		}
+
+		/**
+		 * Builds the.
+		 *
+		 * @return the car
+		 */
+		protected abstract B self();
+
+		public abstract C build();
+
+
+		public String toString()
+		{
+			return "Car.AbstractCarBuilder(constructionYear=" + this.constructionYear + ", model="
+				+ this.model + ")";
+		}
+	}
+
+	private static final class CarBuilder extends AbstractCarBuilder<Car, CarBuilder>
+	{
+		private CarBuilder()
+		{
+		}
+
+		@Override
+		protected CarBuilder self()
+		{
 			return this;
+		}
+
+		@Override
+		public Car build()
+		{
+			return new Car(this);
 		}
 	}
 

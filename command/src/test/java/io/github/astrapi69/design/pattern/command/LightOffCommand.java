@@ -25,7 +25,7 @@
 package io.github.astrapi69.design.pattern.command;
 
 import io.github.astrapi69.design.pattern.command.api.Command;
-import io.github.astrapi69.test.objects.Light;
+import io.github.astrapi69.test.object.Light;
 
 /**
  * The class {@link LightOffCommand}. Concrete Command that implements the {@link Command}

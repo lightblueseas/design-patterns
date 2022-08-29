@@ -34,7 +34,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
-import io.github.astrapi69.crypto.key.KeySize;
+import io.github.astrapi69.crypt.api.key.KeySize;
 
 /**
  * The class {@link NewPrivateKeyModelBean}

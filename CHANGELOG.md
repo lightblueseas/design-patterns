@@ -11,7 +11,11 @@ ADDED:
 CHANGED:
 
 - update of jdk to version 11 
-- update gradle to new patch version 7.5
+- update gradle to new patch version 7.5.1
+- update of lombok version to 1.18.24
+- update of test-dependency jobj-core to new version 6.1
+- update of test-dependency test-object to new version 7.1
+- update of test-dependency testng to new version 7.6.1
 
 Version 5.2
 -------------

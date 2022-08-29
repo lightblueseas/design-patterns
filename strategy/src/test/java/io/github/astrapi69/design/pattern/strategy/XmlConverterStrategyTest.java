@@ -32,8 +32,8 @@ import io.github.astrapi69.file.search.PathFinder;
 import io.github.astrapi69.throwable.RuntimeExceptionDecorator;
 import org.testng.annotations.Test;
 
-import io.github.astrapi69.test.objects.Person;
-import io.github.astrapi69.test.objects.enums.Gender;
+import io.github.astrapi69.test.object.Person;
+import io.github.astrapi69.test.object.enumtype.Gender;
 import io.github.astrapi69.xml.api.ObjectToXml;
 
 import java.io.File;
@@ -55,8 +55,8 @@ public class XmlConverterStrategyTest
 		objectToXmlConverter = new io.github.astrapi69.xstream.ObjectToXmlConverter();
 		strategy = new ObjectToXmlConverterStrategy(objectToXmlConverter);
 		actual = strategy.execute(person);
-		expected = "<io.github.astrapi69.test.objects.Person>\n" + "  <gender>FEMALE</gender>\n"
-			+ "  <name>Anna</name>\n" + "</io.github.astrapi69.test.objects.Person>";
+		expected = "<io.github.astrapi69.test.object.Person>\n" + "  <gender>FEMALE</gender>\n"
+			+ "  <name>Anna</name>\n" + "</io.github.astrapi69.test.object.Person>";
 		assertNotNull(actual);
 		assertEquals(actual, expected);
 		// new scenario with xml.jackson ...

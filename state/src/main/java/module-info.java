@@ -22,46 +22,11 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.design.pattern.command;
-
-import io.github.astrapi69.design.pattern.command.api.Command;
-import io.github.astrapi69.design.pattern.command.api.Invoker;
-import io.github.astrapi69.design.pattern.command.api.Invokers;
-import io.github.astrapi69.test.object.Light;
-
-
-/**
- * The Class DemonstrateCommandPattern.
- */
-public class DemonstrateCommandPattern
-{
-
-	/**
-	 * The main method.
-	 *
-	 * @param args
-	 *            the arguments
-	 */
-	public static void main(final String[] args)
-	{
-		final Invoker<Light> invoker = new Invoker<>();
-
-		final Light light = new Light();
-
-		final Command<Light> lightsOn = new LightOnCommand(light);
-		final Command<Light> lightsOff = new LightOffCommand(light);
-
-		// switch on
-		invoker.setCommand(lightsOn);
-		invoker.invoke();
-
-		// switch off
-		invoker.setCommand(lightsOff);
-		invoker.invoke();
-		// Invoke several commands with a single invokers object...
-		final Invokers<Light> invokers = new Invokers<>();
-		invokers.add(lightsOn).add(lightsOff);
-		invokers.invoke();
-	}
-
+module design.patterns.state {
+	requires lombok;
+	requires java.desktop;
+	exports io.github.astrapi69.design.pattern.state.button;
+	exports io.github.astrapi69.design.pattern.state.component;
+	exports io.github.astrapi69.design.pattern.state.wizard.model;
+	exports io.github.astrapi69.design.pattern.state.wizard;
 }
