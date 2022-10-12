@@ -64,8 +64,10 @@ public class XmlConverterStrategyTest
 		objectToXmlConverter = new io.github.astrapi69.xml.jackson.ObjectToXmlConverter();
 		strategy = new ObjectToXmlConverterStrategy(objectToXmlConverter);
 		actual = strategy.execute(person);
-		expected = "<Person>\n" + "  <about/>\n" + "  <gender>FEMALE</gender>\n" + "  <married/>\n"
-			+ "  <name>Anna</name>\n" + "  <nickname/>\n" + "</Person>\n";
+		expected = "<Person>" + System.lineSeparator() + "  <about/>" + System.lineSeparator()
+			+ "  <gender>FEMALE</gender>" + System.lineSeparator() + "  <married/>"
+			+ System.lineSeparator() + "  <name>Anna</name>" + System.lineSeparator()
+			+ "  <nickname/>" + System.lineSeparator() + "</Person>" + System.lineSeparator();
 		assertNotNull(actual);
 		assertEquals(actual, expected);
 
