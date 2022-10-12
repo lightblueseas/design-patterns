@@ -52,5 +52,5 @@ public abstract class ButtonStateMachine<T, ST> implements ButtonState<ST>
 
 	protected abstract void updateButtonState();
 
-	protected abstract void setEnabled(boolean b);
+	protected abstract void setEnabled(final boolean enabled);
 }

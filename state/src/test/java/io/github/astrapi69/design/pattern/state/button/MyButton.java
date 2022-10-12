@@ -24,33 +24,17 @@
  */
 package io.github.astrapi69.design.pattern.state.button;
 
-public enum ButtonStateEnum implements SigninButtonState<TestButtonStateMachine>
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder(toBuilder = true)
+public class MyButton
 {
-	ENABLED {
-		@Override
-		public void onApplicationFileAdded(TestButtonStateMachine context)
-		{
-			context.onApplicationFileAdded(context);
-		}
-
-		@Override
-		public void onChangeWithMasterPassword(TestButtonStateMachine context)
-		{
-			context.onChangeWithMasterPassword(context);
-		}
-	},
-	DISABLED {
-		@Override
-		public void onApplicationFileAdded(TestButtonStateMachine context)
-		{
-			context.onApplicationFileAdded(context);
-		}
-
-		@Override
-		public void onChangeWithMasterPassword(TestButtonStateMachine context)
-		{
-			context.onChangeWithMasterPassword(context);
-		}
-
-	}
+	String text;
+	boolean enabled;
 }

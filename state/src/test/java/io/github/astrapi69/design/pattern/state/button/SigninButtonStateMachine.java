@@ -39,16 +39,15 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-public class TestButtonStateMachine extends ButtonStateMachine<Button, TestButtonStateMachine>
+public class SigninButtonStateMachine extends ButtonStateMachine<MyButton, SigninButtonStateMachine>
 	implements
-		SigninButtonState<TestButtonStateMachine>
+		SigninButtonState
 {
-	SigninButtonState<TestButtonStateMachine> current;
 	boolean withMasterPassword;
 	boolean applicationFilePresent;
 
 	@Override
-	public void onApplicationFileAdded(TestButtonStateMachine context)
+	public void onApplicationFileAdded()
 	{
 		boolean applicationFilePresent = !isApplicationFilePresent();
 		setApplicationFilePresent(applicationFilePresent);
@@ -56,7 +55,7 @@ public class TestButtonStateMachine extends ButtonStateMachine<Button, TestButto
 	}
 
 	@Override
-	public void onChangeWithMasterPassword(TestButtonStateMachine context)
+	public void onChangeWithMasterPassword()
 	{
 		boolean withMasterPassword = !isWithMasterPassword();
 		setWithMasterPassword(withMasterPassword);
@@ -65,21 +64,21 @@ public class TestButtonStateMachine extends ButtonStateMachine<Button, TestButto
 
 	protected void updateButtonState()
 	{
-		if (applicationFilePresent && withMasterPassword)
+		if (isApplicationFilePresent() && isWithMasterPassword())
 		{
-			current = ButtonStateEnum.ENABLED;
+			current = SigninButtonCurrentState.ENABLED;
 			setEnabled(true);
 		}
 		else
 		{
-			current = ButtonStateEnum.DISABLED;
+			current = SigninButtonCurrentState.DISABLED;
 			setEnabled(false);
 		}
 	}
 
-	public void setEnabled(boolean b)
+	public void setEnabled(final boolean enabled)
 	{
-		button.setEnabled(b);
+		getButton().setEnabled(enabled);
 	}
 
 }

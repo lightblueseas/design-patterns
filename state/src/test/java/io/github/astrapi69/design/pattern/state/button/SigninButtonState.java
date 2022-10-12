@@ -24,12 +24,10 @@
  */
 package io.github.astrapi69.design.pattern.state.button;
 
-public interface SigninButtonState<TestButtonStateMachine>
-	extends
-		ButtonState<TestButtonStateMachine>
+public interface SigninButtonState extends ButtonState<SigninButtonStateMachine>
 {
-	void onApplicationFileAdded(TestButtonStateMachine context);
+	void onApplicationFileAdded();
 
-	void onChangeWithMasterPassword(TestButtonStateMachine context);
+	void onChangeWithMasterPassword();
 
 }
