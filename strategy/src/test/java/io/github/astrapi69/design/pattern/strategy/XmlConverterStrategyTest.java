@@ -27,17 +27,17 @@ package io.github.astrapi69.design.pattern.strategy;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertNotNull;
 
+import java.io.File;
+
+import org.testng.annotations.Test;
+
 import io.github.astrapi69.file.create.FileFactory;
 import io.github.astrapi69.file.delete.DeleteFileExtensions;
 import io.github.astrapi69.file.search.PathFinder;
-import io.github.astrapi69.throwable.RuntimeExceptionDecorator;
-import org.testng.annotations.Test;
-
 import io.github.astrapi69.test.object.Person;
 import io.github.astrapi69.test.object.enumtype.Gender;
+import io.github.astrapi69.throwable.RuntimeExceptionDecorator;
 import io.github.astrapi69.xml.api.ObjectToXml;
-
-import java.io.File;
 
 public class XmlConverterStrategyTest
 {
