@@ -1,3 +1,3 @@
 dependencies {
-    testImplementation("io.github.astrapi69:test-object:$testObjectVersion")
+    testImplementation libs.test.object
 }

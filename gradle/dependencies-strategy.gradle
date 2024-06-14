@@ -1,8 +1,8 @@
 dependencies {
-    testImplementation("io.github.astrapi69:test-object:$testObjectVersion")
-    testImplementation("io.github.astrapi69:xml-api:$xmlApiVersion")
-    testImplementation("io.github.astrapi69:xstream-extensions:$xstreamExtensionsVersion")
-    testImplementation("io.github.astrapi69:xml-jackson-extensions:$xmlJacksonExtensionsVersion")
-    testImplementation("io.github.astrapi69:file-worker:$fileWorkerVersion")
-    testImplementation("io.github.astrapi69:throwable:$throwableVersion")
+    testImplementation libs.test.object
+    testImplementation libs.xml.api
+    testImplementation libs.xstream.extensions
+    testImplementation libs.xml.jackson.extensions
+    testImplementation libs.file.worker
+    testImplementation libs.throwable
 }

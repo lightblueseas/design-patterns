@@ -1,4 +1,4 @@
 dependencies {
-    testImplementation("io.github.astrapi69:file-worker:$fileWorkerVersion")
-    testImplementation("io.github.astrapi69:jobj-core:$jobjCoreVersion")
+    testImplementation libs.file.worker
+    testImplementation libs.jobj.core
 }
