@@ -4,6 +4,10 @@
 Version 7-SNAPSHOT
 -------------
 
+ADDED:
+
+- new libs.versions.toml file for new automatic catalog versions update
+
 CHANGED:
 
 - update of jdk to version 17
