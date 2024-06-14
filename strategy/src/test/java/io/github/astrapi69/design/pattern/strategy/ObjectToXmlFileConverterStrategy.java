@@ -45,6 +45,6 @@ public class ObjectToXmlFileConverterStrategy implements Strategy<String, Object
 	public String execute(Object model)
 	{
 		objectToXml.toXml(model, this.file);
-		return RuntimeExceptionDecorator.decorate(() -> ReadFileExtensions.readFromFile(this.file));
+		return RuntimeExceptionDecorator.decorate(() -> ReadFileExtensions.fromFile(this.file));
 	}
 }

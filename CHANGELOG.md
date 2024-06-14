@@ -1,9 +1,12 @@
 ## Change log
 ----------------------
 
-Version 6.1-SNAPSHOT
+Version 7-SNAPSHOT
 -------------
 
+CHANGED:
+
+- update of jdk to version 17
 
 Version 6
 -------------
