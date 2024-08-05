@@ -34,8 +34,9 @@ import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 /**
- * The abstact class {@link ComponentStateMachine} can provide states on buttons. For an example see
- * the unit tests
+ * The abstract class {@link ComponentStateMachine} can provide states on components. It manages the
+ * current state of a component and defines abstract methods for updating the component state and
+ * enabling/disabling the component. For an example, see the unit tests.
  *
  * @param <C>
  *            the generic type of the component
@@ -53,24 +54,24 @@ public abstract class ComponentStateMachine<C, S>
 {
 
 	/**
-	 * the component
+	 * The component associated with this state machine.
 	 */
 	@NonNull
 	C component;
 
 	/**
-	 * the current state, can be a model object or a bean
+	 * The current state of the component, can be a model object or a bean.
 	 */
 	S currentState;
 
 	/**
-	 * update the component state
+	 * Updates the state of the component.
 	 */
 	protected abstract void updateComponentState();
 
 	/**
-	 * Sets the enabled flag for the component
-	 * 
+	 * Sets the enabled flag for the component.
+	 *
 	 * @param enabled
 	 *            the enabled flag for the component
 	 */

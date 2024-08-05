@@ -33,7 +33,8 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * The class {@link WizardStateMachine}.
+ * The class {@link WizardStateMachine} implements {@link IWizardStateMachine} and manages the state
+ * transitions for a wizard.
  */
 @Getter
 @Setter
@@ -65,5 +66,4 @@ public class WizardStateMachine implements IWizardStateMachine<WizardState<Wizar
 	{
 		getCurrentState().goPrevious(this);
 	}
-
 }

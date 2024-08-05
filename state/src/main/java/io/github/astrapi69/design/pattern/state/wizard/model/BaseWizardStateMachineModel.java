@@ -24,7 +24,6 @@
  */
 package io.github.astrapi69.design.pattern.state.wizard.model;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -35,6 +34,13 @@ import lombok.ToString;
 import io.github.astrapi69.design.pattern.state.wizard.BaseWizardState;
 import io.github.astrapi69.design.pattern.state.wizard.IBaseWizardStateMachine;
 
+/**
+ * The class {@link BaseWizardStateMachineModel} implements {@link IBaseWizardStateMachine} and
+ * manages the state transitions for a wizard with a model object.
+ *
+ * @param <T>
+ *            the type parameter for the model object
+ */
 @Getter
 @Setter
 @EqualsAndHashCode
@@ -46,16 +52,29 @@ public class BaseWizardStateMachineModel<T>
 	implements
 		IBaseWizardStateMachine<BaseWizardState<BaseWizardStateMachineModel<T>>>
 {
+
+	/**
+	 * The current state of the wizard.
+	 */
 	private BaseWizardState<BaseWizardStateMachineModel<T>> currentState;
 
+	/**
+	 * The model object associated with the wizard.
+	 */
 	private T modelObject;
 
+	/**
+	 * Cancels the wizard by transitioning to the cancel state.
+	 */
 	@Override
 	public void cancel()
 	{
 		getCurrentState().cancel(this);
 	}
 
+	/**
+	 * Finishes the wizard by transitioning to the finish state.
+	 */
 	@Override
 	public void finish()
 	{

@@ -25,11 +25,10 @@
 package io.github.astrapi69.design.pattern.state.button;
 
 /**
- * The interface {@link ButtonState}
+ * The interface {@link ButtonState} represents a state in a button state machine.
  *
- * @param <ST>
- *            the generic type of the state machine object
+ * @param <ST> the generic type of the state machine object
  */
-public interface ButtonState<ST>
-{
+public interface ButtonState<ST> {
 }
+

@@ -24,9 +24,23 @@
  */
 package io.github.astrapi69.design.pattern.state.wizard;
 
+/**
+ * The interface {@link IBaseWizardStateMachine} extends {@link IWizardStateMachine} and adds
+ * methods for canceling and finishing the wizard.
+ *
+ * @param <S>
+ *            the type parameter for the state
+ */
 public interface IBaseWizardStateMachine<S> extends IWizardStateMachine<S>
 {
+
+	/**
+	 * Cancels the wizard.
+	 */
 	void cancel();
 
+	/**
+	 * Finishes the wizard.
+	 */
 	void finish();
 }

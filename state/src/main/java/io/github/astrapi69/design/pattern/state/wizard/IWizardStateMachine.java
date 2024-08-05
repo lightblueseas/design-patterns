@@ -25,7 +25,7 @@
 package io.github.astrapi69.design.pattern.state.wizard;
 
 /**
- * The interface {@link IWizardStateMachine}.
+ * The interface {@link IWizardStateMachine} represents a state machine for a wizard.
  *
  * @param <S>
  *            the generic type of the state object
@@ -57,5 +57,4 @@ public interface IWizardStateMachine<S>
 	 * Go to the previous {@link WizardState} object.
 	 */
 	void previous();
-
 }

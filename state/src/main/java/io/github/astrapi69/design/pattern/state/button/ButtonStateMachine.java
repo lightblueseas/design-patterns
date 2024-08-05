@@ -34,8 +34,14 @@ import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 /**
- * The abstact class {@link ButtonStateMachine} can provide states on buttons. For an example see
- * the unit tests
+ * The abstract class {@link ButtonStateMachine} can provide states on buttons. It manages the
+ * current state of a button and defines abstract methods for updating the button state and
+ * enabling/disabling the button. For an example, see the unit tests.
+ *
+ * @param <T>
+ *            the type parameter for the button
+ * @param <ST>
+ *            the type parameter for the state
  */
 @Getter
 @Setter
@@ -46,11 +52,27 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 public abstract class ButtonStateMachine<T, ST> implements ButtonState<ST>
 {
+	/**
+	 * The current state of the button.
+	 */
 	ButtonState<ST> current;
+
+	/**
+	 * The button associated with this state machine.
+	 */
 	@NonNull
 	T button;
 
+	/**
+	 * Updates the state of the button.
+	 */
 	protected abstract void updateButtonState();
 
+	/**
+	 * Sets the enabled state of the button.
+	 *
+	 * @param enabled
+	 *            the new enabled state
+	 */
 	protected abstract void setEnabled(final boolean enabled);
 }

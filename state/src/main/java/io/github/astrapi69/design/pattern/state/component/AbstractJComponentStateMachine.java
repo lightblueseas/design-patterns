@@ -34,7 +34,13 @@ import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 /**
- * The abstact class {@link AbstractJComponentStateMachine}
+ * The abstract class {@link AbstractJComponentStateMachine} provides a state machine for
+ * JComponents.
+ *
+ * @param <T>
+ *            the type parameter for the JComponent
+ * @param <S>
+ *            the type parameter for the state
  */
 @Getter
 @Setter
@@ -46,6 +52,13 @@ public abstract class AbstractJComponentStateMachine<T extends JComponent, S>
 	extends
 		ComponentStateMachine<T, S>
 {
+
+	/**
+	 * Sets the enabled state of the JComponent.
+	 *
+	 * @param b
+	 *            the new enabled state
+	 */
 	public void setEnabled(boolean b)
 	{
 		component.setEnabled(b);
