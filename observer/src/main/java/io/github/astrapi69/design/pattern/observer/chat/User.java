@@ -25,29 +25,28 @@
 package io.github.astrapi69.design.pattern.observer.chat;
 
 /**
- * The class {@link User}.
+ * The class {@link User} represents a user in a chat application It implements the {@link IUser}
+ * interface and provides methods to manage the user's identity, including their name and ID
  */
 public class User implements IUser<User>
 {
 
-	/** The Constant serialVersionUID. */
+	/** The Constant serialVersionUID for serialization compatibility */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * User Name.
-	 */
+
+	/** The name of the user */
 	private String name;
-	/**
-	 * User id number.
-	 */
+
+	/** The ID number of the user */
 	private Integer id;
 
 	/**
-	 * Instantiates a new user.
+	 * Instantiates a new user with the given name and ID
 	 *
 	 * @param name
-	 *            the name
+	 *            the name of the user
 	 * @param id
-	 *            the id
+	 *            the ID number of the user
 	 */
 	public User(final String name, final Integer id)
 	{
@@ -71,8 +70,8 @@ public class User implements IUser<User>
 	@Override
 	public void setApplicationUser(final User user)
 	{
-
-
+		// This method is intentionally left blank as this class represents the application user
+		// itself
 	}
 
 	/**
@@ -85,10 +84,10 @@ public class User implements IUser<User>
 	}
 
 	/**
-	 * Sets the id.
+	 * Sets the ID number of the user
 	 *
 	 * @param id
-	 *            the new id
+	 *            the new ID number
 	 */
 	public void setId(final Integer id)
 	{
@@ -105,10 +104,10 @@ public class User implements IUser<User>
 	}
 
 	/**
-	 * Sets the name.
+	 * Sets the name of the user
 	 *
 	 * @param name
-	 *            the new name
+	 *            the new name of the user
 	 */
 	public void setName(final String name)
 	{

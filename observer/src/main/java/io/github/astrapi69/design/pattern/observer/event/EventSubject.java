@@ -33,7 +33,8 @@ import lombok.NonNull;
 import lombok.ToString;
 
 /**
- * The class {@link EventSubject}
+ * The class {@link EventSubject} is an implementation of the {@link EventSource} interface It
+ * represents a subject that can have multiple event listeners and can fire events to them
  *
  * @param <T>
  *            the generic type of the source object
@@ -44,29 +45,29 @@ import lombok.ToString;
 public class EventSubject<T> implements EventSource<T>
 {
 
-	/** The event listeners */
+	/** The collection of registered event listeners */
 	private final Collection<EventListener<T>> eventListeners;
 
-	/** The source object */
+	/** The source object associated with the event */
 	private T source;
 
-	/* Initialization block */
+	/* Initialization block to initialize the eventListeners collection */
 	{
 		eventListeners = new ArrayList<>();
 	}
 
 	/**
-	 * Instantiates a new event subject.
+	 * Instantiates a new {@code EventSubject} with no initial source
 	 */
 	public EventSubject()
 	{
 	}
 
 	/**
-	 * Instantiates a new event subject.
+	 * Instantiates a new {@code EventSubject} with the specified source
 	 *
 	 * @param source
-	 *            the source
+	 *            the source object associated with the event
 	 */
 	public EventSubject(final T source)
 	{
@@ -74,13 +75,13 @@ public class EventSubject<T> implements EventSource<T>
 	}
 
 	/**
-	 * Factory method for create a new {@link EventSubject} object
+	 * Factory method to create a new {@link EventSubject} object
 	 *
 	 * @param <T>
 	 *            the generic type of the source object
 	 * @param source
-	 *            the source
-	 * @return the new created {@link EventSubject} object
+	 *            the source object associated with the event
+	 * @return the newly created {@link EventSubject} object
 	 */
 	public static <T> EventSubject<T> of(final @NonNull T source)
 	{
@@ -106,7 +107,7 @@ public class EventSubject<T> implements EventSource<T>
 	}
 
 	/**
-	 * Fires the source event and inform all registered listeners.
+	 * Fires the event to all registered listeners
 	 */
 	private synchronized void fireEvent()
 	{

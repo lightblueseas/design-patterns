@@ -28,23 +28,23 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * The interface {@link Subject} represents the "subject" (which is being "observed") being part of
- * the object whose state change is being observed, to be communicated to the observers upon
- * occurrence.
+ * The interface {@link Subject} represents the "subject" in the Observer design pattern The subject
+ * is the object whose state changes are being observed by one or more observers When the state of
+ * the subject changes, the observers are notified of the change
  *
  * @param <T>
- *            the generic type of the observable.
+ *            the generic type of the observable object whose state is being observed
  * @param <O>
- *            the generic type of the observer
+ *            the generic type of the observer that is observing the subject
  */
 public interface Subject<T, O extends Observer<T>>
 {
 
 	/**
-	 * Adds the given observer.
+	 * Adds the given observer to the list of observers
 	 *
 	 * @param observer
-	 *            the observer to be added.
+	 *            the observer to be added
 	 */
 	default void add(final O observer)
 	{
@@ -52,10 +52,10 @@ public interface Subject<T, O extends Observer<T>>
 	}
 
 	/**
-	 * Adds the given observers.
+	 * Adds the given observers to the list of observers
 	 *
 	 * @param observers
-	 *            the observers to be added.
+	 *            the observers to be added
 	 */
 	default void addAll(final Collection<O> observers)
 	{
@@ -63,32 +63,32 @@ public interface Subject<T, O extends Observer<T>>
 	}
 
 	/**
-	 * Gets the observable.
+	 * Gets the observable object, which is the object being observed for state changes
 	 *
-	 * @return the observable
+	 * @return the observable object
 	 */
 	T getObservable();
 
 	/**
-	 * Sets the observable.
+	 * Sets the observable object, which is the object being observed for state changes
 	 *
 	 * @param observable
-	 *            the new observable
+	 *            the new observable object
 	 */
 	void setObservable(final T observable);
 
 	/**
-	 * Gets the observers that wants to be notified on changes.
+	 * Gets the list of observers that wish to be notified of changes to the observable object
 	 *
-	 * @return the observers
+	 * @return the list of observers
 	 */
 	List<O> getObservers();
 
 	/**
-	 * Removes the given observer.
+	 * Removes the given observer from the list of observers
 	 *
 	 * @param observer
-	 *            the observer to be remove.
+	 *            the observer to be removed
 	 */
 	default void remove(final O observer)
 	{
@@ -100,10 +100,10 @@ public interface Subject<T, O extends Observer<T>>
 	}
 
 	/**
-	 * Removes the given observers.
+	 * Removes the given observers from the list of observers
 	 *
 	 * @param observers
-	 *            the observers to be remove.
+	 *            the observers to be removed
 	 */
 	default void removeAll(final Collection<O> observers)
 	{
@@ -111,7 +111,8 @@ public interface Subject<T, O extends Observer<T>>
 	}
 
 	/**
-	 * Update observers.
+	 * Notifies all observers of a change in the state of the observable object Each observer's
+	 * {@code update} method is called with the current state of the observable
 	 */
 	default void updateObservers()
 	{
@@ -120,5 +121,4 @@ public interface Subject<T, O extends Observer<T>>
 			observer.update(getObservable());
 		}
 	}
-
 }

@@ -33,7 +33,8 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * The class {@link ExceptionEvent} acts like as an Observable.
+ * The class {@link ExceptionEvent} represents an event that encapsulates a {@link Throwable} object
+ * It acts as an observable event that can be passed to listeners interested in handling exceptions
  */
 @Getter
 @Setter
@@ -44,7 +45,7 @@ import lombok.ToString;
 @Builder(toBuilder = true)
 public class ExceptionEvent
 {
-	/** The value. */
+	/** The {@link Throwable} object associated with this event */
 	private Throwable value;
 
 }

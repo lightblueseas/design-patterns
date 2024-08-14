@@ -33,44 +33,45 @@ import io.github.astrapi69.design.pattern.observer.api.Observer;
 import io.github.astrapi69.design.pattern.observer.api.Subject;
 
 /**
- * The Class AbstractSubject is an implementation from the interface Subject. This class
- * encapsulates the observable and fires an update if the observable changes. The update informs all
- * registered observers about the change of the observable.
+ * The class {@link AbstractSubject} is an implementation of the {@link Subject} interface This
+ * class encapsulates the observable object and notifies all registered observers when the
+ * observable changes
  *
  * @param <T>
- *            the generic type of the observable.
+ *            the generic type of the observable object
  * @param <O>
  *            the generic type of the observer
  */
 public abstract class AbstractSubject<T, O extends Observer<T>> implements Subject<T, O>
 {
 
-	/** The observers. */
+	/** The list of registered observers */
 	@Getter
 	private final List<O> observers;
-	/** The observable object. */
+
+	/** The current observable object */
 	@Getter
 	private T observable;
 
 	/**
-	 * Initialize block.
+	 * Initialization block to create the list of observers
 	 **/
 	{
 		observers = new ArrayList<>();
 	}
 
 	/**
-	 * Default constructor for a new subject.
+	 * Default constructor for a new subject with no initial observable
 	 */
 	public AbstractSubject()
 	{
 	}
 
 	/**
-	 * Constructor for a new subject with an observable.
+	 * Constructor for a new subject with an initial observable
 	 *
 	 * @param observable
-	 *            the observable
+	 *            the initial observable object
 	 */
 	public AbstractSubject(final T observable)
 	{

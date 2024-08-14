@@ -24,19 +24,32 @@
  */
 package io.github.astrapi69.design.pattern.observer.chat;
 
+/**
+ * The class {@link DataChatRoomUser} represents a user in a chat room who can send and receive
+ * {@link ChatMessage} objects It extends {@link ChatRoomUser} and provides specific behavior for
+ * handling {@link ChatMessage} objects
+ */
 public class DataChatRoomUser extends ChatRoomUser<ChatMessage>
 {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Instantiates a new {@code DataChatRoomUser} with the specified chat room and user
+	 *
+	 * @param room
+	 *            the chat room
+	 * @param user
+	 *            the user associated with this chat room user
+	 */
 	public DataChatRoomUser(final ChatRoom<ChatMessage> room, final IUser<?> user)
 	{
 		super(room, user);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void execute()
 	{
@@ -44,9 +57,11 @@ public class DataChatRoomUser extends ChatRoomUser<ChatMessage>
 			+ getUser().getName() + " sees the Message:\n" + getObservable().getValue().getMessage()
 			+ "\n----------------------------------------------";
 		System.out.println(display);
-
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void send(final ChatMessage message)
 	{

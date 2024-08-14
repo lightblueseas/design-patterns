@@ -29,22 +29,23 @@ import static org.testng.Assert.assertNotEquals;
 import static org.testng.Assert.assertNotNull;
 import static org.testng.Assert.assertNull;
 
-import io.github.astrapi69.design.pattern.eventbus.ApplicationEventBus;
 import org.testng.annotations.Test;
 
+import io.github.astrapi69.design.pattern.eventbus.ApplicationEventBus;
+
 /**
- * The class {@link ImportProgressPanelTest} provides unit tests for the {@link ImportProgressPanel} class
- * It verifies the functionality of event handling and state synchronization between
+ * The class {@link ImportProgressPanelTest} provides unit tests for the {@link ImportProgressPanel}
+ * class It verifies the functionality of event handling and state synchronization between
  * {@link ImportProgressPanel} and {@link ImportWizardPanel}
  */
 public class ImportProgressPanelTest
 {
 
 	/**
-	 * Test method for the interaction between {@link ImportProgressPanel} and {@link ImportWizardPanel}
-	 * through the {@link ApplicationEventBus}
-	 * It validates that events are correctly fired, received, and processed, ensuring that the model
-	 * state is synchronized across the panels
+	 * Test method for the interaction between {@link ImportProgressPanel} and
+	 * {@link ImportWizardPanel} through the {@link ApplicationEventBus} It validates that events
+	 * are correctly fired, received, and processed, ensuring that the model state is synchronized
+	 * across the panels
 	 */
 	@Test
 	public void testApplicationEventBus()

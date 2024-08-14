@@ -25,29 +25,30 @@
 package io.github.astrapi69.design.pattern.observer.chat;
 
 /**
- * The class {@link StringMessage}.
+ * The class {@link StringMessage} represents a message that contains a string value It implements
+ * the {@link Message} interface and provides methods to get and set the string value
  */
 public class StringMessage implements Message<String>
 {
 
-	/** The Constant serialVersionUID. */
+	/** The Constant serialVersionUID for serialization compatibility */
 	private static final long serialVersionUID = 1L;
 
-	/** The value. */
+	/** The value of the string message */
 	private String value;
 
 	/**
-	 * Instantiates a new string message.
+	 * Instantiates a new {@code StringMessage} with no initial value
 	 */
 	public StringMessage()
 	{
 	}
 
 	/**
-	 * Instantiates a new string message.
+	 * Instantiates a new {@code StringMessage} with the given value
 	 *
 	 * @param value
-	 *            the value
+	 *            the value of the message
 	 */
 	public StringMessage(final String value)
 	{

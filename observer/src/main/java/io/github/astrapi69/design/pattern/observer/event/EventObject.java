@@ -31,7 +31,8 @@ import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 /**
- * The class {@link EventObject} serves as the name already tells as an event object
+ * The class {@link EventObject} serves, as its name suggests, as an event object It encapsulates
+ * the source object on which an event initially occurred
  *
  * @param <T>
  *            the generic type of the source object
@@ -52,7 +53,7 @@ public class EventObject<T>
 	 * Instantiates a new {@link EventObject} object
 	 *
 	 * @param source
-	 *            the source
+	 *            the source object on which the event occurred
 	 */
 	public EventObject(final @NonNull T source)
 	{
@@ -60,13 +61,13 @@ public class EventObject<T>
 	}
 
 	/**
-	 * Factory method for create a new {@link EventObject} object
+	 * Factory method to create a new {@link EventObject} object
 	 *
 	 * @param <T>
 	 *            the generic type of the source object
 	 * @param source
-	 *            the source
-	 * @return the new created {@link EventObject} object
+	 *            the source object on which the event occurred
+	 * @return the newly created {@link EventObject} object
 	 */
 	public static <T> EventObject<T> of(final @NonNull T source)
 	{

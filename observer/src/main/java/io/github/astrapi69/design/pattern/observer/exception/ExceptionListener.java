@@ -27,10 +27,10 @@ package io.github.astrapi69.design.pattern.observer.exception;
 import java.util.EventListener;
 
 /**
- * The listener interface for receiving exception events. The class that is interested in processing
- * a exception event implements this interface, and the object created with that class is registered
- * with a component using the component's <code>addExceptionListener</code> method. When the
- * exception event occurs, that object's appropriate method is invoked.
+ * The listener interface for receiving exception events The class that is interested in processing
+ * an exception event implements this interface, and the object created with that class is
+ * registered with a component using the component's <code>addExceptionListener</code> method When
+ * the exception event occurs, that object's appropriate method is invoked
  *
  * @see ExceptionEvent
  */
@@ -38,10 +38,10 @@ public interface ExceptionListener extends EventListener
 {
 
 	/**
-	 * On exception.
+	 * Invoked when an exception event occurs
 	 *
 	 * @param event
-	 *            the event
+	 *            the exception event to be processed
 	 */
 	void onException(final ExceptionEvent event);
 

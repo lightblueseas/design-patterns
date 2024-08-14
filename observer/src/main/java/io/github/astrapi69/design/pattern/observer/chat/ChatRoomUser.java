@@ -30,10 +30,13 @@ import io.github.astrapi69.design.pattern.observer.api.ActionCommand;
 import io.github.astrapi69.design.pattern.observer.api.Observer;
 
 /**
- * The class {@link ChatRoomUser}.
+ * The class {@link ChatRoomUser} represents a user in a chat room who can send and receive messages
+ * This class implements {@link Observer} to observe messages in the chat room,
+ * {@link ActionCommand} to define actions when a message is received, and {@link Serializable} for
+ * serialization support
  *
  * @param <M>
- *            the generic type
+ *            the generic type of the message that will be sent and observed in the chat room
  */
 public abstract class ChatRoomUser<M extends Message<?>>
 	implements
@@ -42,22 +45,25 @@ public abstract class ChatRoomUser<M extends Message<?>>
 		Serializable
 {
 
-	/** The Constant serialVersionUID. */
+	/** The Constant serialVersionUID for serialization compatibility */
 	private static final long serialVersionUID = 1L;
-	/** The user. */
+
+	/** The user associated with this chat room user */
 	private final IUser<?> user;
-	/** The subject. */
+
+	/** The chat room (subject) that this user is part of */
 	protected ChatRoom<M> subject;
-	/** The observable. */
+
+	/** The observable message currently observed by this user */
 	private M observable;
 
 	/**
-	 * Instantiates a new chat room user.
+	 * Instantiates a new chat room user
 	 *
 	 * @param room
-	 *            the room
+	 *            the chat room (subject) that this user is part of
 	 * @param user
-	 *            the user
+	 *            the user associated with this chat room user
 	 */
 	public ChatRoomUser(final ChatRoom<M> room, final IUser<?> user)
 	{
@@ -68,9 +74,9 @@ public abstract class ChatRoomUser<M extends Message<?>>
 	}
 
 	/**
-	 * Gets the observable object.
+	 * Gets the observable message currently observed by this user
 	 *
-	 * @return the observable
+	 * @return the observable message
 	 */
 	public synchronized M getObservable()
 	{
@@ -78,7 +84,7 @@ public abstract class ChatRoomUser<M extends Message<?>>
 	}
 
 	/**
-	 * Gets the user.
+	 * Gets the user associated with this chat room user
 	 *
 	 * @return the user
 	 */
@@ -88,10 +94,10 @@ public abstract class ChatRoomUser<M extends Message<?>>
 	}
 
 	/**
-	 * Send the given message.
+	 * Sends the given message to the chat room
 	 *
 	 * @param message
-	 *            the message
+	 *            the message to be sent
 	 */
 	public void send(final M message)
 	{

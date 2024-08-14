@@ -27,23 +27,25 @@ package io.github.astrapi69.design.pattern.observer.chat;
 import java.io.Serializable;
 
 /**
- * The interface {@link IUser}.
+ * The interface {@link IUser} represents a user in a chat application It provides methods to manage
+ * the user's identity, including getting and setting the application user, retrieving the user's
+ * unique identifier, and obtaining the user's name
  *
  * @param <U>
- *            the generic type
+ *            the generic type representing the application user
  */
 public interface IUser<U> extends Serializable
 {
 
 	/**
-	 * Gets the application user.
+	 * Gets the application user associated with this {@link IUser}
 	 *
 	 * @return the application user
 	 */
 	U getApplicationUser();
 
 	/**
-	 * Sets the application user.
+	 * Sets the application user associated with this {@link IUser}
 	 *
 	 * @param user
 	 *            the new application user
@@ -51,16 +53,16 @@ public interface IUser<U> extends Serializable
 	void setApplicationUser(final U user);
 
 	/**
-	 * Gets the id.
+	 * Gets the unique identifier for this {@link IUser}
 	 *
-	 * @return the id
+	 * @return the unique identifier
 	 */
 	Serializable getId();
 
 	/**
-	 * Gets the name.
+	 * Gets the name of this {@link IUser}
 	 *
-	 * @return the name
+	 * @return the name of the user
 	 */
 	String getName();
 }

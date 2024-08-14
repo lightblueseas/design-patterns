@@ -35,9 +35,9 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * The class {@link ImportWizardModel} acts as a model for the import wizard
- * It contains data related to the import process, such as the application name,
- * whether a database import is required, and the root directory for the import
+ * The class {@link ImportWizardModel} acts as a model for the import wizard It contains data
+ * related to the import process, such as the application name, whether a database import is
+ * required, and the root directory for the import
  */
 @Getter
 @Setter

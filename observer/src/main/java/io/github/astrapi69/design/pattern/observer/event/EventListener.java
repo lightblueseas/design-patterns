@@ -25,22 +25,22 @@
 package io.github.astrapi69.design.pattern.observer.event;
 
 /**
- * The {@link EventListener} interface is for receiving events. The class that is interested in
+ * The {@link EventListener} interface is for receiving events The class that is interested in
  * processing an event implements this interface, and the object created with that class is
- * registered with a component using the component's <code>addEventListener</code> method. When the
+ * registered with a component using the component's <code>addEventListener</code> method When the
  * event occurs, that object's appropriate method is invoked
  *
  * @param <T>
- *            the generic type from the event
+ *            the generic type of the event to be processed
  */
 public interface EventListener<T>
 {
 
 	/**
-	 * Handles the given event.
+	 * Handles the given event
 	 *
 	 * @param event
-	 *            the event
+	 *            the event to be handled
 	 */
 	void onEvent(final T event);
 

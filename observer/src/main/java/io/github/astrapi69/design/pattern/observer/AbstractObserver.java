@@ -28,27 +28,28 @@ import io.github.astrapi69.design.pattern.observer.api.ActionCommand;
 import io.github.astrapi69.design.pattern.observer.api.Observer;
 import io.github.astrapi69.design.pattern.observer.api.Subject;
 
-
 /**
- * A generic implementation from the Observer-Pattern.
- * 
+ * A generic implementation of the Observer pattern This abstract class implements the
+ * {@link Observer} and {@link ActionCommand} interfaces, providing a basic framework for observers
+ * in the Observer design pattern
+ *
  * @param <T>
- *            the generic type
+ *            the generic type of the observable object
  */
 public abstract class AbstractObserver<T> implements Observer<T>, ActionCommand
 {
 
-	/** The subject. */
+	/** The subject being observed */
 	protected Subject<T, Observer<T>> subject;
 
-	/** The observable. */
+	/** The current observable object */
 	private T observable;
 
 	/**
-	 * Constructor for a new observer object.
+	 * Constructor for a new observer object
 	 *
 	 * @param subject
-	 *            the subject
+	 *            the subject to observe
 	 */
 	public AbstractObserver(final Subject<T, Observer<T>> subject)
 	{
@@ -58,9 +59,9 @@ public abstract class AbstractObserver<T> implements Observer<T>, ActionCommand
 	}
 
 	/**
-	 * Gets the observable object.
+	 * Gets the current observable object
 	 *
-	 * @return the observable
+	 * @return the observable object
 	 */
 	public synchronized T getObservable()
 	{
@@ -76,5 +77,4 @@ public abstract class AbstractObserver<T> implements Observer<T>, ActionCommand
 		this.observable = observable;
 		execute();
 	}
-
 }

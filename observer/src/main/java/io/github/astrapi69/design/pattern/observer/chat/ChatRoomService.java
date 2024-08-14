@@ -29,28 +29,30 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * The class {@link ChatRoomService}.
+ * The class {@link ChatRoomService} manages the creation and retrieval of chat rooms It provides a
+ * way to obtain a {@link ChatRoom} based on an observable message and a room name
  *
  * @param <M>
- *            the generic type
+ *            the generic type of the message that will be sent in the chat rooms
  */
 public class ChatRoomService<M extends Message<?>> implements Serializable
 {
 
-	/** The Constant serialVersionUID. */
+	/** The Constant serialVersionUID for serialization compatibility */
 	private static final long serialVersionUID = 1L;
 
-	/** The chat rooms. */
+	/** A map of chat room names to their corresponding {@link ChatRoom} instances */
 	private final Map<String, ChatRoom<M>> chatRooms = new HashMap<>();
 
 	/**
-	 * Gets the chat room.
+	 * Gets the chat room with the specified name If the chat room does not exist, a new one is
+	 * created with the given observable message and name
 	 *
 	 * @param observable
-	 *            the observable
+	 *            the observable message for the chat room
 	 * @param name
-	 *            the name
-	 * @return the chat room
+	 *            the name of the chat room
+	 * @return the chat room associated with the given name
 	 */
 	public ChatRoom<M> getChatRoom(final M observable, final String name)
 	{

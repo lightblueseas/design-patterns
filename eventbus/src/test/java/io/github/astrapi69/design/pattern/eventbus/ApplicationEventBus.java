@@ -25,16 +25,18 @@
 package io.github.astrapi69.design.pattern.eventbus;
 
 import lombok.Getter;
+
 import com.google.common.eventbus.EventBus;
+
 import io.github.astrapi69.design.pattern.eventbus.eventobject.ImportWizardModel;
 import io.github.astrapi69.design.pattern.observer.event.EventObject;
 import io.github.astrapi69.design.pattern.observer.event.EventSource;
 
 /**
- * The class {@link ApplicationEventBus} serves as the central event bus for the application
- * It provides access to various event sources, including those related to navigation and
- * the import wizard model, and it uses an instance of {@link EventBus} from the Guava library
- * to manage and dispatch events
+ * The class {@link ApplicationEventBus} serves as the central event bus for the application It
+ * provides access to various event sources, including those related to navigation and the import
+ * wizard model, and it uses an instance of {@link EventBus} from the Guava library to manage and
+ * dispatch events
  */
 public class ApplicationEventBus
 {
@@ -56,7 +58,8 @@ public class ApplicationEventBus
 	/**
 	 * Retrieves an event source by its key
 	 *
-	 * @param key the key associated with the event source
+	 * @param key
+	 *            the key associated with the event source
 	 * @return the event source associated with the given key, or {@code null} if none is found
 	 */
 	public static EventSource<?> get(final String key)
@@ -94,4 +97,3 @@ public class ApplicationEventBus
 		return instance;
 	}
 }
-

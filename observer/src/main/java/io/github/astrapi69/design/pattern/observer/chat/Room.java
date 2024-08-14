@@ -28,32 +28,34 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * The interface {@link Room}.
+ * The interface {@link Room} represents a chat room in which users can participate It provides
+ * methods to retrieve the list of users in the chat room, the history of messages sent in the room,
+ * and to check whether the room is secure
  *
  * @param <M>
- *            the generic type
+ *            the generic type representing the messages that can be sent in the room
  */
 public interface Room<M extends Message<?>> extends Serializable
 {
 
 	/**
-	 * Gets the chat room users.
+	 * Gets the list of users in the chat room
 	 *
-	 * @return the chat room users
+	 * @return the list of users in the chat room
 	 */
 	List<IUser<?>> getChatRoomUsers();
 
 	/**
-	 * Gets the message history.
+	 * Gets the history of messages sent in the chat room
 	 *
-	 * @return the message history
+	 * @return the list of messages sent in the chat room
 	 */
 	List<M> getMessageHistory();
 
 	/**
-	 * Checks if is secure.
+	 * Checks if the chat room is secure
 	 *
-	 * @return true, if is secure
+	 * @return true if the chat room is secure, otherwise false
 	 */
 	boolean isSecure();
 }

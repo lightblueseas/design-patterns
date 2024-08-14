@@ -28,27 +28,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The Class ExceptionObservers.
+ * The class {@link ExceptionObservers} is a singleton that manages a list of
+ * {@link ExceptionListener} objects It allows classes to register and unregister for exception
+ * events, and notifies registered listeners when an exception event occurs
  */
 public class ExceptionObservers
 {
 
-	/** The instance. */
+	/** The single instance of this class */
 	private static ExceptionObservers instance = null;
-	/** The exception listeners. */
+
+	/** The list of registered exception listeners */
 	protected List<ExceptionListener> exceptionListeners = new ArrayList<>();
 
 	/**
-	 * Instantiates a new exception observers.
+	 * Instantiates a new {@code ExceptionObservers} object This constructor is private to enforce
+	 * the singleton pattern
 	 */
 	private ExceptionObservers()
 	{
 	}
 
 	/**
-	 * Gets the single instance of ExceptionObservers.
+	 * Gets the single instance of {@code ExceptionObservers}
 	 *
-	 * @return single instance of ExceptionObservers
+	 * @return the single instance of {@code ExceptionObservers}
 	 */
 	public static synchronized ExceptionObservers getInstance()
 	{
@@ -63,10 +67,11 @@ public class ExceptionObservers
 	}
 
 	/**
-	 * Adds the exception listener. This method allows classes to register for ExceptionEvents.
+	 * Adds the specified exception listener to the list of listeners This method allows classes to
+	 * register for exception events
 	 *
 	 * @param listener
-	 *            the listener
+	 *            the exception listener to be added
 	 */
 	public void addExceptionListener(final ExceptionListener listener)
 	{
@@ -74,10 +79,10 @@ public class ExceptionObservers
 	}
 
 	/**
-	 * Fire exception event.
+	 * Fires an exception event to all registered listeners
 	 *
 	 * @param event
-	 *            the event
+	 *            the exception event to be fired
 	 */
 	void fireExceptionEvent(final ExceptionEvent event)
 	{
@@ -89,12 +94,12 @@ public class ExceptionObservers
 		}
 	}
 
-
 	/**
-	 * Removes the exception listener. This method allows classes to unregister for ExceptionEvents.
+	 * Removes the specified exception listener from the list of listeners This method allows
+	 * classes to unregister for exception events
 	 *
 	 * @param listener
-	 *            the listener
+	 *            the exception listener to be removed
 	 */
 	public void removeExceptionListener(final ExceptionListener listener)
 	{

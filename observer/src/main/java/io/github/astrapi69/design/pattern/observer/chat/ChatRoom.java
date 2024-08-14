@@ -33,10 +33,12 @@ import io.github.astrapi69.design.pattern.observer.AbstractSubject;
 import io.github.astrapi69.design.pattern.observer.api.Subject;
 
 /**
- * The Class ChatRoom.
+ * The class {@link ChatRoom} represents a chat room where users can send and receive messages It
+ * extends {@link AbstractSubject} and implements {@link Subject}, {@link Room}, and
+ * {@link Serializable}
  *
  * @param <M>
- *            the generic type of the Message that will be send in this chat room.
+ *            the generic type of the message that will be sent in this chat room
  */
 public class ChatRoom<M extends Message<?>> extends AbstractSubject<M, ChatRoomUser<M>>
 	implements
@@ -45,30 +47,35 @@ public class ChatRoom<M extends Message<?>> extends AbstractSubject<M, ChatRoomU
 		Serializable
 {
 
-	/** The Constant serialVersionUID. */
+	/** The Constant serialVersionUID for serialization compatibility */
 	private static final long serialVersionUID = 1L;
-	/** The observers. */
+
+	/** The list of observers (chat room users) */
 	private final List<ChatRoomUser<M>> observers;
+
+	/** The message history of the chat room */
 	private final List<M> messageHistory = new ArrayList<>();
-	/** The name of the chat room. */
+
+	/** The name of the chat room */
 	private final String name;
-	/** The observable object. */
+
+	/** The observable message object */
 	private M observable;
 
 	/**
-	 * Initialize block.
+	 * Initialization block to create the list of observers
 	 **/
 	{
 		observers = new ArrayList<>();
 	}
 
 	/**
-	 * Constructor for a new subject with an observable.
+	 * Constructor for a new chat room with an initial observable message and a name
 	 *
 	 * @param observable
-	 *            the observable
+	 *            the initial observable message
 	 * @param name
-	 *            the name
+	 *            the name of the chat room
 	 */
 	public ChatRoom(final M observable, final String name)
 	{
@@ -77,7 +84,7 @@ public class ChatRoom<M extends Message<?>> extends AbstractSubject<M, ChatRoomU
 	}
 
 	/**
-	 * Constructor for a new chat room with the given name.
+	 * Constructor for a new chat room with the given name
 	 *
 	 * @param name
 	 *            the name of the chat room
@@ -94,7 +101,6 @@ public class ChatRoom<M extends Message<?>> extends AbstractSubject<M, ChatRoomU
 	public synchronized void add(final ChatRoomUser<M> observer)
 	{
 		observers.add(observer);
-
 	}
 
 	/**
@@ -110,9 +116,9 @@ public class ChatRoom<M extends Message<?>> extends AbstractSubject<M, ChatRoomU
 	}
 
 	/**
-	 * Gets the chat room users as User objects.
+	 * Gets the chat room users as a list of {@link IUser} objects
 	 *
-	 * @return the chat room users
+	 * @return the list of chat room users
 	 */
 	@Override
 	public List<IUser<?>> getChatRoomUsers()
@@ -125,6 +131,11 @@ public class ChatRoom<M extends Message<?>> extends AbstractSubject<M, ChatRoomU
 		return chatRoomUsers;
 	}
 
+	/**
+	 * Gets the message history of the chat room
+	 *
+	 * @return the list of messages sent in the chat room
+	 */
 	@Override
 	public List<M> getMessageHistory()
 	{
@@ -132,9 +143,9 @@ public class ChatRoom<M extends Message<?>> extends AbstractSubject<M, ChatRoomU
 	}
 
 	/**
-	 * Gets the name of the chat room.
+	 * Gets the name of the chat room
 	 *
-	 * @return the name of the chat room.
+	 * @return the name of the chat room
 	 */
 	public String getName()
 	{
@@ -161,6 +172,9 @@ public class ChatRoom<M extends Message<?>> extends AbstractSubject<M, ChatRoomU
 		updateObservers();
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public boolean isSecure()
 	{
@@ -193,9 +207,9 @@ public class ChatRoom<M extends Message<?>> extends AbstractSubject<M, ChatRoomU
 	}
 
 	/**
-	 * Returns the number of chat users in this chat room.
+	 * Returns the number of users in this chat room
 	 *
-	 * @return the number of chat users in this chat room.
+	 * @return the number of users in this chat room
 	 */
 	public int size()
 	{

@@ -27,18 +27,18 @@ package io.github.astrapi69.design.pattern.observer.chat;
 import io.github.astrapi69.design.pattern.observer.api.Subject;
 
 /**
- * An asynchronous update interface for receiving notifications about DemonstrateChat information as
- * the DemonstrateChat is constructed.
+ * The class {@link DemonstrateChatObserver} demonstrates the usage of the chat observer pattern
+ * with various chat rooms and users This class contains a main method that simulates a chat session
+ * between multiple users in different chat rooms
  */
 public class DemonstrateChatObserver
 {
 
 	/**
-	 * This method is called when information about an DemonstrateChat which was previously
-	 * requested using an asynchronous interface becomes available.
+	 * The main method that simulates a chat session between multiple users in different chat rooms
 	 *
 	 * @param args
-	 *            the args
+	 *            the command line arguments
 	 */
 	public static void main(final String[] args)
 	{
@@ -61,9 +61,6 @@ public class DemonstrateChatObserver
 			(ChatRoom<StringMessage>)firstRoom, alfredUser)
 		{
 
-			/**
-			 * 
-			 */
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -73,7 +70,6 @@ public class DemonstrateChatObserver
 					+ alfredUser.getName() + " sees the Message:\n" + getObservable().getValue()
 					+ "\n----------------------------------------------";
 				System.out.println(display);
-
 			}
 
 			@Override
@@ -115,7 +111,7 @@ public class DemonstrateChatObserver
 		message = new StringMessage("im alone now :-((");
 		System.out.println("########## New message ##############");
 		alfredFirstRoom.send(message);
-		message = new StringMessage("Im leafing this room too...");
+		message = new StringMessage("Im leaving this room too...");
 		System.out.println("########## New message ##############");
 		alfredFirstRoom.send(message);
 		firstRoom.remove(alfredFirstRoom);

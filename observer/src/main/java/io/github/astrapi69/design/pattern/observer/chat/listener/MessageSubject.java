@@ -29,37 +29,40 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * The class {@link MessageSubject}.
+ * The class {@link MessageSubject} represents a subject in the Observer design pattern for handling
+ * messages It maintains a list of {@link MessageListener} objects that are notified when a message
+ * is fired
  *
  * @param <T>
- *            the generic type
+ *            the generic type of the message object
  */
 public class MessageSubject<T> implements MessageSource<T>
 {
-	/** The event listeners. */
+	/** The list of registered message listeners */
 	private final List<MessageListener<T>> messageListeners;
-	/** The source. */
+
+	/** The current message source */
 	private T source;
 
 	/**
-	 * Initialize block.
+	 * Initialization block to create the list of message listeners
 	 **/
 	{
 		messageListeners = new ArrayList<>();
 	}
 
 	/**
-	 * Instantiates a new message subject.
+	 * Instantiates a new {@code MessageSubject} with no initial source
 	 */
 	public MessageSubject()
 	{
 	}
 
 	/**
-	 * Instantiates a new message subject.
+	 * Instantiates a new {@code MessageSubject} with the given initial source
 	 *
 	 * @param source
-	 *            the source
+	 *            the initial message source
 	 */
 	public MessageSubject(final T source)
 	{
@@ -73,7 +76,6 @@ public class MessageSubject<T> implements MessageSource<T>
 	public synchronized void add(final MessageListener<T> messageListener)
 	{
 		messageListeners.add(messageListener);
-
 	}
 
 	/**
@@ -86,7 +88,7 @@ public class MessageSubject<T> implements MessageSource<T>
 	}
 
 	/**
-	 * Fire message.
+	 * Fires a message to all registered listeners with the current source
 	 */
 	private synchronized void fireMessage()
 	{
@@ -123,5 +125,4 @@ public class MessageSubject<T> implements MessageSource<T>
 	{
 		this.messageListeners.removeAll(messageListeners);
 	}
-
 }

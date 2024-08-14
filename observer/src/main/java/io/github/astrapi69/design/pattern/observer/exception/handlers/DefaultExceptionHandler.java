@@ -28,12 +28,14 @@ import io.github.astrapi69.design.pattern.observer.exception.ExceptionEvent;
 import io.github.astrapi69.design.pattern.observer.exception.ExceptionListener;
 
 /**
- * The Class DefaultExceptionHandler.
+ * The class {@link DefaultExceptionHandler} provides a default implementation for handling
+ * exception events It extends {@link AbstractExceptionHandler} and propagates exception events to
+ * the registered listeners
  */
 public class DefaultExceptionHandler extends AbstractExceptionHandler
 {
 
-	/** The serialVersionUID. */
+	/** The serialVersionUID for serialization compatibility */
 	private static final long serialVersionUID = -7194471234913656513L;
 
 	/**
@@ -46,10 +48,10 @@ public class DefaultExceptionHandler extends AbstractExceptionHandler
 	}
 
 	/**
-	 * Update on exception.
+	 * Updates all registered listeners with the given exception event
 	 *
 	 * @param event
-	 *            the event
+	 *            the exception event to be propagated to the listeners
 	 */
 	public void updateOnException(final ExceptionEvent event)
 	{

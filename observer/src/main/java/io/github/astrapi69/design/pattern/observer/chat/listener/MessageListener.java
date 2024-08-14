@@ -25,23 +25,22 @@
 package io.github.astrapi69.design.pattern.observer.chat.listener;
 
 /**
- * The listener interface for receiving message events. The class that is interested in processing a
+ * The listener interface for receiving message events The class that is interested in processing a
  * message implements this interface, and the object created with that class is registered with a
- * component using the component's <code>addMessageListener</code> method. When the message event
- * occurs, that object's appropriate method is invoked.
- * 
+ * component using the component's <code>addMessageListener</code> method When the message event
+ * occurs, the appropriate method of that object is invoked
+ *
  * @param <T>
- *            the generic type from the message Event
+ *            the generic type of the message event
  */
 public interface MessageListener<T>
 {
 
 	/**
-	 * Handles the given event.
+	 * Handles the given message event
 	 *
 	 * @param event
-	 *            the event
+	 *            the event containing the message to be processed
 	 */
 	void onMessage(final T event);
-
 }

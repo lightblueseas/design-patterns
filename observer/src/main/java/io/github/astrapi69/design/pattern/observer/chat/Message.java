@@ -27,27 +27,28 @@ package io.github.astrapi69.design.pattern.observer.chat;
 import java.io.Serializable;
 
 /**
- * The interface {@link Message}.
+ * The interface {@link Message} represents a message that can be sent in a chat application It
+ * provides methods for getting and setting the value of the message
  *
  * @param <T>
- *            the generic type
+ *            the generic type of the value contained in the message
  */
 public interface Message<T> extends Serializable
 {
 
 	/**
-	 * Gets the value.
+	 * Gets the value of the message
 	 *
-	 * @return the value
+	 * @return the value of the message
 	 */
 	T getValue();
 
 	/**
-	 * Sets the value.
+	 * Sets the value of the message
 	 *
 	 * @param value
-	 *            the value
-	 * @return the message
+	 *            the value to set
+	 * @return the updated message
 	 */
 	Message<T> setValue(final T value);
 

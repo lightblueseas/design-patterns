@@ -27,47 +27,49 @@ package io.github.astrapi69.design.pattern.observer.chat;
 import java.io.Serializable;
 
 /**
- * The Interface Invitation.
+ * The Interface {@link Invitation} represents an invitation to join a chat room It defines the
+ * methods to retrieve the sender, recipient, and the room associated with the invitation, as well
+ * as methods to check if the invitation has been accepted and if the denial is visible to the
+ * sender
  *
  * @param <M>
- *            the generic type
+ *            the generic type of the message associated with the chat room
  */
 public interface Invitation<M extends Message<?>> extends Serializable
 {
 
 	/**
-	 * Gets the recipient of this invitation.
+	 * Gets the recipient of this invitation
 	 *
-	 * @return the recipient of this invitation.
+	 * @return the recipient of this invitation
 	 */
 	IUser<?> getRecipient();
 
 	/**
-	 * Gets the room for this invitation.
+	 * Gets the room associated with this invitation
 	 *
-	 * @return the room for this invitation.
+	 * @return the room for this invitation
 	 */
 	Room<M> getRoom();
 
 	/**
-	 * Gets the sender of this invitation.
+	 * Gets the sender of this invitation
 	 *
-	 * @return the sender of this invitation.
+	 * @return the sender of this invitation
 	 */
 	IUser<?> getSender();
 
 	/**
-	 * Checks if this invitation is accepted from the recipient.
+	 * Checks if this invitation has been accepted by the recipient
 	 *
-	 * @return true, if it is accepted otherwise false.
+	 * @return true if the invitation is accepted, otherwise false
 	 */
 	boolean isAccepted();
 
 	/**
-	 * Checks if the recipient wants that the sender sees that he denied his invitation.
+	 * Checks if the recipient wants the sender to see that the invitation was denied
 	 *
-	 * @return true, if the recipient wants that the sender sees that he denied his invitation
-	 *         otherwise false.
+	 * @return true if the recipient wants the sender to see the denial, otherwise false
 	 */
 	boolean isDeniedVisible();
 }

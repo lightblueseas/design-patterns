@@ -28,37 +28,42 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * The class {@link MessageRoomModelBean}.
- *
+ * The class {@link MessageRoomModelBean} represents a model for a message in a chat room It
+ * includes details such as the chat room name, the user who sent the message, the message content,
+ * and any associated data, as well as the date the message was created
  */
 public class MessageRoomModelBean implements Serializable
 {
 
-	/** The Constant serialVersionUID. */
+	/** The Constant serialVersionUID for serialization compatibility */
 	private static final long serialVersionUID = 1L;
 
-	/** The chat room name. */
+	/** The name of the chat room */
 	private final String chatRoomName;
-	/** The date. */
+
+	/** The date the message was created */
 	private final Date date = new Date();
-	/** The user. */
+
+	/** The user who sent the message */
 	private final IUser<?> user;
-	/** The data. */
+
+	/** Any additional data associated with the message */
 	private Byte[] data;
-	/** The message. */
+
+	/** The content of the message */
 	private String message;
 
 	/**
-	 * Instantiates a new message room model.
+	 * Instantiates a new {@code MessageRoomModelBean} with the specified details
 	 *
 	 * @param chatRoomName
-	 *            the chat room name
+	 *            the name of the chat room
 	 * @param user
-	 *            the user
+	 *            the user who sent the message
 	 * @param message
-	 *            the message
+	 *            the content of the message
 	 * @param data
-	 *            the data
+	 *            any additional data associated with the message
 	 */
 	public MessageRoomModelBean(final String chatRoomName, final IUser<?> user,
 		final String message, final Byte[] data)
@@ -71,7 +76,7 @@ public class MessageRoomModelBean implements Serializable
 	}
 
 	/**
-	 * Gets the chat room name.
+	 * Gets the name of the chat room
 	 *
 	 * @return the chat room name
 	 */
@@ -81,7 +86,7 @@ public class MessageRoomModelBean implements Serializable
 	}
 
 	/**
-	 * Gets the data.
+	 * Gets the additional data associated with the message
 	 *
 	 * @return the data
 	 */
@@ -91,7 +96,7 @@ public class MessageRoomModelBean implements Serializable
 	}
 
 	/**
-	 * Sets the data.
+	 * Sets the additional data associated with the message
 	 *
 	 * @param data
 	 *            the new data
@@ -102,9 +107,9 @@ public class MessageRoomModelBean implements Serializable
 	}
 
 	/**
-	 * Gets the date.
+	 * Gets the date the message was created
 	 *
-	 * @return the date
+	 * @return the creation date of the message
 	 */
 	public Date getDate()
 	{
@@ -112,9 +117,9 @@ public class MessageRoomModelBean implements Serializable
 	}
 
 	/**
-	 * Gets the message.
+	 * Gets the content of the message
 	 *
-	 * @return the message
+	 * @return the message content
 	 */
 	public String getMessage()
 	{
@@ -122,10 +127,10 @@ public class MessageRoomModelBean implements Serializable
 	}
 
 	/**
-	 * Sets the message.
+	 * Sets the content of the message
 	 *
 	 * @param message
-	 *            the new message
+	 *            the new message content
 	 */
 	public void setMessage(final String message)
 	{
@@ -133,9 +138,9 @@ public class MessageRoomModelBean implements Serializable
 	}
 
 	/**
-	 * Gets the user.
+	 * Gets the user who sent the message
 	 *
-	 * @return the user
+	 * @return the user who sent the message
 	 */
 	public IUser<?> getUser()
 	{

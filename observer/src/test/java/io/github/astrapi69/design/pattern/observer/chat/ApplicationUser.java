@@ -28,33 +28,46 @@ import java.io.Serializable;
 
 import io.github.astrapi69.auth.SimpleUser;
 
+/**
+ * The class {@link ApplicationUser} represents a user in the chat application It implements the
+ * {@link IUser} interface, providing methods to manage the application user's identity
+ */
 public class ApplicationUser implements IUser<SimpleUser>
 {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
-	SimpleUser applicationUser;
+	private SimpleUser applicationUser;
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public SimpleUser getApplicationUser()
 	{
 		return this.applicationUser;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void setApplicationUser(final SimpleUser user)
 	{
 		this.applicationUser = user;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public Serializable getId()
 	{
 		return this.applicationUser.getId();
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String getName()
 	{

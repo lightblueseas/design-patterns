@@ -32,7 +32,8 @@ import io.github.astrapi69.design.pattern.observer.exception.ExceptionEvent;
 import io.github.astrapi69.design.pattern.observer.exception.ExceptionListener;
 
 /**
- * The abstract class that handles all exceptions.
+ * The abstract class {@link AbstractExceptionHandler} handles all exceptions by managing a list of
+ * {@link ExceptionListener} objects and updating them when an exception event occurs
  *
  * @version 1.0
  * @author Asterios Raptis
@@ -40,19 +41,17 @@ import io.github.astrapi69.design.pattern.observer.exception.ExceptionListener;
 public abstract class AbstractExceptionHandler implements Serializable
 {
 
-	/**
-	 * The serialVersionUID.
-	 */
+	/** The serialVersionUID for serialization compatibility */
 	private static final long serialVersionUID = 1L;
-	/** Lists of the ExceptionListeners. */
+
+	/** The list of registered {@link ExceptionListener} objects */
 	private final List<ExceptionListener> listeners = new ArrayList<>();
 
-
 	/**
-	 * Adds an ExceptionListener object.
+	 * Adds an {@link ExceptionListener} object to the list of listeners
 	 *
 	 * @param listener
-	 *            the listener
+	 *            the listener to be added
 	 */
 	void addExceptionListener(final ExceptionListener listener)
 	{
@@ -60,10 +59,10 @@ public abstract class AbstractExceptionHandler implements Serializable
 	}
 
 	/**
-	 * Removes an ExceptionListener object.
+	 * Removes an {@link ExceptionListener} object from the list of listeners
 	 *
 	 * @param listener
-	 *            the listener
+	 *            the listener to be removed
 	 */
 	void removeExceptionListener(final ExceptionListener listener)
 	{
@@ -71,10 +70,10 @@ public abstract class AbstractExceptionHandler implements Serializable
 	}
 
 	/**
-	 * Update the given event.
+	 * Updates all registered listeners with the given exception event
 	 *
 	 * @param event
-	 *            the event
+	 *            the exception event to be propagated to the listeners
 	 */
 	void update(final ExceptionEvent event)
 	{
@@ -85,14 +84,14 @@ public abstract class AbstractExceptionHandler implements Serializable
 	}
 
 	/**
-	 * This method updates the listener for this event.
+	 * Updates the specified listener with the given exception event This method must be implemented
+	 * by subclasses to define how the event is propagated to the listener
 	 *
 	 * @param listener
-	 *            the listener
+	 *            the listener to be updated
 	 * @param event
-	 *            the event
+	 *            the exception event to be propagated to the listener
 	 */
 	public abstract void updateEvent(final ExceptionListener listener, final ExceptionEvent event);
-
 
 }

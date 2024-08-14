@@ -24,19 +24,32 @@
  */
 package io.github.astrapi69.design.pattern.observer.chat;
 
+/**
+ * The class {@link SimpleChatRoomUser} represents a user in a chat room who can send and receive
+ * string messages It extends {@link ChatRoomUser} and provides specific behavior for handling
+ * {@link StringMessage} objects
+ */
 public class SimpleChatRoomUser extends ChatRoomUser<StringMessage>
 {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Instantiates a new {@code SimpleChatRoomUser} with the specified chat room and user
+	 *
+	 * @param room
+	 *            the chat room
+	 * @param user
+	 *            the user associated with this chat room user
+	 */
 	public SimpleChatRoomUser(final ChatRoom<StringMessage> room, final IUser<?> user)
 	{
 		super(room, user);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void execute()
 	{
@@ -44,9 +57,11 @@ public class SimpleChatRoomUser extends ChatRoomUser<StringMessage>
 			+ getUser().getName() + " sees the Message:\n" + getObservable().getValue()
 			+ "\n----------------------------------------------";
 		System.out.println(display);
-
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void send(final StringMessage message)
 	{

@@ -27,15 +27,20 @@ package io.github.astrapi69.design.pattern.observer.chat;
 import java.io.Serializable;
 
 /**
- * The class {@link ChatMessage}.
+ * The class {@link ChatMessage} represents a message in a chat application It implements the
+ * {@link Message} interface and is serializable
+ *
+ * @param <T>
+ *            the type of the value held by the message, which in this case is a
+ *            {@link MessageRoomModelBean}
  */
 public class ChatMessage implements Message<MessageRoomModelBean>, Serializable
 {
 
-	/** The Constant serialVersionUID. */
+	/** The Constant serialVersionUID for serialization compatibility */
 	private static final long serialVersionUID = 1L;
 
-	/** The value. */
+	/** The value of the message, typically containing the chat room details */
 	private MessageRoomModelBean value;
 
 	/**
@@ -56,5 +61,4 @@ public class ChatMessage implements Message<MessageRoomModelBean>, Serializable
 		this.value = value;
 		return this;
 	}
-
 }

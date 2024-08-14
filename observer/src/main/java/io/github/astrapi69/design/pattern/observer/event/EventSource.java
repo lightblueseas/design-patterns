@@ -27,7 +27,8 @@ package io.github.astrapi69.design.pattern.observer.event;
 import java.util.Collection;
 
 /**
- * The interface {@link EventSource}
+ * The interface {@link EventSource} represents a source of events It provides methods to manage
+ * event listeners and to fire events to those listeners
  *
  * @param <T>
  *            the generic type of the source object
@@ -36,42 +37,42 @@ public interface EventSource<T>
 {
 
 	/**
-	 * Adds the given event listener to the eventListeners list.
+	 * Adds the given event listener to the list of event listeners
 	 *
 	 * @param eventListener
-	 *            the event listener
+	 *            the event listener to be added
 	 */
 	void add(final EventListener<T> eventListener);
 
 	/**
-	 * Adds the all given event listeners to the eventListeners list.
+	 * Adds all the given event listeners to the list of event listeners
 	 *
 	 * @param eventListeners
-	 *            the event listeners
+	 *            the collection of event listeners to be added
 	 */
 	void addAll(final Collection<EventListener<T>> eventListeners);
 
 	/**
-	 * Fire the given event.
+	 * Fires an event to all registered listeners with the given source object
 	 *
 	 * @param source
-	 *            the source
+	 *            the source object that the event relates to
 	 */
 	void fireEvent(final T source);
 
 	/**
-	 * Removes the given event listener from the eventListeners list.
+	 * Removes the given event listener from the list of event listeners
 	 *
 	 * @param eventListener
-	 *            the event listener
+	 *            the event listener to be removed
 	 */
 	void remove(final EventListener<T> eventListener);
 
 	/**
-	 * Removes the all given event listeners from the eventListeners list.
+	 * Removes all the given event listeners from the list of event listeners
 	 *
 	 * @param eventListeners
-	 *            the event listeners
+	 *            the collection of event listeners to be removed
 	 */
 	void removeAll(final Collection<EventListener<T>> eventListeners);
 

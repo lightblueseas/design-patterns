@@ -27,51 +27,54 @@ package io.github.astrapi69.design.pattern.observer.chat.listener;
 import java.util.Collection;
 
 /**
- * The Interface MessageSource.
- * 
+ * The Interface {@link MessageSource} represents a source that can send messages to registered
+ * listeners It provides methods for adding, removing, and notifying {@link MessageListener} objects
+ *
  * @param <T>
- *            the generic type
+ *            the generic type of the message object
  */
 public interface MessageSource<T>
 {
 
 	/**
-	 * Adds the given messageListeners to the existing messageListeners list.
-	 * 
+	 * Adds the given {@link MessageListener} to the list of listeners that will receive messages
+	 *
 	 * @param messageListener
-	 *            the MessageListener object
+	 *            the {@link MessageListener} to be added
 	 */
 	void add(final MessageListener<T> messageListener);
 
 	/**
-	 * Adds the all given messageListener to the existing messageListeners list.
-	 * 
+	 * Adds all the given {@link MessageListener} objects to the list of listeners that will receive
+	 * messages
+	 *
 	 * @param messageListeners
-	 *            the MessageListener objects
+	 *            the collection of {@link MessageListener} objects to be added
 	 */
 	void addAll(final Collection<MessageListener<T>> messageListeners);
 
 	/**
-	 * Fire the given message.
-	 * 
+	 * Fires a message to all registered listeners with the given source object
+	 *
 	 * @param source
-	 *            the message source
+	 *            the message source object to be sent to listeners
 	 */
 	void fireMessage(final T source);
 
 	/**
-	 * Removes the given MessageListener object from the existing messageListeners list.
-	 * 
+	 * Removes the given {@link MessageListener} from the list of listeners that receive messages
+	 *
 	 * @param messageListener
-	 *            the MessageListener object
+	 *            the {@link MessageListener} to be removed
 	 */
 	void remove(final MessageListener<T> messageListener);
 
 	/**
-	 * Removes the all given MessageListener objects from the messageListeners list.
-	 * 
+	 * Removes all the given {@link MessageListener} objects from the list of listeners that receive
+	 * messages
+	 *
 	 * @param messageListeners
-	 *            the MessageListener objects
+	 *            the collection of {@link MessageListener} objects to be removed
 	 */
 	void removeAll(final Collection<MessageListener<T>> messageListeners);
 

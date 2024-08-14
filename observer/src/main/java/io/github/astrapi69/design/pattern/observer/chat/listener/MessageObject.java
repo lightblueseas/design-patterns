@@ -25,24 +25,27 @@
 package io.github.astrapi69.design.pattern.observer.chat.listener;
 
 /**
- * The Class MessageObject.
- * 
+ * The Class {@link MessageObject} represents an object that contains a message event It
+ * encapsulates the source object on which the message event initially occurred
+ *
  * @param <T>
- *            the generic type
+ *            the generic type of the source object
  */
 public class MessageObject<T>
 {
 
 	/**
-	 * The object on which the message Event initially occurred.
+	 * The object on which the message event initially occurred
 	 */
 	protected transient T source;
 
 	/**
-	 * Instantiates a new message object.
-	 * 
+	 * Instantiates a new {@code MessageObject} with the given source
+	 *
 	 * @param source
-	 *            the source
+	 *            the source object on which the message event occurred
+	 * @throws IllegalArgumentException
+	 *             if the source is {@code null}
 	 */
 	public MessageObject(final T source)
 	{
@@ -55,13 +58,12 @@ public class MessageObject<T>
 	}
 
 	/**
-	 * Gets the source.
+	 * Gets the source object on which the message event initially occurred
 	 *
-	 * @return the source
+	 * @return the source object
 	 */
 	public T getSource()
 	{
 		return source;
 	}
-
 }

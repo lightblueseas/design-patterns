@@ -25,19 +25,21 @@
 package io.github.astrapi69.design.pattern.observer.api;
 
 /**
- * The Interface Observer.
- * 
+ * The Interface {@link Observer} represents an observer in the Observer design pattern It defines a
+ * contract for objects that should be notified of changes in an observable subject
+ *
  * @param <T>
- *            the generic type of the observable.
+ *            the generic type of the observable object that the observer is interested in
  */
 public interface Observer<T>
 {
 
 	/**
-	 * Update.
+	 * This method is called to notify the observer of changes in the observable object Implementing
+	 * classes should define the specific behavior that occurs when the observable object changes
 	 *
-	 * @param t
-	 *            the t
+	 * @param observable
+	 *            the observable object that has changed
 	 */
-	void update(final T t);
+	void update(final T observable);
 }

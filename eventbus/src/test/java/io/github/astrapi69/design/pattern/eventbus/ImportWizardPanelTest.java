@@ -33,9 +33,10 @@ import io.github.astrapi69.design.pattern.observer.event.EventObject;
 import io.github.astrapi69.design.pattern.observer.event.EventSource;
 
 /**
- * The class {@link ImportWizardPanelTest} provides unit tests for the {@link ImportWizardPanel} class
- * It implements the {@link EventListener} interface to listen for {@link NavigationEventState} events
- * and verify the correct behavior of the event handling and state update logic
+ * The class {@link ImportWizardPanelTest} provides unit tests for the {@link ImportWizardPanel}
+ * class It implements the {@link EventListener} interface to listen for
+ * {@link NavigationEventState} events and verify the correct behavior of the event handling and
+ * state update logic
  */
 public class ImportWizardPanelTest implements EventListener<EventObject<NavigationEventState>>
 {
@@ -46,7 +47,8 @@ public class ImportWizardPanelTest implements EventListener<EventObject<Navigati
 	/**
 	 * Handles the given event by updating the navigation state of the panel
 	 *
-	 * @param event the event containing the new {@link NavigationEventState}
+	 * @param event
+	 *            the event containing the new {@link NavigationEventState}
 	 */
 	@Override
 	public void onEvent(EventObject<NavigationEventState> event)
@@ -57,7 +59,8 @@ public class ImportWizardPanelTest implements EventListener<EventObject<Navigati
 	/**
 	 * Updates the button state based on the given navigation state
 	 *
-	 * @param navigationState the new navigation state to be applied
+	 * @param navigationState
+	 *            the new navigation state to be applied
 	 */
 	protected void updateButtonState(NavigationEventState navigationState)
 	{
@@ -66,19 +69,19 @@ public class ImportWizardPanelTest implements EventListener<EventObject<Navigati
 
 	/**
 	 * Test method for verifying the event handling functionality of the {@link ImportWizardPanel}
-	 * It registers the test class as a listener for {@link NavigationEventState} events,
-	 * fires events, and verifies that the {@code navigationEventState} is updated correctly
+	 * It registers the test class as a listener for {@link NavigationEventState} events, fires
+	 * events, and verifies that the {@code navigationEventState} is updated correctly
 	 */
 	@Test
 	public void testApplicationEventBus()
 	{
 		// Register as listener...
 		final EventSource<EventObject<NavigationEventState>> eventSource = ApplicationEventBus
-				.getImportNavigationState();
+			.getImportNavigationState();
 		eventSource.add(this);
 		// Create an event source object
 		final EventSource<EventObject<NavigationEventState>> navigationEventStateEventSource = ApplicationEventBus
-				.getImportNavigationState();
+			.getImportNavigationState();
 		// Fire a new event
 		navigationEventStateEventSource.fireEvent(new EventObject<>(NavigationEventState.UPDATE));
 		// Verify that the navigationEventState is set to NavigationEventState.UPDATE

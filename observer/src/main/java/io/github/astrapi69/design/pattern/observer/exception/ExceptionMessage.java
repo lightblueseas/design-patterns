@@ -36,12 +36,13 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * Class for Messages in Exception classes.
+ * The class {@link ExceptionMessage} represents a message object used in exception handling It
+ * encapsulates information such as a properties key and value, an ID, and additional data that may
+ * be related to the exception
  *
  * @version 1.0
- * @author Asterios Raptis
  * @param <T>
- *            the generic type
+ *            the generic type of the additional data
  */
 @Getter
 @Setter
@@ -53,32 +54,30 @@ import lombok.ToString;
 public class ExceptionMessage<T> implements Serializable
 {
 
-	/**
-	 * The serialVersionUID.
-	 */
+	/** The serialVersionUID for serialization compatibility */
 	private static final long serialVersionUID = 1L;
 
-	/** Reference for the key in the resources bundle. */
+	/** The key reference for a property in the resource bundle */
 	private String propertiesKey;
 
-	/** Reference for the value in the resources bundle. */
+	/** The value reference for a property in the resource bundle */
 	private String propertiesValue;
 
-	/** Reference for the id in the database. */
+	/** The unique identifier in the database */
 	private String id;
 
-	/** The additions. */
+	/** A list of additional data related to the exception */
 	private List<T> additions;
 
 	/**
-	 * Default constructor.
+	 * Constructor for creating an {@code ExceptionMessage} with specified key, value, and ID
 	 *
 	 * @param propertiesKey
-	 *            the properties key
+	 *            the key reference for a property in the resource bundle
 	 * @param propertiesValue
-	 *            the properties value
+	 *            the value reference for a property in the resource bundle
 	 * @param id
-	 *            the id
+	 *            the unique identifier in the database
 	 */
 	public ExceptionMessage(final String propertiesKey, final String propertiesValue,
 		final String id)

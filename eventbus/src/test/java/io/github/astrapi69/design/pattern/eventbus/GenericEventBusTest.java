@@ -32,10 +32,10 @@ import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 
 /**
- * The class {@link GenericEventBusTest} provides unit tests for the integration
- * of the {@link GenericEventBus} with the {@link ApplicationEventBus} using the Guava {@link EventBus}
- * The tests verify the registration, event posting, and unregistration of event listeners,
- * ensuring correct behavior of the event bus system
+ * The class {@link GenericEventBusTest} provides unit tests for the integration of the
+ * {@link GenericEventBus} with the {@link ApplicationEventBus} using the Guava {@link EventBus} The
+ * tests verify the registration, event posting, and unregistration of event listeners, ensuring
+ * correct behavior of the event bus system
  */
 public class GenericEventBusTest
 {
@@ -46,9 +46,10 @@ public class GenericEventBusTest
 	private static NavigationEventState navigationEventState;
 
 	/**
-	 * Test method for verifying the functionality of the {@link ApplicationEventBus} using the Guava {@link EventBus}
-	 * It checks the correct registration and unregistration of listeners,
-	 * the proper handling of different types of events, and the integrity of event-driven state changes
+	 * Test method for verifying the functionality of the {@link ApplicationEventBus} using the
+	 * Guava {@link EventBus} It checks the correct registration and unregistration of listeners,
+	 * the proper handling of different types of events, and the integrity of event-driven state
+	 * changes
 	 */
 	@Test
 	public void testApplicationEventBus()
@@ -92,10 +93,11 @@ public class GenericEventBusTest
 	}
 
 	/**
-	 * Event handler method for string-based events
-	 * This method increments the counter each time it is called
+	 * Event handler method for string-based events This method increments the counter each time it
+	 * is called
 	 *
-	 * @param event the event string, typically a command or action indicator
+	 * @param event
+	 *            the event string, typically a command or action indicator
 	 */
 	@Subscribe
 	public void onAddition(String event)
@@ -104,10 +106,11 @@ public class GenericEventBusTest
 	}
 
 	/**
-	 * Event handler method for {@link NavigationEventState} events
-	 * This method updates the {@code navigationEventState} field to reflect the state passed in the event
+	 * Event handler method for {@link NavigationEventState} events This method updates the
+	 * {@code navigationEventState} field to reflect the state passed in the event
 	 *
-	 * @param navigationEventState the event containing the new navigation state
+	 * @param navigationEventState
+	 *            the event containing the new navigation state
 	 */
 	@Subscribe
 	public void onAdditionWithObject(NavigationEventState navigationEventState)

@@ -25,13 +25,15 @@
 package io.github.astrapi69.design.pattern.observer.api;
 
 /**
- * The interface {@link ActionCommand}.
+ * The interface {@link ActionCommand} represents a command that can be executed Implementations of
+ * this interface encapsulate a specific action that can be triggered
  */
 public interface ActionCommand
 {
 
 	/**
-	 * Executes the command.
+	 * Executes the command Implementing classes should define the specific action to be performed
+	 * when this method is called
 	 */
 	void execute();
 }
