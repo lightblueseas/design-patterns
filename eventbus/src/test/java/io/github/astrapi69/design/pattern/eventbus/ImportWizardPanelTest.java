@@ -32,16 +32,21 @@ import io.github.astrapi69.design.pattern.observer.event.EventListener;
 import io.github.astrapi69.design.pattern.observer.event.EventObject;
 import io.github.astrapi69.design.pattern.observer.event.EventSource;
 
+/**
+ * The class {@link ImportWizardPanelTest} provides unit tests for the {@link ImportWizardPanel} class
+ * It implements the {@link EventListener} interface to listen for {@link NavigationEventState} events
+ * and verify the correct behavior of the event handling and state update logic
+ */
 public class ImportWizardPanelTest implements EventListener<EventObject<NavigationEventState>>
 {
 
+	/** The current state of the navigation event, set by the event listener */
 	private NavigationEventState navigationEventState;
 
 	/**
-	 * Handles the given event.
+	 * Handles the given event by updating the navigation state of the panel
 	 *
-	 * @param event
-	 *            the event
+	 * @param event the event containing the new {@link NavigationEventState}
 	 */
 	@Override
 	public void onEvent(EventObject<NavigationEventState> event)
@@ -49,32 +54,42 @@ public class ImportWizardPanelTest implements EventListener<EventObject<Navigati
 		updateButtonState(event.getSource());
 	}
 
+	/**
+	 * Updates the button state based on the given navigation state
+	 *
+	 * @param navigationState the new navigation state to be applied
+	 */
 	protected void updateButtonState(NavigationEventState navigationState)
 	{
 		this.navigationEventState = navigationState;
 	}
 
+	/**
+	 * Test method for verifying the event handling functionality of the {@link ImportWizardPanel}
+	 * It registers the test class as a listener for {@link NavigationEventState} events,
+	 * fires events, and verifies that the {@code navigationEventState} is updated correctly
+	 */
 	@Test
 	public void testApplicationEventBus()
 	{
-		// register as listener...
+		// Register as listener...
 		final EventSource<EventObject<NavigationEventState>> eventSource = ApplicationEventBus
-			.getImportNavigationState();
+				.getImportNavigationState();
 		eventSource.add(this);
-		// create an event source object
+		// Create an event source object
 		final EventSource<EventObject<NavigationEventState>> navigationEventStateEventSource = ApplicationEventBus
-			.getImportNavigationState();
-		// fire a new event
+				.getImportNavigationState();
+		// Fire a new event
 		navigationEventStateEventSource.fireEvent(new EventObject<>(NavigationEventState.UPDATE));
-		// verify that the navigationEventState is set to NavigationEventState.UPDATE
+		// Verify that the navigationEventState is set to NavigationEventState.UPDATE
 		assertEquals(NavigationEventState.UPDATE, this.navigationEventState);
-		// fire a new event
+		// Fire a new event
 		navigationEventStateEventSource.fireEvent(new EventObject<>(NavigationEventState.VALIDATE));
-		// verify that the navigationEventState is set to NavigationEventState.VALIDATE
+		// Verify that the navigationEventState is set to NavigationEventState.VALIDATE
 		assertEquals(NavigationEventState.VALIDATE, this.navigationEventState);
-		// fire a new event
+		// Fire a new event
 		navigationEventStateEventSource.fireEvent(new EventObject<>(NavigationEventState.RESET));
-		// verify that the navigationEventState is set to NavigationEventState.RESET
+		// Verify that the navigationEventState is set to NavigationEventState.RESET
 		assertEquals(NavigationEventState.RESET, this.navigationEventState);
 	}
 }

@@ -24,7 +24,25 @@
  */
 package io.github.astrapi69.design.pattern.eventbus;
 
+/**
+ * The enum {@link NavigationEventState} represents different states of navigation events that can
+ * occur in a wizard navigation process
+ */
 public enum NavigationEventState
 {
-	RESET, UPDATE, VALIDATE
+
+	/**
+	 * The RESET state indicates that the navigation should reset to its initial state
+	 */
+	RESET,
+
+	/**
+	 * The UPDATE state indicates that the navigation should update its current state
+	 */
+	UPDATE,
+
+	/**
+	 * The VALIDATE state indicates that the navigation should validate its current state
+	 */
+	VALIDATE
 }

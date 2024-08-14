@@ -30,20 +30,36 @@ import io.github.astrapi69.design.pattern.observer.event.EventListener;
 import io.github.astrapi69.design.pattern.observer.event.EventObject;
 import io.github.astrapi69.design.pattern.observer.event.EventSource;
 
+/**
+ * The {@code ImportProgressPanel} class is responsible for handling events related to the
+ * {@code ImportWizardModel}. It listens for events on the {@code ApplicationEventBus} and
+ * updates its internal state when an event occurs.
+ */
 public class ImportProgressPanel implements EventListener<EventObject<ImportWizardModel>>
 {
 
+	/** The model that this panel is monitoring */
 	@Getter
 	ImportWizardModel importWizardModel;
 
+	/**
+	 * Constructs a new {@code ImportProgressPanel} and registers it as a listener
+	 * for {@code ImportWizardModel} events on the {@code ApplicationEventBus}
+	 */
 	ImportProgressPanel()
 	{
-		// register as listener...
+		// Register as listener...
 		final EventSource<EventObject<ImportWizardModel>> eventSource = ApplicationEventBus
-			.getImportWizardModel();
+				.getImportWizardModel();
 		eventSource.add(this);
 	}
 
+	/**
+	 * Handles the event when an {@code ImportWizardModel} event is fired.
+	 * This method updates the internal {@code importWizardModel} with the event's source.
+	 *
+	 * @param event the event object containing the updated {@code ImportWizardModel}
+	 */
 	@Override
 	public void onEvent(EventObject<ImportWizardModel> event)
 	{

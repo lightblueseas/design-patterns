@@ -33,30 +33,70 @@ import io.github.astrapi69.design.pattern.observer.event.EventObject;
 import io.github.astrapi69.design.pattern.observer.event.EventSource;
 import io.github.astrapi69.design.pattern.observer.event.EventSubject;
 
+/**
+ * The {@code GenericEventBus} is a final utility class that provides a centralized event bus
+ * mechanism for managing and dispatching events using {@code EventSource} objects. It maintains a
+ * registry of event sources keyed by strings or class types, enabling efficient event dispatching
+ * and management.
+ */
 public final class GenericEventBus
 {
-
+	// A static map holding event sources keyed by their string representation
 	private static final Map<String, EventSource<?>> eventSources = new HashMap<>();
 
+	// Private constructor to prevent instantiation
 	private GenericEventBus()
 	{
 	}
 
+	/**
+	 * Retrieves the event source associated with the specified key
+	 *
+	 * @param key
+	 *            the key associated with the event source
+	 * @return the event source associated with the given key or null if none is found
+	 */
 	public static EventSource<?> get(final String key)
 	{
 		return eventSources.get(key);
 	}
 
+	/**
+	 * Checks if the event bus contains an event source associated with the specified key
+	 *
+	 * @param key
+	 *            the key to check
+	 * @return {@code true} if the event source is present, {@code false} otherwise
+	 */
 	public static boolean containsKey(final String key)
 	{
 		return eventSources.containsKey(key);
 	}
 
+	/**
+	 * Checks if the event bus contains an event source associated with the specified class type
+	 *
+	 * @param <T>
+	 *            the type of the event source
+	 * @param eventSourceTypeClass
+	 *            the class type of the event source to check
+	 * @return {@code true} if the event source is present, {@code false} otherwise
+	 */
 	public static <T> boolean containsKey(@NonNull final Class<T> eventSourceTypeClass)
 	{
 		return eventSources.containsKey(eventSourceTypeClass.getSimpleName());
 	}
 
+	/**
+	 * Retrieves the event source associated with the specified class type. If it does not exist, a
+	 * new {@code EventSubject} is created and associated with the class type.
+	 *
+	 * @param <T>
+	 *            the type of the event source
+	 * @param eventSourceTypeClass
+	 *            the class type of the event source
+	 * @return the event source associated with the specified class type
+	 */
 	@SuppressWarnings("unchecked")
 	public static <T> EventSource<EventObject<T>> getEventSource(
 		@NonNull final Class<T> eventSourceTypeClass)
@@ -68,6 +108,16 @@ public final class GenericEventBus
 		return (EventSource<EventObject<T>>)get(eventSourceTypeClass.getSimpleName());
 	}
 
+	/**
+	 * Removes the event source associated with the specified class type
+	 *
+	 * @param <T>
+	 *            the type of the event source
+	 * @param eventSourceTypeClass
+	 *            the class type of the event source to be removed
+	 * @return an {@code Optional} containing the removed event source, or {@code Optional.empty()}
+	 *         if none existed
+	 */
 	public static <T> Optional<EventSource<EventObject<T>>> remove(
 		@NonNull final Class<T> eventSourceTypeClass)
 	{
@@ -80,6 +130,16 @@ public final class GenericEventBus
 		return Optional.empty();
 	}
 
+	/**
+	 * Associates the specified event source with the specified key
+	 *
+	 * @param key
+	 *            the key with which the event source is to be associated
+	 * @param value
+	 *            the event source to be associated with the key
+	 * @return the previous event source associated with the key, or {@code null} if there was no
+	 *         mapping for the key
+	 */
 	public static synchronized EventSource<?> put(final String key, final EventSource<?> value)
 	{
 		return eventSources.put(key, value);

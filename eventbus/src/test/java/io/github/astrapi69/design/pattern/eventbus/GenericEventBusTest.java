@@ -31,59 +31,84 @@ import org.testng.annotations.Test;
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 
+/**
+ * The class {@link GenericEventBusTest} provides unit tests for the integration
+ * of the {@link GenericEventBus} with the {@link ApplicationEventBus} using the Guava {@link EventBus}
+ * The tests verify the registration, event posting, and unregistration of event listeners,
+ * ensuring correct behavior of the event bus system
+ */
 public class GenericEventBusTest
 {
+	/** Counter to track the number of events processed */
 	private static long counter;
+
+	/** Stores the current state of the {@link NavigationEventState} as set by the event handler */
 	private static NavigationEventState navigationEventState;
 
+	/**
+	 * Test method for verifying the functionality of the {@link ApplicationEventBus} using the Guava {@link EventBus}
+	 * It checks the correct registration and unregistration of listeners,
+	 * the proper handling of different types of events, and the integrity of event-driven state changes
+	 */
 	@Test
 	public void testApplicationEventBus()
 	{
-		// ApplicationEventBus
+		// ApplicationEventBus from guava
 		EventBus guavaEventBus = ApplicationEventBus.getInstance().getApplicationEventBus();
-		// register this instance as listener
+		// Register this instance as listener
 		guavaEventBus.register(this);
-		// post an event
+		// Post an event
 		guavaEventBus.post("increment");
-		// verify that the counter is incremented
+		// Verify that the counter is incremented
 		assertEquals(1, counter);
-		// post an event
+		// Post an event
 		guavaEventBus.post(NavigationEventState.UPDATE);
-		// verify that the navigationEventState is set to NavigationEventState.UPDATE
+		// Verify that the navigationEventState is set to NavigationEventState.UPDATE
 		assertEquals(NavigationEventState.UPDATE, navigationEventState);
-		// verify that the counter is not incremented
+		// Verify that the counter is not incremented
 		assertEquals(1, counter);
-		// unregister this instance as listener
+		// Unregister this instance as listener
 		guavaEventBus.unregister(this);
-		// post an event
+		// Post an event
 		guavaEventBus.post("increment");
-		// verify that the counter is not incremented
+		// Verify that the counter is not incremented
 		assertEquals(1, counter);
-		// register again this instance as listener
+		// Register again this instance as listener
 		guavaEventBus.register(this);
-		// post an event
+		// Post an event
 		guavaEventBus.post("increment");
-		// verify that the counter is incremented
+		// Verify that the counter is incremented
 		assertEquals(2, counter);
-		// post an event
+		// Post an event
 		guavaEventBus.post(NavigationEventState.RESET);
-		// verify that the navigationEventState is set to NavigationEventState.RESET
+		// Verify that the navigationEventState is set to NavigationEventState.RESET
 		assertEquals(NavigationEventState.RESET, navigationEventState);
-		// post an event
+		// Post an event
 		guavaEventBus.post(NavigationEventState.VALIDATE);
-		// verify that the navigationEventState is set to NavigationEventState.VALIDATE
+		// Verify that the navigationEventState is set to NavigationEventState.VALIDATE
 		assertEquals(NavigationEventState.VALIDATE, navigationEventState);
-		// unregister this instance as listener
+		// Unregister this instance as listener
 		guavaEventBus.unregister(this);
 	}
 
-
+	/**
+	 * Event handler method for string-based events
+	 * This method increments the counter each time it is called
+	 *
+	 * @param event the event string, typically a command or action indicator
+	 */
 	@Subscribe
 	public void onAddition(String event)
 	{
 		counter++;
 	}
 
+	/**
+	 * Event handler method for {@link NavigationEventState} events
+	 * This method updates the {@code navigationEventState} field to reflect the state passed in the event
+	 *
+	 * @param navigationEventState the event containing the new navigation state
+	 */
 	@Subscribe
 	public void onAdditionWithObject(NavigationEventState navigationEventState)
 	{
