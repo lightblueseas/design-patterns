@@ -1,3 +1,0 @@
-apply from: "../gradle/dependencies-observer.gradle"
-apply from: "../gradle/licensing.gradle"
-apply from: "../gradle/publishing-observer.gradle"

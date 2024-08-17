@@ -1,9 +1,5 @@
 [versions]
-auth-api-version = "6"
-auth-version = "6"
 commons-lang3-version = "3.14.0"
-crypt-api-version = "9"
-crypt-data-version = "9"
 file-worker-version = "17.2"
 gradle-plugin-grgit-version = "5.2.2"
 gradle-plugin-license-version = "0.16.1"
@@ -11,8 +7,6 @@ gradle-plugin-lombok-version = "8.6"
 gradle-plugin-spotless-version = "7.0.0.BETA1"
 gradle-plugin-version-catalog-update-version = "0.8.4"
 gradle-plugin-versions-version = "0.51.0"
-guava-version = "33.2.1-jre"
-jobj-core-version = "8.2"
 lombok-version = "1.18.32"
 meanbean-version = "2.0.3"
 test-object-version = "8.2"
@@ -23,14 +17,8 @@ xml-jackson-extensions-version = "2.1"
 xstream-extensions-version = "1.1"
 
 [libraries]
-auth = { module = "io.github.astrapi69:auth", version.ref = "auth-version" }
-auth-api = { module = "io.github.astrapi69:auth-api", version.ref = "auth-api-version" }
 commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "commons-lang3-version" }
-crypt-api = { module = "io.github.astrapi69:crypt-api", version.ref = "crypt-api-version" }
-crypt-data = { module = "io.github.astrapi69:crypt-data", version.ref = "crypt-data-version" }
 file-worker = { module = "io.github.astrapi69:file-worker", version.ref = "file-worker-version" }
-guava = { module = "com.google.guava:guava", version.ref = "guava-version" }
-jobj-core = { module = "io.github.astrapi69:jobj-core", version.ref = "jobj-core-version" }
 lombok = { module = "org.projectlombok:lombok", version.ref = "lombok-version" }
 meanbean = { module = "org.meanbean:meanbean", version.ref = "meanbean-version" }
 test-object = { module = "io.github.astrapi69:test-object", version.ref = "test-object-version" }

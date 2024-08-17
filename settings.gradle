@@ -2,9 +2,5 @@ rootProject.name = 'design-patterns'
 include(':builder')
 include(':command')
 include(':decorator')
-include(':eventbus')
-include(':observer')
-include(':state')
 include(':strategy')
-include(':visitor')
 

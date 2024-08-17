@@ -1,3 +1,0 @@
-apply from: "../gradle/dependencies-eventbus.gradle"
-apply from: "../gradle/licensing.gradle"
-apply from: "../gradle/publishing-eventbus.gradle"

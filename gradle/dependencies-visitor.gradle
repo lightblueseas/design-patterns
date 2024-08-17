@@ -1,4 +1,0 @@
-dependencies {
-    testImplementation libs.file.worker
-    testImplementation libs.jobj.core
-}

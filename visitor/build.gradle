@@ -1,3 +1,0 @@
-apply from: "../gradle/dependencies-visitor.gradle"
-apply from: "../gradle/licensing.gradle"
-apply from: "../gradle/publishing-visitor.gradle"

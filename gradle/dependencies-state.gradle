@@ -1,5 +1,0 @@
-dependencies {
-    testImplementation libs.crypt.api
-    testImplementation libs.crypt.data
-    testImplementation libs.file.worker
-}

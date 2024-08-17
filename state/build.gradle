@@ -1,3 +1,0 @@
-apply from: "../gradle/dependencies-state.gradle"
-apply from: "../gradle/licensing.gradle"
-apply from: "../gradle/publishing-state.gradle"

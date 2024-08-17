@@ -1,5 +1,0 @@
-dependencies {
-    implementation project(":observer")
-
-    testImplementation libs.guava
-}

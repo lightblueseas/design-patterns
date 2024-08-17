@@ -11,6 +11,10 @@ ADDED:
 CHANGED:
 
 - update of jdk to version 17
+- moved state design pattern to its own repository and deleted from this repository
+- moved observer design pattern to its own repository and deleted from this repository
+- moved eventbus design pattern to its own repository and deleted from this repository
+- moved visitor design pattern to its own repository and deleted from this repository
 
 Version 6
 -------------

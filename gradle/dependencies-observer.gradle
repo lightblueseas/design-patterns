@@ -1,4 +1,0 @@
-dependencies {
-    testImplementation libs.auth
-    testImplementation libs.auth.api
-}
