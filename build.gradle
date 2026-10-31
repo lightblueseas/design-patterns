@@ -67,3 +67,5 @@ subprojects {
     }
 
 }
+
+allprojects { apply from: rootProject.file("gradle/test-results-complete.gradle") }
